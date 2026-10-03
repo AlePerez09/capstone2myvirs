@@ -13,7 +13,6 @@ frequency bands from Sprint 1 (word_categories.json) — that merge is
 Isa's integration layer, described in the Sprint 2 design doc.
 """
 
-import re
 from collections import OrderedDict
 
 import numpy as np
@@ -21,49 +20,6 @@ import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 
 nlp = spacy.load("en_core_web_sm")
-
-
-def pre_process_hyphenation(text):
-    """Merges end-of-line hyphenated words, e.g. mole-\ncula -> molecula."""
-    return re.sub(r"(\w+)-\s*(\w+)", r"\1\2", text)
-
-
-def contains_digits(text):
-    return any(char.isdigit() for char in text)
-
-
-def get_corpus(text):
-    """Cleans and tokenizes text, returning a corpus dict and ordered word list."""
-    corpus = {}
-    text_processed_list = []
-    text_cleaned = pre_process_hyphenation(text)
-    doc = nlp(text_cleaned)
-
-    for token in doc:
-        if (
-            contains_digits(token.text)
-            or token.is_punct
-            or token.like_url
-            or token.is_space
-            or len(token.text) <= 2
-            or "-" in token.text
-        ):
-            continue
-
-        word = token.lower_
-        text_processed_list.append(word)
-
-        if word not in corpus:
-            corpus[word] = {
-                "part_of_speech": token.pos_,
-                "lemma": token.lemma_,
-                "is_stop": token.is_stop,
-                "count": 1,
-            }
-        else:
-            corpus[word]["count"] += 1
-
-    return corpus, text_processed_list
 
 
 class TextRank:
@@ -100,6 +56,7 @@ class TextRank:
         self.node_weight = {word: pr[i] for word, i in vocab.items()}
 
     def get_keywords(self, number=10):
+        assert self.node_weight is not None
         sorted_keywords = OrderedDict(
             sorted(self.node_weight.items(), key=lambda t: t[1], reverse=True)
         )

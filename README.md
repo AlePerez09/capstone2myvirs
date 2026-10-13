@@ -1,10 +1,11 @@
-# MyVIRS Walking Skeleton — Team A
+# MyVIRS — Team A
 
 ## What this is
 
-Just a quick proof that the basic path works: you give it a passage of
-text and get back each word tagged with how common it is. Relevance
-scoring was added in Sprint 2, see the Sprint 2 update below.
+Team A's half of MyVIRS: you give it a passage of text or a whole
+textbook, and it tells you which words matter. Sprint 1 tagged each
+word with how common it is, Sprint 2 added relevance scoring, and
+Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 
 ## What's in this folder
 
@@ -12,6 +13,11 @@ scoring was added in Sprint 2, see the Sprint 2 update below.
 - `word_categories.json` — the word-to-category lookup, parsed directly out
   of the previous team's own database seed file (`data.sql`), not invented
 - `textrank.py` — the Sprint 2 script, ranks words by contextual relevance
+- `preprocessing.py` — Beatriz Cariello's pre-processing (Appendix A), adapted to English
+- `approach_decision_textrank_vs_tfidf.md` — why we chose TextRank over TF-IDF
+- `contextual_relevance_requirements.md` — requirements for the relevance model
+- `pipeline.py` — the Sprint 3 end-to-end pipeline, textbook PDF in, ranked words out
+- `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
 - `README.md` — this file
 
 ## How to run it
@@ -103,6 +109,73 @@ python3 textrank.py "Paste any passage of text here."
 
 - Doesn't merge with `word_categories.json`'s frequency bands yet.
   That combination is Isa's integration layer, still in design.
-- Only tested on short sample passages so far, not a full textbook.
+- Only tested on short sample passages so far, not a full textbook
+  (addressed in Sprint 3).
 - Doesn't account for word forms ("cells" vs "cell") yet, same open
   team decision as the Sprint 1 script.
+
+## Sprint 3 update
+
+`pipeline.py` runs the whole relevance side end to end on a real
+CK-12 textbook. It extracts the text from a searchable PDF, runs the
+Appendix A pre-processing and the Appendix B TextRank in a single
+spaCy pass, and returns one record per word with its part of speech,
+lemma, count, and relevance score.
+
+### How to run it
+
+Requires `spacy`, `pypdf`, `scipy`, and `numpy`:
+
+```bash
+pip install spacy pypdf scipy numpy
+python -m spacy download en_core_web_sm
+```
+
+Run on a textbook and save the results:
+
+```bash
+python3 pipeline.py CK_12_Biology.pdf --out data/biology.json --save-text data/biology.txt
+```
+
+Run on your own passage:
+
+```bash
+python3 pipeline.py --text "Paste any passage of text here."
+```
+
+Use `--top 30` to print more words.
+
+### What changed from `textrank.py` to handle whole textbooks
+
+- **PDF extraction:** reads the text layer of searchable PDFs with
+  pypdf. Scanned PDFs are rejected with a clear error, since there's
+  no OCR.
+- **Chunking:** spaCy can only process about 1 million characters at
+  once, and a textbook is longer than that, so the text is processed
+  in pieces.
+- **Sparse word graph:** the original code builds a full
+  vocabulary-by-vocabulary matrix, which needs several GB of memory
+  for a textbook's vocabulary. This version stores only the
+  connections that exist.
+- **Textbook stopwords:** layout and instruction words like "page,"
+  "figure," "question," and "answer" are counted but never ranked as
+  relevant, following Cariello's dissertation (section 3.5).
+
+### First result: CK-12 Biology
+
+The full textbook produced 9,389 words. Ranked by frequency, the top
+words are "the," "and," "that," and "are." Ranked by relevance, they
+are "called," "cells," "water," "body," "species," and "organisms."
+The results are in `data/biology.json`, and the extracted text is in
+`data/biology.txt` so teammates can test without the PDF.
+
+### What's not here yet (Sprint 3)
+
+- "Cell" and "cells" are still separate entries. The headword
+  resolver will group word families together.
+- Some general academic words like "called," "include," and "shown"
+  rank high because they connect to everything in a textbook. Blending
+  in the frequency bands, or adding them to the textbook stopwords,
+  should push them down.
+- Not yet merged with Eric's frequency lists. That's the combined
+  ranking card.

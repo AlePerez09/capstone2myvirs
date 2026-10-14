@@ -1,0 +1,39 @@
+{
+  "lessons": 85,
+  "raw_frequency_p@10_mean": 0.09411764705882351,
+  "raw_frequency_r@10_mean": 0.143437746277294,
+  "raw_frequency_ap_mean": 0.10777396101534711,
+  "frequency_only_p@10_mean": 0.16117647058823528,
+  "frequency_only_r@10_mean": 0.23964468018782187,
+  "frequency_only_ap_mean": 0.1976088752752202,
+  "textrank_p@10_mean": 0.12941176470588234,
+  "textrank_r@10_mean": 0.18893621596542579,
+  "textrank_ap_mean": 0.1500006428804507,
+  "textrank_converged_p@10_mean": 0.12823529411764703,
+  "textrank_converged_r@10_mean": 0.18740198823924759,
+  "textrank_converged_ap_mean": 0.15440446406536262,
+  "textrank_vs_frequency_only_p@10": {
+    "wins": 7,
+    "losses": 27,
+    "ties": 51,
+    "wilcoxon_p": 0.0005158571729047602
+  },
+  "textrank_vs_frequency_only_ap": {
+    "wins": 6,
+    "losses": 78,
+    "ties": 1,
+    "wilcoxon_p": 3.7310159921870066e-13
+  },
+  "textrank_converged_vs_frequency_only_p@10": {
+    "wins": 7,
+    "losses": 28,
+    "ties": 50,
+    "wilcoxon_p": 0.00033952083792314293
+  },
+  "textrank_converged_vs_frequency_only_ap": {
+    "wins": 6,
+    "losses": 78,
+    "ties": 1,
+    "wilcoxon_p": 9.63353850618036e-13
+  }
+}

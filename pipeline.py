@@ -21,6 +21,8 @@ Usage:
     python3 pipeline.py path/to/book.pdf --top 30 --out results.json
     python3 pipeline.py path/to/book.pdf --save-text book.txt
     python3 pipeline.py --text "Paste a passage here."
+    python3 pipeline.py --text-file data/biology.txt --out data/biology.json
+    python3 pipeline.py book.pdf --no-families   (rank every word form separately)
 """
 
 import argparse
@@ -128,14 +130,18 @@ def build_corpus_and_sentences(text):
                 word = token.lower_
                 entry = corpus.get(word)
                 if entry is None:
-                    corpus[word] = {
+                    entry = corpus[word] = {
                         "part_of_speech": token.pos_,
                         "lemma": token.lemma_.lower(),
                         "is_stop": token.is_stop,
-                        "count": 1,
+                        "count": 0,
+                        "_pos": {},
+                        "_lemma": {},
                     }
-                else:
-                    entry["count"] += 1
+                entry["count"] += 1
+                entry["_pos"][token.pos_] = entry["_pos"].get(token.pos_, 0) + 1
+                lemma = token.lemma_.lower()
+                entry["_lemma"][lemma] = entry["_lemma"].get(lemma, 0) + 1
                 if (
                     token.pos_ in CANDIDATE_POS
                     and not token.is_stop
@@ -144,6 +150,15 @@ def build_corpus_and_sentences(text):
                     candidates.append(word)
             if candidates:
                 sentences.append(candidates)
+
+    # Use each word's most common part of speech and lemma, not the one from
+    # its first appearance. A textbook's first "Cells" is usually a title or
+    # table of contents entry, where spaCy tags it as a proper noun and
+    # leaves it unlemmatized, which kept "cells" apart from "cell".
+    for entry in corpus.values():
+        entry["part_of_speech"] = max(entry["_pos"], key=entry["_pos"].get)
+        entry["lemma"] = max(entry["_lemma"], key=entry["_lemma"].get)
+        del entry["_pos"], entry["_lemma"]
 
     return corpus, sentences
 
@@ -189,20 +204,29 @@ def textrank(sentences, window_size=WINDOW_SIZE):
 
 # ---------- 5. Full pipeline ----------
 
-def analyze_text(text):
-    """Text in, one record per word out, sorted by relevance."""
-    corpus, sentences = build_corpus_and_sentences(text)
-    scores = textrank(sentences)
-
-    # Relevance percentile among TextRank candidates (0 lowest, 1 highest),
-    # as proposed in Isa's integration layer design
+def relevance_percentiles(scores):
+    """Rank each TextRank candidate from 0 (lowest) to 1 (highest), as
+    proposed in Isa's integration layer design."""
     ranked = sorted(scores, key=scores.get)
     denom = max(len(ranked) - 1, 1)
-    percentile = {w: i / denom for i, w in enumerate(ranked)}
+    return {w: i / denom for i, w in enumerate(ranked)}
 
-    records = []
-    for word, meta in corpus.items():
-        records.append({
+
+def analyze_text(text, families=True, family_list=None):
+    """Text in, one record per word family out, sorted by relevance.
+
+    With families=True (the default), word forms are grouped into families
+    before ranking (cells + cell -> cell), so each family is one node in the
+    TextRank graph and its count is the total over all its forms.
+    With families=False, every word form is ranked separately (Sprint 2
+    behaviour).
+    """
+    corpus, sentences = build_corpus_and_sentences(text)
+
+    if not families:
+        scores = textrank(sentences)
+        percentile = relevance_percentiles(scores)
+        records = [{
             "word": word,
             "lemma": meta["lemma"],
             "pos": meta["part_of_speech"],
@@ -210,14 +234,33 @@ def analyze_text(text):
             "count": meta["count"],
             "textrank_score": round(scores[word], 6) if word in scores else None,
             "relevance": round(percentile[word], 4) if word in percentile else 0.0,
-        })
+        } for word, meta in corpus.items()]
+        records.sort(key=lambda r: (r["relevance"], r["count"]), reverse=True)
+        return records
 
+    from wordfamilies import group_by_family
+
+    fams, word_to_head = group_by_family(corpus, family_list)
+    head_sentences = [[word_to_head[w] for w in s] for s in sentences]
+    scores = textrank(head_sentences)
+    percentile = relevance_percentiles(scores)
+
+    records = [{
+        "headword": head,
+        "forms": fam["forms"],
+        "match_source": fam["match_source"],
+        "pos": fam["pos"],
+        "is_stop": fam["is_stop"],
+        "count": fam["count"],
+        "textrank_score": round(scores[head], 6) if head in scores else None,
+        "relevance": round(percentile[head], 4) if head in percentile else 0.0,
+    } for head, fam in fams.items()]
     records.sort(key=lambda r: (r["relevance"], r["count"]), reverse=True)
     return records
 
 
-def analyze_pdf(pdf_path):
-    return analyze_text(extract_pdf_text(pdf_path))
+def analyze_pdf(pdf_path, **kwargs):
+    return analyze_text(extract_pdf_text(pdf_path), **kwargs)
 
 
 # ---------- CLI ----------
@@ -226,13 +269,22 @@ def main():
     parser = argparse.ArgumentParser(description="MyVIRS relevance pipeline")
     parser.add_argument("pdf", nargs="?", help="path to a searchable PDF")
     parser.add_argument("--text", help="analyze this text instead of a PDF")
+    parser.add_argument("--text-file", help="analyze a saved .txt file (e.g. data/biology.txt)")
     parser.add_argument("--top", type=int, default=20, help="how many words to print")
     parser.add_argument("--out", help="save all records to this JSON file")
     parser.add_argument("--save-text", help="save the extracted PDF text to this file")
+    parser.add_argument("--no-families", action="store_true",
+                        help="rank every word form separately (Sprint 2 behaviour)")
+    parser.add_argument("--families-file",
+                        help="word family list (Nation format or word,headword CSV); "
+                             "data/word_families.txt is used automatically if present")
     args = parser.parse_args()
 
     if args.text:
         text = args.text
+    elif args.text_file:
+        with open(args.text_file, encoding="utf-8") as f:
+            text = f.read()
     elif args.pdf:
         text = extract_pdf_text(args.pdf)
         if args.save_text:
@@ -242,16 +294,30 @@ def main():
         parser.print_help()
         sys.exit(1)
 
-    records = analyze_text(text)
+    family_list = None
+    if not args.no_families:
+        from wordfamilies import find_family_list
+        family_list = find_family_list(args.families_file)
+
+    records = analyze_text(text, families=not args.no_families, family_list=family_list)
+    key = "word" if args.no_families else "headword"
+
+    total = sum(r["count"] for r in records)
+    unit = "word forms" if args.no_families else "word families"
+    print(f"Unique {unit}: {len(records)}   Total words: {total:,}")
+    if not args.no_families:
+        merged = sum(1 for r in records if len(r["forms"]) > 1)
+        print(f"Families with more than one form: {merged}"
+              + ("   (using family list)" if family_list else "   (no family list, rules + lemma)"))
+    print()
 
     by_count = sorted(records, key=lambda r: r["count"], reverse=True)
-    print(f"Words analyzed: {len(records)}\n")
     print(f"{'Top by relevance (score)':<32}{'Top by frequency (count)'}")
     for i in range(min(args.top, len(records))):
         r, f = records[i], by_count[i]
         score = r["textrank_score"] if r["textrank_score"] is not None else 0.0
-        left = f"{r['word']} ({score:.2f})"
-        right = f"{f['word']} ({f['count']})"
+        left = f"{r[key]} ({score:.2f})"
+        right = f"{f[key]} ({f['count']})"
         print(f"{i + 1:>3}. {left:<27}{right}")
 
     if args.out:

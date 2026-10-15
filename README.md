@@ -17,6 +17,7 @@ Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 - `approach_decision_textrank_vs_tfidf.md` — why we chose TextRank over TF-IDF
 - `contextual_relevance_requirements.md` — requirements for the relevance model
 - `pipeline.py` — the Sprint 3 end-to-end pipeline, textbook PDF in, ranked words out
+- `wordfamilies.py` — groups word forms into word families (cells + cell → cell)
 - `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
 - `README.md` — this file
 
@@ -169,10 +170,40 @@ are "called," "cells," "water," "body," "species," and "organisms."
 The results are in `data/biology.json`, and the extracted text is in
 `data/biology.txt` so teammates can test without the PDF.
 
+### Word families
+
+`wordfamilies.py` groups word forms into families before ranking, the
+same unit Eric's lists use, so "cells" and "cell" become one entry with
+a combined count and one node in the TextRank graph. Each word is
+matched in this order, and the record says which step matched
+(`match_source`):
+
+1. `family_list`: a word family list file, if there is one in
+   `data/word_families.txt` (or passed with `--families-file`). This
+   should be the authors' own lists from Ehsan, or Nation's BNC/COCA
+   families.
+2. `derived`: conservative suffix and prefix rules (development →
+   develop, activity → active, nonliving → live), used only when the
+   base word also appears in the text.
+3. `lemma`: spaCy's lemma (cells → cell, protected → protect).
+
+Without a family list, "-er" nouns like "walker" aren't merged (the
+rule would also turn "flower" into "flow"), and irregular forms like
+"decision → decide" are missed.
+
+Records now have `headword`, `forms`, and `match_source` instead of
+`word`. To get the old one-entry-per-form output, add `--no-families`.
+
+Re-run on the saved Biology text without the PDF:
+
+```bash
+python3 pipeline.py --text-file data/biology.txt --out data/biology.json
+```
+
 ### What's not here yet (Sprint 3)
 
-- "Cell" and "cells" are still separate entries. The headword
-  resolver will group word families together.
+- No word family list file yet, so families come from rules and
+  lemmas. Ask Eric for the authors' word family version of the lists.
 - Some general academic words like "called," "include," and "shown"
   rank high because they connect to everything in a textbook. Blending
   in the frequency bands, or adding them to the textbook stopwords,

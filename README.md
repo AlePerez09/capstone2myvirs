@@ -18,7 +18,11 @@ Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 - `contextual_relevance_requirements.md` — requirements for the relevance model
 - `pipeline.py` — the Sprint 3 end-to-end pipeline, textbook PDF in, ranked words out
 - `wordfamilies.py` — groups word forms into word families (cells + cell → cell)
-- `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
+- `team_b_format.py` — formats the ranked word list in the format proposed for Team B
+- `team_b_output_format.md` — the proposed Team B format, field by field
+- `test_team_b_format.py` — tests for the Team B formatter
+- `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`,
+  and `biology_team_b.json`, a sample of the Team B format)
 - `README.md` — this file
 
 ## How to run it
@@ -210,3 +214,26 @@ python3 pipeline.py --text-file data/biology.txt --out data/biology.json
   should push them down.
 - Not yet merged with Eric's frequency lists. That's the combined
   ranking card.
+
+## Ranked word list for Team B
+
+`team_b_format.py` turns the pipeline's records into the smaller format
+Team B needs: only real candidates (no stop words or null scores), the
+top 10 by default, an explicit rank, and every word with the same nine
+fields. `frequency_band` and `combined_score` are reserved as `null` so
+Team B's code won't need to change when the combined ranking lands. The
+full format is in `team_b_output_format.md`, which is a proposal for
+Team B to review.
+
+```bash
+# Rank a passage
+python3 team_b_format.py --text "Paste any passage of text here."
+
+# Reformat saved pipeline results (instant, no spaCy run)
+python3 team_b_format.py --from-json data/biology.json --out data/biology_team_b.json
+
+# Run the tests
+python3 -m unittest test_team_b_format -v
+```
+
+From Python: `from team_b_format import rank_passage_for_team_b`.

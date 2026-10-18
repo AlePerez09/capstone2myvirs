@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "ranking_method": "textrank",
+  "source_type": "textbook",
+  "total_candidates": 4935,
+  "returned": 10,
+  "words": [
+    {
+      "rank": 1,
+      "word": "cell",
+      "forms": [
+        "cell",
+        "cells"
+      ],
+      "part_of_speech": "NOUN",
+      "count": 2002,
+      "relevance_score": 23.9688,
+      "relevance_percentile": 1.0,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 2,
+      "word": "call",
+      "forms": [
+        "call",
+        "called",
+        "calls"
+      ],
+      "part_of_speech": "VERB",
+      "count": 505,
+      "relevance_score": 22.2017,
+      "relevance_percentile": 0.9998,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 3,
+      "word": "include",
+      "forms": [
+        "include",
+        "included",
+        "includes",
+        "including"
+      ],
+      "part_of_speech": "VERB",
+      "count": 435,
+      "relevance_score": 21.1824,
+      "relevance_percentile": 0.9996,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 4,
+      "word": "plant",
+      "forms": [
+        "plant",
+        "planted",
+        "plants"
+      ],
+      "part_of_speech": "NOUN",
+      "count": 1081,
+      "relevance_score": 18.9425,
+      "relevance_percentile": 0.9994,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 5,
+      "word": "water",
+      "forms": [
+        "water",
+        "waters"
+      ],
+      "part_of_speech": "NOUN",
+      "count": 684,
+      "relevance_score": 17.4175,
+      "relevance_percentile": 0.9992,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 6,
+      "word": "body",
+      "forms": [
+        "body",
+        "bodies"
+      ],
+      "part_of_speech": "NOUN",
+      "count": 743,
+      "relevance_score": 16.6554,
+      "relevance_percentile": 0.999,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 7,
+      "word": "species",
+      "forms": [
+        "species"
+      ],
+      "part_of_speech": "NOUN",
+      "count": 663,
+      "relevance_score": 15.7947,
+      "relevance_percentile": 0.9988,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 8,
+      "word": "form",
+      "forms": [
+        "form",
+        "formation",
+        "formed",
+        "forming",
+        "forms"
+      ],
+      "part_of_speech": "VERB",
+      "count": 476,
+      "relevance_score": 14.6629,
+      "relevance_percentile": 0.9986,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 9,
+      "word": "human",
+      "forms": [
+        "human",
+        "humans",
+        "nonhuman"
+      ],
+      "part_of_speech": "ADJ",
+      "count": 633,
+      "relevance_score": 14.492,
+      "relevance_percentile": 0.9984,
+      "frequency_band": null,
+      "combined_score": null
+    },
+    {
+      "rank": 10,
+      "word": "live",
+      "forms": [
+        "live",
+        "lived",
+        "lives",
+        "living",
+        "nonliving"
+      ],
+      "part_of_speech": "VERB",
+      "count": 663,
+      "relevance_score": 14.4054,
+      "relevance_percentile": 0.9982,
+      "frequency_band": null,
+      "combined_score": null
+    }
+  ]
+}

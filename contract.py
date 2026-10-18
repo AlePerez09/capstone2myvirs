@@ -44,9 +44,9 @@ def build_response(text, text_id, corpus_id=None, lexicon=None,
                    frequency_only=False, text_grade=None, top=None):
     """Raw text in, a contract v1 response (a dict) out."""
     import pipeline
-    from priority_ranking import lexicon_from_word_categories, lookup, rank_records
+    from priority_ranking import load_default_lexicon, lookup, rank_records
 
-    lexicon = lexicon if lexicon is not None else lexicon_from_word_categories()
+    lexicon = lexicon if lexicon is not None else load_default_lexicon()
     records = pipeline.analyze_text(text)
 
     # Coverage is over every counted word, stop words included

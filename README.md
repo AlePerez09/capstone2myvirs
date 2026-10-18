@@ -20,6 +20,8 @@ Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 - `wordfamilies.py` — groups word forms into word families (cells + cell → cell)
 - `priority_ranking.py` — combines frequency band and relevance into one ranking
 - `contract.py` — formats the ranked list as JSON for Team B (contract v1)
+- `word_lists.py` — loads Eric's five Excel word lists into one lookup table
+- `tests/test_word_lists.py` — tests for the word list loader, using mock files
 - `schema/contract_v1.schema.json` — the contract format, for both teams to validate against
 - `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
 - `README.md` — this file
@@ -253,14 +255,39 @@ Two changes from the design doc's proposal: `match_source` uses
 `family_list`, `derived`, `lemma`, or `self`, and each word has an optional
 `count` (times it appears in the text).
 
-### Important: the frequency bands are temporary
+### Eric's word lists
 
-Until the loader for Eric's word lists is done, bands come from
+`word_lists.py` reads Eric's five Excel files (HIGH, MID, LOW, and the two
+K-12 grade lists) into one lookup table with each word's band, subject,
+earliest grade, and frequency count. Subject comes from the cell color in
+the K-12 files, and an unrecognized color stops with an error instead of
+guessing.
+
+```bash
+pip install openpyxl jsonschema
+python3 word_lists.py              # summary of what loaded
+python3 word_lists.py --word cell  # look up one word
+python3 tests/test_word_lists.py   # tests on mock files
+```
+
+Put the files in `data/word_lists/`. Once all five are there, the ranking
+and `contract.py` use them automatically.
+
+The loader was written from the layout Isa documented after reading the
+files, and tested on mock files built the same way, because we didn't
+have the files on hand this sprint. Running it on the real files is the
+first thing to check; if their layout differs, adjust `COLUMN_NAMES`,
+`COLOR_MAPS`, or `classify_color()`.
+
+### Important: until then, the frequency bands are temporary
+
+Without Eric's files, bands come from
 `word_categories.json`, the ~2,300 words recovered from the old site.
 That list isn't reliable as a frequency list: it labels "photosynthesis"
 and "glucose" as K2 and "oxygen" as K1, but doesn't include "money." So
-science words currently show up as HIGH. Swap in Eric's lists by passing a
-different `lexicon` to `rank_text()` or `build_response()`.
+science words currently show up as HIGH. The samples in `data/contract/`
+were made with this temporary list and should be regenerated once Eric's
+files are loaded.
 
 ### Also fixed this sprint
 

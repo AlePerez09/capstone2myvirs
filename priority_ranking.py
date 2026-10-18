@@ -25,9 +25,10 @@ For each word family in a text:
 - Ties break by how often the family appears in the text.
 
 Frequency bands come from a "lexicon": {headword: {"band", "subject",
-"grade_level", "frequency_count"}}. Until the loader for Eric's word lists
-is in, lexicon_from_word_categories() builds a temporary one from
-word_categories.json (the ~2,300 words recovered from the old site).
+"grade_level", "frequency_count"}}. load_default_lexicon() reads Eric's
+word lists (word_lists.py) when they're in data/word_lists/, and otherwise
+falls back to word_categories.json (the ~2,300 words recovered from the
+old site), which isn't a reliable frequency list.
 
 Run:
     python3 priority_ranking.py "your passage here"
@@ -72,6 +73,20 @@ def lexicon_from_word_categories(path=CATEGORY_FILE):
         lexicon[word.lower()] = {"band": band, "subject": subject,
                                  "grade_level": None, "frequency_count": None}
     return lexicon
+
+
+def load_default_lexicon(verbose=True):
+    """Eric's word lists if they're in data/word_lists/, otherwise the
+    temporary list from word_categories.json."""
+    import sys
+    import word_lists
+
+    if word_lists.files_present():
+        return word_lists.load_lexicon()
+    if verbose:
+        print("(Eric's word lists not found in data/word_lists/, using the temporary "
+              "word_categories.json bands)", file=sys.stderr)
+    return lexicon_from_word_categories()
 
 
 def lookup(record, lexicon):
@@ -133,7 +148,7 @@ def rank_text(text, lexicon=None, frequency_only=False, text_grade=None):
     """Raw text in, ranked word families out."""
     import pipeline
 
-    lexicon = lexicon if lexicon is not None else lexicon_from_word_categories()
+    lexicon = lexicon if lexicon is not None else load_default_lexicon()
     records = pipeline.analyze_text(text)
     return rank_records(records, lexicon, frequency_only, text_grade)
 

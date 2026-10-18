@@ -78,6 +78,14 @@ def extract_pdf_text(pdf_path):
 
 # ---------- 2. Pre-processing (Appendix A) ----------
 
+def normalize_text(text):
+    """Turn PDF ligatures into plain letters (the "fi" in "ﬁsh" is one
+    character in CK-12 PDFs), so "ﬁsh" and "fish" count as one word."""
+    import unicodedata
+
+    return unicodedata.normalize("NFKC", text)
+
+
 def pre_process_hyphenation(text):
     """Merges words broken across lines, e.g. 'photo-\\nsynthesis'."""
     return re.sub(r"(\w+)-\s*\n\s*(\w+)", r"\1\2", text)
@@ -121,7 +129,8 @@ def build_corpus_and_sentences(text):
     corpus = {}
     sentences = []
 
-    for doc in nlp.pipe(chunk_text(pre_process_hyphenation(text)), batch_size=4):
+    text = pre_process_hyphenation(normalize_text(text))
+    for doc in nlp.pipe(chunk_text(text), batch_size=4):
         for sent in doc.sents:
             candidates = []
             for token in sent:
@@ -207,9 +216,15 @@ def textrank(sentences, window_size=WINDOW_SIZE):
 def relevance_percentiles(scores):
     """Rank each TextRank candidate from 0 (lowest) to 1 (highest), as
     proposed in Isa's integration layer design."""
-    ranked = sorted(scores, key=scores.get)
-    denom = max(len(ranked) - 1, 1)
-    return {w: i / denom for i, w in enumerate(ranked)}
+    if not scores:
+        return {}
+    from scipy.stats import rankdata
+
+    words = list(scores)
+    # Tied scores share the same percentile (common in short passages)
+    ranks = rankdata([scores[w] for w in words], method="average")
+    denom = max(len(words) - 1, 1)
+    return {w: float((r - 1) / denom) for w, r in zip(words, ranks)}
 
 
 def analyze_text(text, families=True, family_list=None):

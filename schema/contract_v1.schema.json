@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AlePerez09/capstone2myvirs/schema/contract_v1.schema.json",
+  "title": "MyVIRS ranked word list, contract v1",
+  "description": "What Team A hands Team B for one analyzed text: one entry per word family, ranked so rank 1 is the word to teach first. New optional fields may be added within v1; renaming or removing a field makes it v2.",
+  "type": "object",
+  "required": ["contract_version", "text_id", "corpus_id", "text_summary", "words"],
+  "properties": {
+    "contract_version": {"const": "1.0"},
+    "text_id": {"type": "string", "minLength": 1, "description": "ID of the analyzed text"},
+    "corpus_id": {"type": ["string", "null"], "description": "Set when relevance was computed over a whole textbook or subject"},
+    "text_summary": {
+      "type": "object",
+      "required": ["tokens", "coverage_high", "coverage_lsw"],
+      "properties": {
+        "tokens": {"type": "integer", "minimum": 0, "description": "Words counted (3+ letters, no numbers or punctuation)"},
+        "coverage_high": {"type": "number", "minimum": 0, "maximum": 1, "description": "Share of tokens in the HIGH band"},
+        "coverage_lsw": {"type": "number", "minimum": 0, "maximum": 1, "description": "Share of tokens in any band (HIGH, MID or LOW)"}
+      }
+    },
+    "words": {"type": "array", "items": {"$ref": "#/$defs/word"}}
+  },
+  "$defs": {
+    "word": {
+      "type": "object",
+      "required": ["headword", "forms", "match_source", "pos", "band", "frequency_count",
+                   "subject", "grade_level", "relevance", "priority", "rank"],
+      "properties": {
+        "headword": {"type": "string", "minLength": 1, "description": "Word family headword, e.g. walk"},
+        "forms": {"type": "array", "items": {"type": "string"}, "minItems": 1, "description": "Family members found in the text"},
+        "match_source": {"enum": ["family_list", "derived", "lemma", "self"], "description": "How the forms were grouped"},
+        "pos": {"type": "string", "description": "Most common part of speech in the text"},
+        "band": {"enum": ["HIGH", "MID", "LOW", "NONE"]},
+        "frequency_count": {"type": ["integer", "null"], "description": "Count from the band list"},
+        "subject": {"enum": ["general", "academic", "math", "science", "math_science"]},
+        "grade_level": {"type": ["string", "null"], "pattern": "^(K|G([1-9]|1[0-2]))$"},
+        "relevance": {"type": ["number", "null"], "minimum": 0, "maximum": 1,
+                      "description": "TextRank percentile in the text. 0 = computed but not a keyword, null = not computed"},
+        "priority": {"type": "number", "minimum": 0, "maximum": 1},
+        "rank": {"type": "integer", "minimum": 1, "description": "1 = teach first"},
+        "count": {"type": "integer", "minimum": 1, "description": "Optional: times the family appears in the text"}
+      }
+    }
+  }
+}

@@ -18,6 +18,9 @@ Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 - `contextual_relevance_requirements.md` — requirements for the relevance model
 - `pipeline.py` — the Sprint 3 end-to-end pipeline, textbook PDF in, ranked words out
 - `wordfamilies.py` — groups word forms into word families (cells + cell → cell)
+- `priority_ranking.py` — combines frequency band and relevance into one ranking
+- `contract.py` — formats the ranked list as JSON for Team B (contract v1)
+- `schema/contract_v1.schema.json` — the contract format, for both teams to validate against
 - `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
 - `README.md` — this file
 
@@ -210,3 +213,57 @@ python3 pipeline.py --text-file data/biology.txt --out data/biology.json
   should push them down.
 - Not yet merged with Eric's frequency lists. That's the combined
   ranking card.
+
+## Combined ranking and the Team B format
+
+`priority_ranking.py` turns the pipeline's output into one ranked list,
+following Isa's integration layer design (first version by Fernando):
+
+```
+priority = 0.5 × band score + 0.5 × relevance
+```
+
+- Band score: HIGH 1.0, MID 0.6, LOW 0.3, not in any list 0.1, plus 0.2
+  (capped at 1.0) for K-12 list words at or below the text's grade.
+- Relevance: the family's TextRank percentile in the text (0 to 1).
+  Tied scores share a percentile.
+- `--frequency-only` drops relevance, which is the baseline to compare against.
+- Stop words and layout words ("figure," "page") are left out. Ties break
+  by how often the word appears.
+
+```bash
+python3 priority_ranking.py --text-file data/biology.txt --top 25
+python3 priority_ranking.py --text-file data/biology.txt --frequency-only
+```
+
+`contract.py` wraps that ranking in the contract v1 JSON from the design
+doc and checks every response against `schema/contract_v1.schema.json`
+before saving it. Team B can validate what they receive against the same
+file.
+
+```bash
+python3 contract.py --text-file data/biology.txt --text-id ck12-biology \
+    --corpus-id ck12-biology --out data/contract/ck12-biology.json
+```
+
+Sample outputs for Team B are in `data/contract/`: the whole Biology book
+and a short photosynthesis passage.
+
+Two changes from the design doc's proposal: `match_source` uses
+`family_list`, `derived`, `lemma`, or `self`, and each word has an optional
+`count` (times it appears in the text).
+
+### Important: the frequency bands are temporary
+
+Until the loader for Eric's word lists is done, bands come from
+`word_categories.json`, the ~2,300 words recovered from the old site.
+That list isn't reliable as a frequency list: it labels "photosynthesis"
+and "glucose" as K2 and "oxygen" as K1, but doesn't include "money." So
+science words currently show up as HIGH. Swap in Eric's lists by passing a
+different `lexicon` to `rank_text()` or `build_response()`.
+
+### Also fixed this sprint
+
+- PDF ligatures: CK-12 PDFs store "fi" and "fl" as single characters
+  ("ﬁsh," "ﬂowers"), about 2,500 times in Biology. The pipeline now
+  normalizes them, so "ﬁsh" and "fish" count as one word.

@@ -1,0 +1,832 @@
+{
+  "contract_version": "1.0",
+  "text_id": "ck12-biology-photosynthesis-intro",
+  "corpus_id": null,
+  "text_summary": {
+    "tokens": 141,
+    "coverage_high": 0.6879,
+    "coverage_lsw": 0.8085
+  },
+  "words": [
+    {
+      "headword": "light",
+      "forms": [
+        "light"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.9773,
+      "priority": 0.9887,
+      "rank": 1,
+      "count": 5
+    },
+    {
+      "headword": "glucose",
+      "forms": [
+        "glucose"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.9545,
+      "priority": 0.9772,
+      "rank": 2,
+      "count": 4
+    },
+    {
+      "headword": "chemical",
+      "forms": [
+        "chemical"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.9318,
+      "priority": 0.9659,
+      "rank": 3,
+      "count": 6
+    },
+    {
+      "headword": "oxygen",
+      "forms": [
+        "oxygen"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.8864,
+      "priority": 0.9432,
+      "rank": 4,
+      "count": 4
+    },
+    {
+      "headword": "produce",
+      "forms": [
+        "produce"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.8409,
+      "priority": 0.9204,
+      "rank": 5,
+      "count": 2
+    },
+    {
+      "headword": "photosynthesis",
+      "forms": [
+        "photosynthesis"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.8182,
+      "priority": 0.9091,
+      "rank": 6,
+      "count": 3
+    },
+    {
+      "headword": "respiration",
+      "forms": [
+        "respiration"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.7955,
+      "priority": 0.8978,
+      "rank": 7,
+      "count": 3
+    },
+    {
+      "headword": "burn",
+      "forms": [
+        "burns",
+        "burning"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.6818,
+      "priority": 0.8409,
+      "rank": 8,
+      "count": 2
+    },
+    {
+      "headword": "dioxide",
+      "forms": [
+        "dioxide"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.6364,
+      "priority": 0.8182,
+      "rank": 9,
+      "count": 1
+    },
+    {
+      "headword": "energy",
+      "forms": [
+        "energy"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "MID",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": null,
+      "relevance": 1.0,
+      "priority": 0.8,
+      "rank": 10,
+      "count": 8
+    },
+    {
+      "headword": "reactant",
+      "forms": [
+        "reactants"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.5909,
+      "priority": 0.7954,
+      "rank": 11,
+      "count": 1
+    },
+    {
+      "headword": "intense",
+      "forms": [
+        "intense"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.5114,
+      "priority": 0.7557,
+      "rank": 12,
+      "count": 1
+    },
+    {
+      "headword": "release",
+      "forms": [
+        "releases",
+        "release",
+        "released"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "MID",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": null,
+      "relevance": 0.9091,
+      "priority": 0.7546,
+      "rank": 13,
+      "count": 4
+    },
+    {
+      "headword": "life",
+      "forms": [
+        "life"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.4545,
+      "priority": 0.7272,
+      "rank": 14,
+      "count": 1
+    },
+    {
+      "headword": "consider",
+      "forms": [
+        "considered"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.4318,
+      "priority": 0.7159,
+      "rank": 15,
+      "count": 1
+    },
+    {
+      "headword": "water",
+      "forms": [
+        "water"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.4091,
+      "priority": 0.7046,
+      "rank": 16,
+      "count": 1
+    },
+    {
+      "headword": "combine",
+      "forms": [
+        "combine"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.3864,
+      "priority": 0.6932,
+      "rank": 17,
+      "count": 1
+    },
+    {
+      "headword": "reaction",
+      "forms": [
+        "reactions"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "MID",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": null,
+      "relevance": 0.75,
+      "priority": 0.675,
+      "rank": 18,
+      "count": 2
+    },
+    {
+      "headword": "small",
+      "forms": [
+        "small"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.3409,
+      "priority": 0.6704,
+      "rank": 19,
+      "count": 1
+    },
+    {
+      "headword": "form",
+      "forms": [
+        "form"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.3182,
+      "priority": 0.6591,
+      "rank": 20,
+      "count": 1
+    },
+    {
+      "headword": "atmosphere",
+      "forms": [
+        "atmosphere"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.2955,
+      "priority": 0.6478,
+      "rank": 21,
+      "count": 2
+    },
+    {
+      "headword": "type",
+      "forms": [
+        "types"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.2727,
+      "priority": 0.6363,
+      "rank": 22,
+      "count": 1
+    },
+    {
+      "headword": "involve",
+      "forms": [
+        "involves"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "MID",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": null,
+      "relevance": 0.6136,
+      "priority": 0.6068,
+      "rank": 23,
+      "count": 2
+    },
+    {
+      "headword": "waste",
+      "forms": [
+        "waste"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.2045,
+      "priority": 0.6022,
+      "rank": 24,
+      "count": 1
+    },
+    {
+      "headword": "environment",
+      "forms": [
+        "environment"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.1818,
+      "priority": 0.5909,
+      "rank": 25,
+      "count": 1
+    },
+    {
+      "headword": "use",
+      "forms": [
+        "using",
+        "uses"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.1477,
+      "priority": 0.5738,
+      "rank": 26,
+      "count": 2
+    },
+    {
+      "headword": "molecule",
+      "forms": [
+        "molecules"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.1477,
+      "priority": 0.5738,
+      "rank": 27,
+      "count": 1
+    },
+    {
+      "headword": "change",
+      "forms": [
+        "changes"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0455,
+      "priority": 0.5228,
+      "rank": 28,
+      "count": 1
+    },
+    {
+      "headword": "product",
+      "forms": [
+        "product"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0227,
+      "priority": 0.5113,
+      "rank": 29,
+      "count": 1
+    },
+    {
+      "headword": "earth",
+      "forms": [
+        "earth"
+      ],
+      "match_source": "self",
+      "pos": "PROPN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.5,
+      "rank": 30,
+      "count": 1
+    },
+    {
+      "headword": "single",
+      "forms": [
+        "single"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.8636,
+      "priority": 0.4818,
+      "rank": 31,
+      "count": 2
+    },
+    {
+      "headword": "carbon",
+      "forms": [
+        "carbon"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.7727,
+      "priority": 0.4364,
+      "rank": 32,
+      "count": 1
+    },
+    {
+      "headword": "absorb",
+      "forms": [
+        "absorb"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.7273,
+      "priority": 0.4136,
+      "rank": 33,
+      "count": 1
+    },
+    {
+      "headword": "process",
+      "forms": [
+        "process"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "MID",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": null,
+      "relevance": 0.2273,
+      "priority": 0.4136,
+      "rank": 34,
+      "count": 1
+    },
+    {
+      "headword": "sun",
+      "forms": [
+        "sun"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.7045,
+      "priority": 0.4022,
+      "rank": 35,
+      "count": 1
+    },
+    {
+      "headword": "important",
+      "forms": [
+        "important"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.6591,
+      "priority": 0.3795,
+      "rank": 36,
+      "count": 1
+    },
+    {
+      "headword": "capture",
+      "forms": [
+        "capture"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.5682,
+      "priority": 0.3341,
+      "rank": 37,
+      "count": 1
+    },
+    {
+      "headword": "sum",
+      "forms": [
+        "summed"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.5455,
+      "priority": 0.3227,
+      "rank": 38,
+      "count": 2
+    },
+    {
+      "headword": "heat",
+      "forms": [
+        "heat"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.5114,
+      "priority": 0.3057,
+      "rank": 39,
+      "count": 1
+    },
+    {
+      "headword": "starch",
+      "forms": [
+        "starch"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.4773,
+      "priority": 0.2887,
+      "rank": 40,
+      "count": 1
+    },
+    {
+      "headword": "autotrophs",
+      "forms": [
+        "autotrophs"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.3636,
+      "priority": 0.2318,
+      "rank": 41,
+      "count": 1
+    },
+    {
+      "headword": "equation",
+      "forms": [
+        "equation"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.25,
+      "priority": 0.175,
+      "rank": 42,
+      "count": 2
+    },
+    {
+      "headword": "store",
+      "forms": [
+        "store"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.1136,
+      "priority": 0.1068,
+      "rank": 43,
+      "count": 1
+    },
+    {
+      "headword": "photosynthetic",
+      "forms": [
+        "photosynthetic"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0909,
+      "priority": 0.0955,
+      "rank": 44,
+      "count": 1
+    },
+    {
+      "headword": "step",
+      "forms": [
+        "steps"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0682,
+      "priority": 0.0841,
+      "rank": 45,
+      "count": 1
+    },
+    {
+      "headword": "cellular",
+      "forms": [
+        "cellular"
+      ],
+      "match_source": "self",
+      "pos": "PROPN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.05,
+      "rank": 46,
+      "count": 3
+    },
+    {
+      "headword": "atp",
+      "forms": [
+        "atp"
+      ],
+      "match_source": "self",
+      "pos": "PROPN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.05,
+      "rank": 47,
+      "count": 2
+    },
+    {
+      "headword": "actually",
+      "forms": [
+        "actually"
+      ],
+      "match_source": "self",
+      "pos": "ADV",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.05,
+      "rank": 48,
+      "count": 1
+    },
+    {
+      "headword": "energy\u2192",
+      "forms": [
+        "energy\u2192"
+      ],
+      "match_source": "self",
+      "pos": "PROPN",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.05,
+      "rank": 49,
+      "count": 1
+    },
+    {
+      "headword": "slowly",
+      "forms": [
+        "slowly"
+      ],
+      "match_source": "self",
+      "pos": "ADV",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.05,
+      "rank": 50,
+      "count": 1
+    },
+    {
+      "headword": "usually",
+      "forms": [
+        "usually"
+      ],
+      "match_source": "self",
+      "pos": "ADV",
+      "band": "NONE",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "relevance": 0.0,
+      "priority": 0.05,
+      "rank": 51,
+      "count": 1
+    }
+  ]
+}

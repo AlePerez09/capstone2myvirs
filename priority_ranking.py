@@ -1,89 +1,170 @@
 """
-MyVIRS Sprint 2 — priority ranking.
+MyVIRS Team A, Sprint 3: combine frequency and relevance into one ranking.
 
-Merges each headword's frequency band (word_categories.json) with its
-TextRank relevance score (textrank.py) into one priority score, so the
-words most worth teaching come first.
+First version by Fernando (frequency band + TextRank, frequency-only
+fallback). Updated to follow Isa's integration layer design and to run on
+the Sprint 3 pipeline (word families, percentile relevance).
+
+For each word family in a text:
 
     priority = FREQUENCY_WEIGHT * band_score + RELEVANCE_WEIGHT * relevance
 
-- band_score: 0-1, higher for words learners are less likely to know
-  (K1 lowest, academic/uncategorized highest). See BAND_SCORES.
-- relevance: TextRank score divided by the passage maximum, so 0-1.
-- If no relevance scores are available (empty/None), priority is the
-  band score alone.
-- A headword missing from a non-empty relevance dict gets relevance 0.
+- band_score comes from the frequency band, plus a grade bonus (below).
+  Common bands score higher, following Eric's approach of teaching the
+  most frequent words first:
+      HIGH 1.0, MID 0.6, LOW 0.3, not in any list 0.1
+- relevance is the family's TextRank percentile within the text, 0 to 1,
+  straight from pipeline.analyze_text(). It is 0 for families TextRank
+  ran on but didn't score (function words, adverbs). Percentile is used
+  instead of dividing by the top score so one standout word doesn't push
+  everyone else toward zero.
+- If relevance wasn't computed (frequency_only=True), priority is
+  band_score alone. That is the frequency-only baseline.
+- A family on the K-12 list at or below the text's grade gets +0.2 on its
+  band_score, capped at 1.0.
+- Ties break by how often the family appears in the text.
 
-Run:  python3 priority_ranking.py "your passage here"
+Frequency bands come from a "lexicon": {headword: {"band", "subject",
+"grade_level", "frequency_count"}}. Until the loader for Eric's word lists
+is in, lexicon_from_word_categories() builds a temporary one from
+word_categories.json (the ~2,300 words recovered from the old site).
+
+Run:
+    python3 priority_ranking.py "your passage here"
+    python3 priority_ranking.py --text-file data/biology.txt --top 25
+    python3 priority_ranking.py --text-file data/biology.txt --frequency-only
 """
 
-from walking_skeleton import CATEGORY_FILE, load_word_categories, tokenize
+import argparse
+import json
+from pathlib import Path
 
-BAND_SCORES = {
-    "K1": 0.1,
-    "K2": 0.4,
-    "BAW": 0.7,
-    "AWL": 0.9,
-    "UNKNOWN": 1.0,
-}
 FREQUENCY_WEIGHT = 0.5
 RELEVANCE_WEIGHT = 0.5
+BAND_SCORES = {"HIGH": 1.0, "MID": 0.6, "LOW": 0.3, "NONE": 0.1}
+GRADE_BONUS = 0.2
+GRADES = ["K"] + [f"G{i}" for i in range(1, 13)]
+
+CATEGORY_FILE = Path(__file__).parent / "word_categories.json"
+
+# Textbook layout words: frequent, but not vocabulary to teach
+LAYOUT_WORDS = {"figure", "page", "chapter", "lesson", "flexbook", "www"}
+
+# Temporary mapping for word_categories.json. K1 and K2 are the 2,000 most
+# frequent words, so they map to HIGH. AWL words are academic vocabulary
+# outside that top 2,000, so they map to MID with subject "academic".
+OLD_CATEGORY_MAP = {
+    "K1": ("HIGH", "general"),
+    "K2": ("HIGH", "general"),
+    "BAW": ("MID", "academic"),
+    "AWL": ("MID", "academic"),
+}
 
 
-def band_score(word, categories):
-    return BAND_SCORES.get(categories.get(word.lower(), "UNKNOWN"), BAND_SCORES["UNKNOWN"])
+def lexicon_from_word_categories(path=CATEGORY_FILE):
+    """Temporary lexicon from the recovered word list. Replace with the
+    loader for Eric's lists once it's in."""
+    with open(path, encoding="utf-8") as f:
+        categories = json.load(f)
+    lexicon = {}
+    for word, category in categories.items():
+        band, subject = OLD_CATEGORY_MAP.get(category, ("NONE", "general"))
+        lexicon[word.lower()] = {"band": band, "subject": subject,
+                                 "grade_level": None, "frequency_count": None}
+    return lexicon
 
 
-def rank_headwords(headwords, categories, relevance=None,
-                   frequency_weight=FREQUENCY_WEIGHT, relevance_weight=RELEVANCE_WEIGHT):
-    """Return a list of dicts sorted by descending priority.
+def lookup(record, lexicon):
+    """Find a family in the lexicon by its headword, or failing that by any
+    of its forms (the old list stores some words as forms, not headwords)."""
+    for key in [record["headword"], *record.get("forms", [])]:
+        if key in lexicon:
+            return lexicon[key]
+    return {"band": "NONE", "subject": "general", "grade_level": None,
+            "frequency_count": None}
 
-    headwords: iterable of words (duplicates and case are collapsed).
-    categories: word -> band dict (word_categories.json).
-    relevance: word -> TextRank score dict, or None/empty for frequency-only.
-    Every headword gets a priority; ties break alphabetically.
-    """
-    words = sorted({w.lower() for w in headwords})
-    rel = {w.lower(): s for w, s in (relevance or {}).items()}
-    max_rel = max(rel.values(), default=0)
-    use_relevance = max_rel > 0
+
+def band_score(entry, text_grade=None):
+    score = BAND_SCORES.get(entry["band"], BAND_SCORES["NONE"])
+    grade = entry.get("grade_level")
+    if text_grade and grade in GRADES and text_grade in GRADES:
+        if GRADES.index(grade) <= GRADES.index(text_grade):
+            score = min(1.0, score + GRADE_BONUS)
+    return score
+
+
+def rank_records(records, lexicon, frequency_only=False, text_grade=None,
+                 frequency_weight=FREQUENCY_WEIGHT, relevance_weight=RELEVANCE_WEIGHT):
+    """Take pipeline.analyze_text() records and return them ranked, with
+    band, subject, grade_level, priority and rank added. Rank 1 = teach first.
+    Stop words and textbook layout words (figure, page) are left out,
+    since they aren't vocabulary to teach."""
+    from spacy.lang.en.stop_words import STOP_WORDS
 
     ranked = []
-    for word in words:
-        band = categories.get(word, "UNKNOWN")
-        freq = band_score(word, categories)
-        if use_relevance:
-            rel_norm = rel.get(word, 0.0) / max_rel
-            priority = frequency_weight * freq + relevance_weight * rel_norm
-        else:
-            rel_norm = None
+    for rec in records:
+        head = rec["headword"]
+        if rec.get("is_stop") or head in STOP_WORDS or head in LAYOUT_WORDS:
+            continue
+        entry = lookup(rec, lexicon)
+        freq = band_score(entry, text_grade)
+        if frequency_only:
+            relevance = None
             priority = freq
+        else:
+            relevance = rec.get("relevance") or 0.0
+            priority = frequency_weight * freq + relevance_weight * relevance
         ranked.append({
-            "word": word,
-            "band": band,
-            "relevance_score": rel.get(word) if use_relevance else None,
+            **rec,
+            "band": entry["band"],
+            "subject": entry["subject"],
+            "grade_level": entry["grade_level"],
+            "frequency_count": entry["frequency_count"],
+            "relevance": relevance,
             "priority": round(priority, 4),
-            "source": "frequency+relevance" if use_relevance else "frequency-only",
         })
-    ranked.sort(key=lambda r: (-r["priority"], r["word"]))
+    ranked.sort(key=lambda r: (-r["priority"], -r["count"], r["headword"]))
+    for i, r in enumerate(ranked, 1):
+        r["rank"] = i
     return ranked
 
 
-if __name__ == "__main__":
-    import sys
+def rank_text(text, lexicon=None, frequency_only=False, text_grade=None):
+    """Raw text in, ranked word families out."""
+    import pipeline
 
-    text = " ".join(sys.argv[1:]) or (
-        "The teacher asked the students to analyze the function of the ecosystem. "
-        "Photosynthesis is the process by which plants convert light into energy."
-    )
-    cats = load_word_categories(CATEGORY_FILE)
-    rel = None
-    try:
-        from textrank import TextRank
-        tr = TextRank()
-        tr.analyze(text, lower=True)
-        rel = tr.node_weight
-    except Exception as e:  # spaCy/model missing -> frequency-only
-        print(f"(relevance unavailable, using frequency only: {e})")
-    for r in rank_headwords(tokenize(text), cats, rel):
-        print(f"  {r['word']:<15} {r['band']:<8} {r['priority']:.4f}  {r['source']}")
+    lexicon = lexicon if lexicon is not None else lexicon_from_word_categories()
+    records = pipeline.analyze_text(text)
+    return rank_records(records, lexicon, frequency_only, text_grade)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="MyVIRS combined ranking")
+    parser.add_argument("text", nargs="*", help="passage to rank")
+    parser.add_argument("--text-file", help="rank a saved .txt file")
+    parser.add_argument("--top", type=int, default=20)
+    parser.add_argument("--frequency-only", action="store_true",
+                        help="ignore relevance (the frequency-only baseline)")
+    parser.add_argument("--grade", help="text grade for the grade bonus, e.g. G7")
+    args = parser.parse_args()
+
+    if args.text_file:
+        with open(args.text_file, encoding="utf-8") as f:
+            text = f.read()
+    else:
+        text = " ".join(args.text) or (
+            "The teacher asked the students to analyze the function of the ecosystem. "
+            "Photosynthesis is the process by which plants convert light into energy."
+        )
+
+    ranked = rank_text(text, frequency_only=args.frequency_only, text_grade=args.grade)
+    mode = "frequency only" if args.frequency_only else "frequency + relevance"
+    print(f"Ranked {len(ranked)} word families ({mode})\n")
+    print(f"{'rank':>4}  {'headword':<16}{'band':<6}{'relevance':>10}{'priority':>10}{'count':>8}")
+    for r in ranked[: args.top]:
+        rel = "-" if r["relevance"] is None else f"{r['relevance']:.2f}"
+        print(f"{r['rank']:>4}  {r['headword']:<16}{r['band']:<6}{rel:>10}{r['priority']:>10.3f}{r['count']:>8}")
+
+
+if __name__ == "__main__":
+    main()

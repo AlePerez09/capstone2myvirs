@@ -28,7 +28,7 @@ from pathlib import Path
 CONTRACT_VERSION = "1.0"
 SCHEMA_FILE = Path(__file__).parent / "schema" / "contract_v1.schema.json"
 WORD_FIELDS = ["headword", "forms", "match_source", "pos", "band", "frequency_count",
-               "subject", "grade_level", "relevance", "priority", "rank", "count"]
+               "subject", "grade_level", "k_level", "relevance", "priority", "rank", "count"]
 
 
 def validate(response):

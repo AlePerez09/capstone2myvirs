@@ -125,6 +125,27 @@ def test_ranking_uses_lexicon():
         assert bands["happen"] == "NONE"
 
 
+def test_virs_csv():
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+        path = Path(tmp) / "virs_words.csv"
+        path.write_text(
+            "value,category,grade\n"
+            "cell,k1,G4\ncell,stem,G4\ncell,hi,G4\n"
+            "the,k1,\n"
+            "analyze,k1,G2\nanalyze,awl,G2\nanalyze,hi,G2\n"
+            "glucose,k2,G6\n"
+            "habitat,med,G3\nhabitat,med,G5\n"
+            "zygote,low,\n", encoding="utf-8")
+        lex = word_lists.load_virs_csv(path)
+        assert lex["cell"] == {"band": "HIGH", "subject": "stem", "k_level": "K1",
+                               "grade_level": "G4", "frequency_count": None}
+        assert lex["the"]["band"] == "HIGH", "K1-only words count as HIGH"
+        assert lex["analyze"]["subject"] == "academic"
+        assert lex["glucose"]["band"] == "HIGH" and lex["glucose"]["k_level"] == "K2"
+        assert lex["habitat"]["band"] == "MID" and lex["habitat"]["grade_level"] == "G3", "earliest grade"
+        assert lex["zygote"]["band"] == "LOW" and lex["zygote"]["grade_level"] is None
+
+
 if __name__ == "__main__":
     tests = [v for k, v in dict(globals()).items() if k.startswith("test_")]
     for t in tests:

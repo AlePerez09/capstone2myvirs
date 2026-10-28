@@ -213,6 +213,54 @@ def _read_grade_grid(path, ws, color_map):
     return words
 
 
+# ---------- Full VIRS word list (CSV from the old site) ----------
+
+VIRS_CSV = Path(__file__).parent / "data" / "virs_words.csv"
+VIRS_BANDS = {"hi": "HIGH", "med": "MID", "low": "LOW"}
+K_LEVELS = ("k1", "k2", "k3")
+
+
+def load_virs_csv(path=VIRS_CSV):
+    """Read the full word list recovered from the old VIRS database
+    (value, category, grade; one row per word per category) into a lexicon.
+
+    - band: hi/med/low -> HIGH/MID/LOW. A word with no hi/med/low row but a
+      K1-K3 row is HIGH (K1-K3 are the most frequent school words).
+    - subject: stem -> "stem", awl or baw -> "academic", otherwise "general".
+    - k_level: K1, K2 or K3 when the word is on one of those lists.
+    - grade_level: the earliest grade listed for the word.
+    The list holds word forms (ability, abilities), so lookups by form work.
+    """
+    import csv
+
+    cats, grades = {}, {}
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            word = clean_word(row.get("value"))
+            if not word:
+                continue
+            cats.setdefault(word, set()).add((row.get("category") or "").strip().lower())
+            grade = parse_grade(row.get("grade"))
+            if grade and (word not in grades or GRADES.index(grade) < GRADES.index(grades[word])):
+                grades[word] = grade
+
+    lexicon = {}
+    for word, c in cats.items():
+        band = next((VIRS_BANDS[b] for b in ("hi", "med", "low") if b in c), None)
+        k_level = next((k.upper() for k in K_LEVELS if k in c), None)
+        if band is None:
+            band = "HIGH" if k_level else "NONE"
+        if "stem" in c:
+            subject = "stem"
+        elif "awl" in c or "baw" in c:
+            subject = "academic"
+        else:
+            subject = "general"
+        lexicon[word] = {"band": band, "subject": subject, "k_level": k_level,
+                         "grade_level": grades.get(word), "frequency_count": None}
+    return lexicon
+
+
 # ---------- Lexicon ----------
 
 def files_present(folder=WORD_LIST_DIR):

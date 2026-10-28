@@ -53,6 +53,17 @@ TEXTBOOK_STOPWORDS = {
     "student", "students", "lesson", "flexbook", "ck-12", "www",
 }
 
+# Number words are kept as vocabulary: counted, scored for relevance, and
+# ranked, even though spaCy tags them as stop words (Eric asked for them).
+NUMBER_WORDS = {
+    "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+    "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+    "seventeen", "eighteen", "nineteen", "twenty", "thirty", "forty", "fifty",
+    "sixty", "seventy", "eighty", "ninety", "hundred", "thousand", "million",
+    "billion", "trillion",
+}
+SPELL_OUT_NUMBERS = True
+
 nlp = spacy.load("en_core_web_sm", disable=["ner"])
 nlp.max_length = CHUNK_CHARS * 2
 
@@ -84,6 +95,63 @@ def normalize_text(text):
     import unicodedata
 
     return unicodedata.normalize("NFKC", text)
+
+
+_NUMBER_RE = re.compile(
+    r"(?<![\w.])(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?(?![\w])"
+)
+
+
+_LAYOUT_WORD_NUMBER_RE = re.compile(
+    r"\b(figure|fig\.|table|lesson|chapter|section|unit|page|example|exercise|"
+    r"problem|question|step|appendix)\s+\d+(?:\.\d+)*[a-z]?\b",
+    re.IGNORECASE,
+)
+_HEADING_NUMBER_RE = re.compile(r"^\s*\d+(?:\.\d+)*\.?\s+(?=[A-Za-z])")
+_FOOTER_RE = re.compile(r"^\s*(?:\d+|[ivxlc]+)\s+www\.ck12\.org\s*$|"
+                        r"^\s*www\.ck12\.org\s+(?:\d+|[ivxlc]+)\s*$", re.IGNORECASE)
+_TRAILING_PAGE_RE = re.compile(r"(?:\s*\.\s*){2,}\s*\d+\s*$|\s+\d+\s*$")
+
+
+def strip_layout_numbers(text):
+    """Remove numbers that are textbook layout, not vocabulary: section
+    headings ("3.1 Cells"), table of contents page numbers, page footers
+    ("12 www.ck12.org") and labels like "Figure 2.4" or "Lesson 5"."""
+    lines = []
+    for line in text.split("\n"):
+        if _FOOTER_RE.match(line):
+            continue
+        if _HEADING_NUMBER_RE.match(line):
+            line = _HEADING_NUMBER_RE.sub("", line)
+            line = _TRAILING_PAGE_RE.sub("", line)  # "Cells . . . . 53" or "Biology? 1"
+        line = _LAYOUT_WORD_NUMBER_RE.sub(lambda m: m.group(1), line)
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def spell_out_numbers(text):
+    """Turn standalone numbers into words, as Cariello's dissertation
+    describes (3,000 -> three thousand, 45 -> forty-five), so number
+    vocabulary counts like any other word. Numbers stuck to letters, like
+    the 2 in CO2 or x2, are left alone and filtered out later."""
+    try:
+        from num2words import num2words
+    except ImportError:
+        print("(num2words isn't installed, so digits are skipped instead of "
+              "spelled out: pip install num2words)", file=sys.stderr)
+        return text
+
+    def replace(match):
+        whole, decimal = match.group(1).replace(",", ""), match.group(2)
+        if len(whole) > 12:
+            return match.group(0)  # IDs, long codes: leave them
+        try:
+            value = float(whole + decimal) if decimal else int(whole)
+            return " " + num2words(value) + " "
+        except (ValueError, OverflowError):
+            return match.group(0)
+
+    return _NUMBER_RE.sub(replace, text)
 
 
 def pre_process_hyphenation(text):
@@ -125,11 +193,13 @@ def chunk_text(text, size=CHUNK_CHARS):
 
 # ---------- 3. One pass: corpus metadata + TextRank sentences ----------
 
-def build_corpus_and_sentences(text):
+def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS):
     corpus = {}
     sentences = []
 
     text = pre_process_hyphenation(normalize_text(text))
+    if numbers:
+        text = spell_out_numbers(strip_layout_numbers(text))
     for doc in nlp.pipe(chunk_text(text), batch_size=4):
         for sent in doc.sents:
             candidates = []
@@ -142,7 +212,7 @@ def build_corpus_and_sentences(text):
                     entry = corpus[word] = {
                         "part_of_speech": token.pos_,
                         "lemma": token.lemma_.lower(),
-                        "is_stop": token.is_stop,
+                        "is_stop": token.is_stop and word not in NUMBER_WORDS,
                         "count": 0,
                         "_pos": {},
                         "_lemma": {},
@@ -151,7 +221,8 @@ def build_corpus_and_sentences(text):
                 entry["_pos"][token.pos_] = entry["_pos"].get(token.pos_, 0) + 1
                 lemma = token.lemma_.lower()
                 entry["_lemma"][lemma] = entry["_lemma"].get(lemma, 0) + 1
-                if (
+                is_number = numbers and word in NUMBER_WORDS
+                if is_number or (
                     token.pos_ in CANDIDATE_POS
                     and not token.is_stop
                     and word not in TEXTBOOK_STOPWORDS
@@ -227,7 +298,7 @@ def relevance_percentiles(scores):
     return {w: float((r - 1) / denom) for w, r in zip(words, ranks)}
 
 
-def analyze_text(text, families=True, family_list=None):
+def analyze_text(text, families=True, family_list=None, numbers=SPELL_OUT_NUMBERS):
     """Text in, one record per word family out, sorted by relevance.
 
     With families=True (the default), word forms are grouped into families
@@ -236,7 +307,7 @@ def analyze_text(text, families=True, family_list=None):
     With families=False, every word form is ranked separately (Sprint 2
     behaviour).
     """
-    corpus, sentences = build_corpus_and_sentences(text)
+    corpus, sentences = build_corpus_and_sentences(text, numbers=numbers)
 
     if not families:
         scores = textrank(sentences)
@@ -290,6 +361,8 @@ def main():
     parser.add_argument("--save-text", help="save the extracted PDF text to this file")
     parser.add_argument("--no-families", action="store_true",
                         help="rank every word form separately (Sprint 2 behaviour)")
+    parser.add_argument("--no-numbers", action="store_true",
+                        help="drop numbers instead of spelling them out as words")
     parser.add_argument("--families-file",
                         help="word family list (Nation format or word,headword CSV); "
                              "data/word_families.txt is used automatically if present")
@@ -314,7 +387,8 @@ def main():
         from wordfamilies import find_family_list
         family_list = find_family_list(args.families_file)
 
-    records = analyze_text(text, families=not args.no_families, family_list=family_list)
+    records = analyze_text(text, families=not args.no_families, family_list=family_list,
+                           numbers=not args.no_numbers)
     key = "word" if args.no_families else "headword"
 
     total = sum(r["count"] for r in records)

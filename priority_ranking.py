@@ -27,8 +27,8 @@ For each word family in a text:
 Frequency bands come from a "lexicon": {headword: {"band", "subject",
 "grade_level", "frequency_count"}}. load_default_lexicon() reads Eric's
 word lists (word_lists.py) when they're in data/word_lists/, and otherwise
-falls back to word_categories.json (the ~2,300 words recovered from the
-old site), which isn't a reliable frequency list.
+falls back to the full VIRS list (data/virs_words.csv), then to
+word_categories.json (an incomplete ~2,300-word piece of that list).
 
 Run:
     python3 priority_ranking.py "your passage here"
@@ -76,16 +76,20 @@ def lexicon_from_word_categories(path=CATEGORY_FILE):
 
 
 def load_default_lexicon(verbose=True):
-    """Eric's word lists if they're in data/word_lists/, otherwise the
-    temporary list from word_categories.json."""
+    """Pick the best word list available, in this order:
+    1. Eric's five Excel files in data/word_lists/
+    2. the full VIRS word list, data/virs_words.csv (~30,000 words)
+    3. word_categories.json (the ~2,300-word partial list, last resort)"""
     import sys
     import word_lists
 
     if word_lists.files_present():
         return word_lists.load_lexicon()
+    if word_lists.VIRS_CSV.exists():
+        return word_lists.load_virs_csv()
     if verbose:
-        print("(Eric's word lists not found in data/word_lists/, using the temporary "
-              "word_categories.json bands)", file=sys.stderr)
+        print("(no full word list found, using the partial word_categories.json bands)",
+              file=sys.stderr)
     return lexicon_from_word_categories()
 
 
@@ -96,7 +100,7 @@ def lookup(record, lexicon):
         if key in lexicon:
             return lexicon[key]
     return {"band": "NONE", "subject": "general", "grade_level": None,
-            "frequency_count": None}
+            "k_level": None, "frequency_count": None}
 
 
 def band_score(entry, text_grade=None):
@@ -115,11 +119,14 @@ def rank_records(records, lexicon, frequency_only=False, text_grade=None,
     Stop words and textbook layout words (figure, page) are left out,
     since they aren't vocabulary to teach."""
     from spacy.lang.en.stop_words import STOP_WORDS
+    from pipeline import NUMBER_WORDS
 
     ranked = []
     for rec in records:
         head = rec["headword"]
-        if rec.get("is_stop") or head in STOP_WORDS or head in LAYOUT_WORDS:
+        if head in NUMBER_WORDS:
+            pass  # numbers are kept even though spaCy calls them stop words
+        elif rec.get("is_stop") or head in STOP_WORDS or head in LAYOUT_WORDS:
             continue
         entry = lookup(rec, lexicon)
         freq = band_score(entry, text_grade)
@@ -134,6 +141,7 @@ def rank_records(records, lexicon, frequency_only=False, text_grade=None,
             "band": entry["band"],
             "subject": entry["subject"],
             "grade_level": entry["grade_level"],
+            "k_level": entry.get("k_level"),
             "frequency_count": entry["frequency_count"],
             "relevance": relevance,
             "priority": round(priority, 4),

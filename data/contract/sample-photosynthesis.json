@@ -4,10 +4,27 @@
   "corpus_id": null,
   "text_summary": {
     "tokens": 141,
-    "coverage_high": 0.6879,
-    "coverage_lsw": 0.8085
+    "coverage_high": 0.9645,
+    "coverage_lsw": 0.9645
   },
   "words": [
+    {
+      "headword": "energy",
+      "forms": [
+        "energy"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": "G2",
+      "k_level": "K1",
+      "relevance": 1.0,
+      "priority": 1.0,
+      "rank": 1,
+      "count": 8
+    },
     {
       "headword": "light",
       "forms": [
@@ -18,10 +35,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.9773,
       "priority": 0.9887,
-      "rank": 1,
+      "rank": 2,
       "count": 5
     },
     {
@@ -34,10 +52,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G6",
+      "k_level": "K2",
       "relevance": 0.9545,
       "priority": 0.9772,
-      "rank": 2,
+      "rank": 3,
       "count": 4
     },
     {
@@ -49,12 +68,32 @@
       "pos": "ADJ",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
+      "subject": "stem",
       "grade_level": null,
+      "k_level": "K1",
       "relevance": 0.9318,
       "priority": 0.9659,
-      "rank": 3,
+      "rank": 4,
       "count": 6
+    },
+    {
+      "headword": "release",
+      "forms": [
+        "releases",
+        "release",
+        "released"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": "G7",
+      "k_level": "K1",
+      "relevance": 0.9091,
+      "priority": 0.9546,
+      "rank": 5,
+      "count": 4
     },
     {
       "headword": "oxygen",
@@ -65,11 +104,12 @@
       "pos": "NOUN",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
+      "subject": "stem",
+      "grade_level": "G4",
+      "k_level": "K1",
       "relevance": 0.8864,
       "priority": 0.9432,
-      "rank": 4,
+      "rank": 6,
       "count": 4
     },
     {
@@ -82,10 +122,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.8409,
       "priority": 0.9204,
-      "rank": 5,
+      "rank": 7,
       "count": 2
     },
     {
@@ -98,10 +139,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G10",
+      "k_level": "K2",
       "relevance": 0.8182,
       "priority": 0.9091,
-      "rank": 6,
+      "rank": 8,
       "count": 3
     },
     {
@@ -113,12 +155,81 @@
       "pos": "NOUN",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
+      "subject": "stem",
       "grade_level": null,
+      "k_level": "K1",
       "relevance": 0.7955,
       "priority": 0.8978,
-      "rank": 7,
+      "rank": 9,
       "count": 3
+    },
+    {
+      "headword": "carbon",
+      "forms": [
+        "carbon"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "stem",
+      "grade_level": "G7",
+      "k_level": "K1",
+      "relevance": 0.7727,
+      "priority": 0.8863,
+      "rank": 10,
+      "count": 1
+    },
+    {
+      "headword": "reaction",
+      "forms": [
+        "reactions"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "academic",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.75,
+      "priority": 0.875,
+      "rank": 11,
+      "count": 2
+    },
+    {
+      "headword": "absorb",
+      "forms": [
+        "absorb"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "stem",
+      "grade_level": "G6",
+      "k_level": "K2",
+      "relevance": 0.7273,
+      "priority": 0.8637,
+      "rank": 12,
+      "count": 1
+    },
+    {
+      "headword": "sun",
+      "forms": [
+        "sun"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": "K",
+      "k_level": "K1",
+      "relevance": 0.7045,
+      "priority": 0.8522,
+      "rank": 13,
+      "count": 1
     },
     {
       "headword": "burn",
@@ -131,11 +242,29 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G5",
+      "k_level": "K1",
       "relevance": 0.6818,
       "priority": 0.8409,
-      "rank": 8,
+      "rank": 14,
       "count": 2
+    },
+    {
+      "headword": "important",
+      "forms": [
+        "important"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.6591,
+      "priority": 0.8296,
+      "rank": 15,
+      "count": 1
     },
     {
       "headword": "dioxide",
@@ -146,28 +275,30 @@
       "pos": "NOUN",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
+      "subject": "stem",
+      "grade_level": "G5",
+      "k_level": "K1",
       "relevance": 0.6364,
       "priority": 0.8182,
-      "rank": 9,
+      "rank": 16,
       "count": 1
     },
     {
-      "headword": "energy",
+      "headword": "involve",
       "forms": [
-        "energy"
+        "involves"
       ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "MID",
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "HIGH",
       "frequency_count": null,
       "subject": "academic",
-      "grade_level": null,
-      "relevance": 1.0,
-      "priority": 0.8,
-      "rank": 10,
-      "count": 8
+      "grade_level": "G2",
+      "k_level": "K1",
+      "relevance": 0.6136,
+      "priority": 0.8068,
+      "rank": 17,
+      "count": 2
     },
     {
       "headword": "reactant",
@@ -180,9 +311,61 @@
       "frequency_count": null,
       "subject": "general",
       "grade_level": null,
+      "k_level": "K2",
       "relevance": 0.5909,
       "priority": 0.7954,
-      "rank": 11,
+      "rank": 18,
+      "count": 1
+    },
+    {
+      "headword": "capture",
+      "forms": [
+        "capture"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": "G5",
+      "k_level": "K2",
+      "relevance": 0.5682,
+      "priority": 0.7841,
+      "rank": 19,
+      "count": 1
+    },
+    {
+      "headword": "sum",
+      "forms": [
+        "summed"
+      ],
+      "match_source": "lemma",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "stem",
+      "grade_level": "G3",
+      "k_level": "K1",
+      "relevance": 0.5455,
+      "priority": 0.7728,
+      "rank": 20,
+      "count": 2
+    },
+    {
+      "headword": "heat",
+      "forms": [
+        "heat"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": "G2",
+      "k_level": "K1",
+      "relevance": 0.5114,
+      "priority": 0.7557,
+      "rank": 21,
       "count": 1
     },
     {
@@ -196,28 +379,28 @@
       "frequency_count": null,
       "subject": "general",
       "grade_level": null,
+      "k_level": "K2",
       "relevance": 0.5114,
       "priority": 0.7557,
-      "rank": 12,
+      "rank": 22,
       "count": 1
     },
     {
-      "headword": "release",
+      "headword": "starch",
       "forms": [
-        "releases",
-        "release",
-        "released"
+        "starch"
       ],
-      "match_source": "lemma",
-      "pos": "VERB",
-      "band": "MID",
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
       "frequency_count": null,
-      "subject": "academic",
-      "grade_level": null,
-      "relevance": 0.9091,
-      "priority": 0.7546,
-      "rank": 13,
-      "count": 4
+      "subject": "general",
+      "grade_level": "G12",
+      "k_level": "K3",
+      "relevance": 0.4773,
+      "priority": 0.7387,
+      "rank": 23,
+      "count": 1
     },
     {
       "headword": "life",
@@ -229,10 +412,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.4545,
       "priority": 0.7272,
-      "rank": 14,
+      "rank": 24,
       "count": 1
     },
     {
@@ -245,10 +429,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G2",
+      "k_level": "K1",
       "relevance": 0.4318,
       "priority": 0.7159,
-      "rank": 15,
+      "rank": 25,
       "count": 1
     },
     {
@@ -261,10 +446,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "K",
+      "k_level": "K1",
       "relevance": 0.4091,
       "priority": 0.7046,
-      "rank": 16,
+      "rank": 26,
       "count": 1
     },
     {
@@ -277,27 +463,29 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G2",
+      "k_level": "K1",
       "relevance": 0.3864,
       "priority": 0.6932,
-      "rank": 17,
+      "rank": 27,
       "count": 1
     },
     {
-      "headword": "reaction",
+      "headword": "autotrophs",
       "forms": [
-        "reactions"
+        "autotrophs"
       ],
-      "match_source": "lemma",
+      "match_source": "self",
       "pos": "NOUN",
-      "band": "MID",
+      "band": "HIGH",
       "frequency_count": null,
-      "subject": "academic",
+      "subject": "general",
       "grade_level": null,
-      "relevance": 0.75,
-      "priority": 0.675,
-      "rank": 18,
-      "count": 2
+      "k_level": "K3",
+      "relevance": 0.3636,
+      "priority": 0.6818,
+      "rank": 28,
+      "count": 1
     },
     {
       "headword": "small",
@@ -309,10 +497,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.3409,
       "priority": 0.6704,
-      "rank": 19,
+      "rank": 29,
       "count": 1
     },
     {
@@ -325,10 +514,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "K",
+      "k_level": "K1",
       "relevance": 0.3182,
       "priority": 0.6591,
-      "rank": 20,
+      "rank": 30,
       "count": 1
     },
     {
@@ -340,11 +530,12 @@
       "pos": "NOUN",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
+      "subject": "stem",
+      "grade_level": "G5",
+      "k_level": "K1",
       "relevance": 0.2955,
       "priority": 0.6478,
-      "rank": 21,
+      "rank": 31,
       "count": 2
     },
     {
@@ -357,27 +548,46 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.2727,
       "priority": 0.6363,
-      "rank": 22,
+      "rank": 32,
       "count": 1
     },
     {
-      "headword": "involve",
+      "headword": "equation",
       "forms": [
-        "involves"
+        "equation"
       ],
-      "match_source": "lemma",
-      "pos": "VERB",
-      "band": "MID",
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "stem",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.25,
+      "priority": 0.625,
+      "rank": 33,
+      "count": 2
+    },
+    {
+      "headword": "process",
+      "forms": [
+        "process"
+      ],
+      "match_source": "self",
+      "pos": "NOUN",
+      "band": "HIGH",
       "frequency_count": null,
       "subject": "academic",
-      "grade_level": null,
-      "relevance": 0.6136,
-      "priority": 0.6068,
-      "rank": 23,
-      "count": 2
+      "grade_level": "G7",
+      "k_level": "K1",
+      "relevance": 0.2273,
+      "priority": 0.6137,
+      "rank": 34,
+      "count": 1
     },
     {
       "headword": "waste",
@@ -389,10 +599,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.2045,
       "priority": 0.6022,
-      "rank": 24,
+      "rank": 35,
       "count": 1
     },
     {
@@ -404,11 +615,12 @@
       "pos": "NOUN",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
+      "subject": "stem",
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.1818,
       "priority": 0.5909,
-      "rank": 25,
+      "rank": 36,
       "count": 1
     },
     {
@@ -422,10 +634,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "K",
+      "k_level": "K1",
       "relevance": 0.1477,
       "priority": 0.5738,
-      "rank": 26,
+      "rank": 37,
       "count": 2
     },
     {
@@ -437,11 +650,63 @@
       "pos": "NOUN",
       "band": "HIGH",
       "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
+      "subject": "stem",
+      "grade_level": "G4",
+      "k_level": "K1",
       "relevance": 0.1477,
       "priority": 0.5738,
-      "rank": 27,
+      "rank": 38,
+      "count": 1
+    },
+    {
+      "headword": "store",
+      "forms": [
+        "store"
+      ],
+      "match_source": "self",
+      "pos": "VERB",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": "G1",
+      "k_level": "K1",
+      "relevance": 0.1136,
+      "priority": 0.5568,
+      "rank": 39,
+      "count": 1
+    },
+    {
+      "headword": "photosynthetic",
+      "forms": [
+        "photosynthetic"
+      ],
+      "match_source": "self",
+      "pos": "ADJ",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "k_level": "K2",
+      "relevance": 0.0909,
+      "priority": 0.5454,
+      "rank": 40,
+      "count": 1
+    },
+    {
+      "headword": "step",
+      "forms": [
+        "steps"
+      ],
+      "match_source": "lemma",
+      "pos": "NOUN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": "G1",
+      "k_level": "K1",
+      "relevance": 0.0682,
+      "priority": 0.5341,
+      "rank": 41,
       "count": 1
     },
     {
@@ -454,10 +719,11 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "K",
+      "k_level": "K1",
       "relevance": 0.0455,
       "priority": 0.5228,
-      "rank": 28,
+      "rank": 42,
       "count": 1
     },
     {
@@ -471,9 +737,44 @@
       "frequency_count": null,
       "subject": "general",
       "grade_level": null,
+      "k_level": "K1",
       "relevance": 0.0227,
       "priority": 0.5113,
-      "rank": 29,
+      "rank": 43,
+      "count": 1
+    },
+    {
+      "headword": "cellular",
+      "forms": [
+        "cellular"
+      ],
+      "match_source": "self",
+      "pos": "PROPN",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.0,
+      "priority": 0.5,
+      "rank": 44,
+      "count": 3
+    },
+    {
+      "headword": "actually",
+      "forms": [
+        "actually"
+      ],
+      "match_source": "self",
+      "pos": "ADV",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.0,
+      "priority": 0.5,
+      "rank": 45,
       "count": 1
     },
     {
@@ -486,10 +787,45 @@
       "band": "HIGH",
       "frequency_count": null,
       "subject": "general",
-      "grade_level": null,
+      "grade_level": "G1",
+      "k_level": "K1",
       "relevance": 0.0,
       "priority": 0.5,
-      "rank": 30,
+      "rank": 46,
+      "count": 1
+    },
+    {
+      "headword": "slowly",
+      "forms": [
+        "slowly"
+      ],
+      "match_source": "self",
+      "pos": "ADV",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.0,
+      "priority": 0.5,
+      "rank": 47,
+      "count": 1
+    },
+    {
+      "headword": "usually",
+      "forms": [
+        "usually"
+      ],
+      "match_source": "self",
+      "pos": "ADV",
+      "band": "HIGH",
+      "frequency_count": null,
+      "subject": "general",
+      "grade_level": null,
+      "k_level": "K1",
+      "relevance": 0.0,
+      "priority": 0.5,
+      "rank": 48,
       "count": 1
     },
     {
@@ -503,250 +839,11 @@
       "frequency_count": null,
       "subject": "general",
       "grade_level": null,
+      "k_level": null,
       "relevance": 0.8636,
       "priority": 0.4818,
-      "rank": 31,
+      "rank": 49,
       "count": 2
-    },
-    {
-      "headword": "carbon",
-      "forms": [
-        "carbon"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.7727,
-      "priority": 0.4364,
-      "rank": 32,
-      "count": 1
-    },
-    {
-      "headword": "absorb",
-      "forms": [
-        "absorb"
-      ],
-      "match_source": "self",
-      "pos": "VERB",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.7273,
-      "priority": 0.4136,
-      "rank": 33,
-      "count": 1
-    },
-    {
-      "headword": "process",
-      "forms": [
-        "process"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "MID",
-      "frequency_count": null,
-      "subject": "academic",
-      "grade_level": null,
-      "relevance": 0.2273,
-      "priority": 0.4136,
-      "rank": 34,
-      "count": 1
-    },
-    {
-      "headword": "sun",
-      "forms": [
-        "sun"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.7045,
-      "priority": 0.4022,
-      "rank": 35,
-      "count": 1
-    },
-    {
-      "headword": "important",
-      "forms": [
-        "important"
-      ],
-      "match_source": "self",
-      "pos": "ADJ",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.6591,
-      "priority": 0.3795,
-      "rank": 36,
-      "count": 1
-    },
-    {
-      "headword": "capture",
-      "forms": [
-        "capture"
-      ],
-      "match_source": "self",
-      "pos": "VERB",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.5682,
-      "priority": 0.3341,
-      "rank": 37,
-      "count": 1
-    },
-    {
-      "headword": "sum",
-      "forms": [
-        "summed"
-      ],
-      "match_source": "lemma",
-      "pos": "VERB",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.5455,
-      "priority": 0.3227,
-      "rank": 38,
-      "count": 2
-    },
-    {
-      "headword": "heat",
-      "forms": [
-        "heat"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.5114,
-      "priority": 0.3057,
-      "rank": 39,
-      "count": 1
-    },
-    {
-      "headword": "starch",
-      "forms": [
-        "starch"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.4773,
-      "priority": 0.2887,
-      "rank": 40,
-      "count": 1
-    },
-    {
-      "headword": "autotrophs",
-      "forms": [
-        "autotrophs"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.3636,
-      "priority": 0.2318,
-      "rank": 41,
-      "count": 1
-    },
-    {
-      "headword": "equation",
-      "forms": [
-        "equation"
-      ],
-      "match_source": "self",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.25,
-      "priority": 0.175,
-      "rank": 42,
-      "count": 2
-    },
-    {
-      "headword": "store",
-      "forms": [
-        "store"
-      ],
-      "match_source": "self",
-      "pos": "VERB",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.1136,
-      "priority": 0.1068,
-      "rank": 43,
-      "count": 1
-    },
-    {
-      "headword": "photosynthetic",
-      "forms": [
-        "photosynthetic"
-      ],
-      "match_source": "self",
-      "pos": "ADJ",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.0909,
-      "priority": 0.0955,
-      "rank": 44,
-      "count": 1
-    },
-    {
-      "headword": "step",
-      "forms": [
-        "steps"
-      ],
-      "match_source": "lemma",
-      "pos": "NOUN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.0682,
-      "priority": 0.0841,
-      "rank": 45,
-      "count": 1
-    },
-    {
-      "headword": "cellular",
-      "forms": [
-        "cellular"
-      ],
-      "match_source": "self",
-      "pos": "PROPN",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.0,
-      "priority": 0.05,
-      "rank": 46,
-      "count": 3
     },
     {
       "headword": "atp",
@@ -759,26 +856,11 @@
       "frequency_count": null,
       "subject": "general",
       "grade_level": null,
+      "k_level": null,
       "relevance": 0.0,
       "priority": 0.05,
-      "rank": 47,
+      "rank": 50,
       "count": 2
-    },
-    {
-      "headword": "actually",
-      "forms": [
-        "actually"
-      ],
-      "match_source": "self",
-      "pos": "ADV",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.0,
-      "priority": 0.05,
-      "rank": 48,
-      "count": 1
     },
     {
       "headword": "energy\u2192",
@@ -791,38 +873,7 @@
       "frequency_count": null,
       "subject": "general",
       "grade_level": null,
-      "relevance": 0.0,
-      "priority": 0.05,
-      "rank": 49,
-      "count": 1
-    },
-    {
-      "headword": "slowly",
-      "forms": [
-        "slowly"
-      ],
-      "match_source": "self",
-      "pos": "ADV",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
-      "relevance": 0.0,
-      "priority": 0.05,
-      "rank": 50,
-      "count": 1
-    },
-    {
-      "headword": "usually",
-      "forms": [
-        "usually"
-      ],
-      "match_source": "self",
-      "pos": "ADV",
-      "band": "NONE",
-      "frequency_count": null,
-      "subject": "general",
-      "grade_level": null,
+      "k_level": null,
       "relevance": 0.0,
       "priority": 0.05,
       "rank": 51,

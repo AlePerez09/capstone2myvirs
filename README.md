@@ -20,7 +20,8 @@ Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 - `wordfamilies.py` — groups word forms into word families (cells + cell → cell)
 - `priority_ranking.py` — combines frequency band and relevance into one ranking
 - `contract.py` — formats the ranked list as JSON for Team B (contract v1)
-- `word_lists.py` — loads Eric's five Excel word lists into one lookup table
+- `word_lists.py` — loads the word lists (the full VIRS list, or Eric's five Excel files) into one lookup table
+- `data/virs_words.csv` — the full VIRS word list from the old site (~30,000 words), shared by Team B
 - `tests/test_word_lists.py` — tests for the word list loader, using mock files
 - `schema/contract_v1.schema.json` — the contract format, for both teams to validate against
 - `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
@@ -264,7 +265,7 @@ the K-12 files, and an unrecognized color stops with an error instead of
 guessing.
 
 ```bash
-pip install openpyxl jsonschema
+pip install openpyxl jsonschema num2words
 python3 word_lists.py              # summary of what loaded
 python3 word_lists.py --word cell  # look up one word
 python3 tests/test_word_lists.py   # tests on mock files
@@ -279,18 +280,55 @@ have the files on hand this sprint. Running it on the real files is the
 first thing to check; if their layout differs, adjust `COLUMN_NAMES`,
 `COLOR_MAPS`, or `classify_color()`.
 
-### Important: until then, the frequency bands are temporary
+### The full VIRS word list
+
+`data/virs_words.csv` is the complete word list from the old VIRS site,
+recovered and shared by Team B: 44,034 rows covering 30,259 words, with
+columns `value, category, grade`. Categories are K1, K2, K3 (school
+frequency tiers), AWL and BAW (academic), STEM, and HI/MED/LOW (frequency
+bands); about 6,000 words have a grade. It's the ~42,000-entry list the
+old schema pointed to, and replaces the partial `word_categories.json`.
+
+`word_lists.load_virs_csv()` turns it into the lexicon: HI/MED/LOW become
+the band (K1-K3 words with no band count as HIGH), STEM and AWL/BAW become
+the subject, and each word keeps its K level and earliest grade. The Team
+B output now includes an optional `k_level` field, and `subject` can be
+`stem`.
+
+Which list is used, in order: Eric's five Excel files (if in
+`data/word_lists/`), then `data/virs_words.csv`, then
+`word_categories.json`.
+
+Gaps: no number words (e.g. "hundred") and no multiword entries.
+
+### Earlier note: the partial list
 
 Without Eric's files, bands come from
 `word_categories.json`, the ~2,300 words recovered from the old site.
 That list isn't reliable as a frequency list: it labels "photosynthesis"
 and "glucose" as K2 and "oxygen" as K1, but doesn't include "money." So
-science words currently show up as HIGH. The samples in `data/contract/`
-were made with this temporary list and should be regenerated once Eric's
-files are loaded.
+science words show up as HIGH. With the full list it's clear K1-K3 are
+school-textbook tiers, so that's expected. The samples in `data/contract/`
+now use the full VIRS list.
 
 ### Also fixed this sprint
 
 - PDF ligatures: CK-12 PDFs store "fi" and "fl" as single characters
   ("ﬁsh," "ﬂowers"), about 2,500 times in Biology. The pipeline now
   normalizes them, so "ﬁsh" and "fish" count as one word.
+
+### Numbers
+
+At Eric's request, numbers count as vocabulary. Standalone digits are
+spelled out first, the way Cariello's dissertation describes ("3,000" →
+"three thousand," "2.5" → "two point five"), and number words like
+"hundred" are counted, scored for relevance, and ranked even though spaCy
+treats them as stop words.
+
+Layout numbers are removed before that, so they don't flood the results:
+section headings ("3.1 Cells"), table of contents page numbers, page
+footers ("12 www.ck12.org"), and labels like "Figure 2.4" or "Lesson 5."
+Numbers stuck to letters, like the 2 in CO2, are still dropped.
+
+Requires `num2words` (`pip install num2words`). Use `--no-numbers` with
+`pipeline.py` to drop numbers instead.

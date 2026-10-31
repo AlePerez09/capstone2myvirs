@@ -23,6 +23,13 @@ Usage:
     python3 pipeline.py --text "Paste a passage here."
     python3 pipeline.py --text-file data/biology.txt --out data/biology.json
     python3 pipeline.py book.pdf --no-families   (rank every word form separately)
+
+Relevance options (all off by default, so a plain run is the baseline; each
+has a --no- form too, so evaluation runs can be scripted either way):
+    --weighted-links        weight graph links by how often two words co-occur
+    --filter-verbs          drop generic textbook verbs (call, include, show,
+                            find, use...) and layout words (introduction...)
+    --group-abbreviations   count sin/cos/tan under sine/cosine/tangent
 """
 
 import argparse
@@ -51,6 +58,25 @@ TEXTBOOK_STOPWORDS = {
     "vocabulary", "objective", "objectives", "practice", "problem",
     "problems", "read", "explain", "describe", "list", "identify",
     "student", "students", "lesson", "flexbook", "ck-12", "www",
+}
+
+# Generic instruction/narration verbs ("is called", "includes", "shows") that
+# appear in every textbook and say nothing about the subject. Matched on the
+# lemma, so called/calls/calling are all caught. Only used with filter_verbs.
+TEXTBOOK_VERBS = {
+    "call", "include", "show", "find", "use", "make", "give", "see", "note",
+    "consider", "refer", "follow", "get", "take", "let", "know", "look",
+}
+# Extra layout words that only appear as headings. Only used with filter_verbs.
+LAYOUT_WORDS = {
+    "introduction", "overview", "conclusion", "contents", "preface",
+    "glossary", "appendix", "index",
+}
+
+# Abbreviations grouped with their full word. Only used with group_abbreviations.
+ABBREVIATIONS = {
+    "sin": "sine", "cos": "cosine", "tan": "tangent",
+    "cot": "cotangent", "csc": "cosecant",
 }
 
 # Number words are kept as vocabulary: counted, scored for relevance, and
@@ -193,7 +219,8 @@ def chunk_text(text, size=CHUNK_CHARS):
 
 # ---------- 3. One pass: corpus metadata + TextRank sentences ----------
 
-def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS):
+def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS, filter_verbs=False,
+                               group_abbreviations=False):
     corpus = {}
     sentences = []
 
@@ -207,11 +234,14 @@ def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS):
                 if not keep_token(token):
                     continue
                 word = token.lower_
+                lemma = token.lemma_.lower()
+                if group_abbreviations and word in ABBREVIATIONS:
+                    word = lemma = ABBREVIATIONS[word]
                 entry = corpus.get(word)
                 if entry is None:
                     entry = corpus[word] = {
                         "part_of_speech": token.pos_,
-                        "lemma": token.lemma_.lower(),
+                        "lemma": lemma,
                         "is_stop": token.is_stop and word not in NUMBER_WORDS,
                         "count": 0,
                         "_pos": {},
@@ -219,13 +249,16 @@ def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS):
                     }
                 entry["count"] += 1
                 entry["_pos"][token.pos_] = entry["_pos"].get(token.pos_, 0) + 1
-                lemma = token.lemma_.lower()
                 entry["_lemma"][lemma] = entry["_lemma"].get(lemma, 0) + 1
                 is_number = numbers and word in NUMBER_WORDS
+                generic = filter_verbs and (
+                    lemma in TEXTBOOK_VERBS or word in LAYOUT_WORDS
+                )
                 if is_number or (
                     token.pos_ in CANDIDATE_POS
                     and not token.is_stop
                     and word not in TEXTBOOK_STOPWORDS
+                    and not generic
                 ):
                     candidates.append(word)
             if candidates:
@@ -245,7 +278,9 @@ def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS):
 
 # ---------- 4. TextRank (Appendix B, sparse) ----------
 
-def textrank(sentences, window_size=WINDOW_SIZE):
+def textrank(sentences, window_size=WINDOW_SIZE, weighted=False):
+    """With weighted=True, a link's weight is how many times its two words
+    appear within the window; otherwise every link counts as 1."""
     vocab = {}
     for sentence in sentences:
         for word in sentence:
@@ -264,9 +299,11 @@ def textrank(sentences, window_size=WINDOW_SIZE):
                     rows += [a, b]
                     cols += [b, a]
 
-    # Unweighted edges, as in the original: duplicates collapse to 1
+    # Duplicate entries are summed into co-occurrence counts by tocsr();
+    # unweighted (as in the original) collapses them back to 1.
     g = coo_matrix((np.ones(len(rows)), (rows, cols)), shape=(n, n)).tocsr()
-    g.data[:] = 1.0
+    if not weighted:
+        g.data[:] = 1.0
     col_sums = np.asarray(g.sum(axis=0)).ravel()
     col_sums[col_sums == 0] = 1.0
     g = g.multiply(1.0 / col_sums).tocsr()
@@ -298,7 +335,8 @@ def relevance_percentiles(scores):
     return {w: float((r - 1) / denom) for w, r in zip(words, ranks)}
 
 
-def analyze_text(text, families=True, family_list=None, numbers=SPELL_OUT_NUMBERS):
+def analyze_text(text, families=True, family_list=None, numbers=SPELL_OUT_NUMBERS,
+                 weighted=False, filter_verbs=False, group_abbreviations=False):
     """Text in, one record per word family out, sorted by relevance.
 
     With families=True (the default), word forms are grouped into families
@@ -306,11 +344,18 @@ def analyze_text(text, families=True, family_list=None, numbers=SPELL_OUT_NUMBER
     TextRank graph and its count is the total over all its forms.
     With families=False, every word form is ranked separately (Sprint 2
     behaviour).
+
+    Relevance options, each off by default so they can be compared:
+    weighted: graph links are weighted by co-occurrence count.
+    filter_verbs: generic textbook verbs and layout words are not candidates.
+    group_abbreviations: sin/cos/tan are counted as sine/cosine/tangent.
     """
-    corpus, sentences = build_corpus_and_sentences(text, numbers=numbers)
+    corpus, sentences = build_corpus_and_sentences(
+        text, numbers=numbers, filter_verbs=filter_verbs,
+        group_abbreviations=group_abbreviations)
 
     if not families:
-        scores = textrank(sentences)
+        scores = textrank(sentences, weighted=weighted)
         percentile = relevance_percentiles(scores)
         records = [{
             "word": word,
@@ -328,7 +373,7 @@ def analyze_text(text, families=True, family_list=None, numbers=SPELL_OUT_NUMBER
 
     fams, word_to_head = group_by_family(corpus, family_list)
     head_sentences = [[word_to_head[w] for w in s] for s in sentences]
-    scores = textrank(head_sentences)
+    scores = textrank(head_sentences, weighted=weighted)
     percentile = relevance_percentiles(scores)
 
     records = [{
@@ -363,6 +408,15 @@ def main():
                         help="rank every word form separately (Sprint 2 behaviour)")
     parser.add_argument("--no-numbers", action="store_true",
                         help="drop numbers instead of spelling them out as words")
+    opt = argparse.BooleanOptionalAction
+    parser.add_argument("--weighted-links", action=opt, default=False,
+                        help="weight graph links by how often words appear together")
+    parser.add_argument("--filter-verbs", action=opt, default=False,
+                        help="drop generic textbook verbs (call, include, show, find, use...) "
+                             "and layout words (introduction...) from the ranking")
+    parser.add_argument("--group-abbreviations", action=opt, default=False,
+                        help="count abbreviations with their full word (sin -> sine, "
+                             "cos -> cosine, tan -> tangent)")
     parser.add_argument("--families-file",
                         help="word family list (Nation format or word,headword CSV); "
                              "data/word_families.txt is used automatically if present")
@@ -388,7 +442,9 @@ def main():
         family_list = find_family_list(args.families_file)
 
     records = analyze_text(text, families=not args.no_families, family_list=family_list,
-                           numbers=not args.no_numbers)
+                           numbers=not args.no_numbers, weighted=args.weighted_links,
+                           filter_verbs=args.filter_verbs,
+                           group_abbreviations=args.group_abbreviations)
     key = "word" if args.no_families else "headword"
 
     total = sum(r["count"] for r in records)

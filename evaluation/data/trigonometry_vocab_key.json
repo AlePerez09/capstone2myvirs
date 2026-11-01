@@ -1,0 +1,28 @@
+{
+  "_about": "CK-12 Trigonometry lesson Vocabulary lists, transcribed by hand from evaluation/data/trigonometry_spaced.txt because the term/definition layout varies too much to parse (term before, after, or on its own line). 'line' is the 1-based line of the 'Vocabulary' heading. In this book the Vocabulary block comes at the END of its lesson, so it belongs to the lesson that starts at the last 'Learning objectives' before it.",
+  "blocks": [
+    {"line": 647, "terms": ["dependent variable", "domain", "function", "independent variable", "periodic function", "range", "relation"]},
+    {"line": 920, "terms": ["acute angle", "alternate interior angles", "congruent", "acute triangle", "isosceles triangle", "equilateral triangle", "scalene triangle", "leg", "hypotenuse", "obtuse angle", "parallel lines", "right angle", "transversal"]},
+    {"line": 1248, "terms": ["acute angle", "coterminal angles", "minutes", "obtuse angle", "protractor", "quadrantal angle", "right angle", "seconds", "standard position", "straight angle"]},
+    {"line": 1552, "terms": ["adjacent", "hypotenuse", "leg", "pythagorean theorem", "radius", "unit circle"]},
+    {"line": 2151, "terms": ["coterminal angles", "reference angle"]},
+    {"line": 2487, "terms": ["domain", "identity", "quotient", "range", "reciprocal"]},
+    {"line": 2735, "terms": ["angle of depression", "angle of elevation", "bearings", "clinometer", "theodolite", "nautical mile"]},
+    {"line": 6433, "terms": ["one-to-one function", "arc cosine", "arc sine", "arc tangent"]},
+    {"line": 6933, "terms": ["unit circle"]},
+    {"line": 7122, "terms": ["inverse function", "invertible"]},
+    {"line": 7396, "terms": ["cofunction", "complementary angles"]},
+    {"line": 8093, "terms": ["principal value"]},
+    {"line": 8640, "terms": ["double angle identity", "identity"]},
+    {"line": 9606, "terms": ["law of cosines", "oblique triangle"]},
+    {"line": 9889, "terms": ["heron's formula"]},
+    {"line": 10300, "terms": ["included angle", "included side", "law of sines", "non-included angle", "non-included side"]},
+    {"line": 10676, "terms": ["ambiguous case"]},
+    {"line": 11447, "terms": ["directed line segment", "displacement", "equal vectors", "force", "initial point", "magnitude", "negative vector", "resultant", "standard position", "terminal point", "vector", "velocity"]},
+    {"line": 11956, "terms": ["component vectors", "scalar", "unit vector"]},
+    {"line": 12499, "terms": ["polar coordinate system", "pole", "polar axis", "polar coordinates"]},
+    {"line": 14018, "terms": ["polar coordinates", "polar equation", "polar graph"]},
+    {"line": 14320, "terms": ["complex number", "complex number plane", "conjugate of a complex number", "imaginary number"]},
+    {"line": 14828, "terms": ["argument", "modulus", "polar form"]}
+  ]
+}

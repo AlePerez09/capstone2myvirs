@@ -1,0 +1,962 @@
+{
+  "baseline": "priority_ranking.py --frequency-only (official)",
+  "biology_baseline_map": 0.1643043934331956,
+  "trigonometry_baseline_map": 0.1924661789639923,
+  "settings_tried": 160,
+  "chosen": [
+    {
+      "why": "best combined setting on Biology",
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_tuned_in_sample": {
+        "map": 0.22053380346775653,
+        "baseline_map": 0.1643043934331956,
+        "better": 75,
+        "worse": 9,
+        "tied": 0,
+        "wilcoxon_p": 1.5633904076565097e-12,
+        "significant_win": true,
+        "p@10": 0.17857142857142858
+      },
+      "trigonometry_held_out": {
+        "map": 0.2791266577531759,
+        "baseline_map": 0.1924661789639923,
+        "better": 19,
+        "worse": 3,
+        "tied": 0,
+        "wilcoxon_p": 0.006649494171142578,
+        "significant_win": true,
+        "p@10": 0.12272727272727275
+      },
+      "would_meet_criterion": true
+    },
+    {
+      "why": "best setting of any kind on Biology",
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_tuned_in_sample": {
+        "map": 0.23070516365630572,
+        "baseline_map": 0.1643043934331956,
+        "better": 80,
+        "worse": 4,
+        "tied": 0,
+        "wilcoxon_p": 6.535203340521629e-14,
+        "significant_win": true,
+        "p@10": 0.18809523809523807
+      },
+      "trigonometry_held_out": {
+        "map": 0.2932286310604988,
+        "baseline_map": 0.1924661789639923,
+        "better": 21,
+        "worse": 0,
+        "tied": 1,
+        "wilcoxon_p": 5.956977907456359e-05,
+        "significant_win": true,
+        "p@10": 0.14545454545454548
+      },
+      "would_meet_criterion": true
+    }
+  ],
+  "top20_on_biology": [
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.23070516365630572,
+      "biology_p@10": 0.18809523809523807
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.23070516365630572,
+      "biology_p@10": 0.18809523809523807
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.2240988126028856,
+      "biology_p@10": 0.18095238095238095
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.2240988126028856,
+      "biology_p@10": 0.18095238095238095
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.22053380346775653,
+      "biology_p@10": 0.17857142857142858
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2197998204535928,
+      "biology_p@10": 0.17857142857142858
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.21863221249071363,
+      "biology_p@10": 0.17380952380952377
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.21863221249071363,
+      "biology_p@10": 0.17380952380952377
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.2149530186056699,
+      "biology_p@10": 0.17261904761904762
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.21331857592292747,
+      "biology_p@10": 0.1714285714285714
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.21303923046058673,
+      "biology_p@10": 0.16785714285714284
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.21303923046058673,
+      "biology_p@10": 0.16785714285714284
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.20947870200346166,
+      "biology_p@10": 0.17261904761904762
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.20946573593137702,
+      "biology_p@10": 0.1738095238095238
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.20912471316537568,
+      "biology_p@10": 0.16547619047619047
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2074938428323365,
+      "biology_p@10": 0.1630952380952381
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.2047928706632558,
+      "biology_p@10": 0.16785714285714284
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.20352047175212598,
+      "biology_p@10": 0.1619047619047619
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.20211926268341784,
+      "biology_p@10": 0.1607142857142857
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.20156985829198337,
+      "biology_p@10": 0.1630952380952381
+    }
+  ],
+  "all_settings_both_books_for_reference_only": [
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.2307,
+      "trigonometry_map": 0.2932
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2307,
+      "trigonometry_map": 0.2859
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.2241,
+      "trigonometry_map": 0.2791
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.2241,
+      "trigonometry_map": 0.2724
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.2205,
+      "trigonometry_map": 0.2791
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2198,
+      "trigonometry_map": 0.2498
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.2186,
+      "trigonometry_map": 0.2218
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2186,
+      "trigonometry_map": 0.2199
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.215,
+      "trigonometry_map": 0.2413
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.2133,
+      "trigonometry_map": 0.2427
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.213,
+      "trigonometry_map": 0.2129
+    },
+    {
+      "setting": "count_pct, relevance weight 0.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.213,
+      "trigonometry_map": 0.2111
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2095,
+      "trigonometry_map": 0.2557
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.2095,
+      "trigonometry_map": 0.2593
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.2091,
+      "trigonometry_map": 0.2204
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.2075,
+      "trigonometry_map": 0.1907
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.2048,
+      "trigonometry_map": 0.246
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.2035,
+      "trigonometry_map": 0.1943
+    },
+    {
+      "setting": "count_pct, relevance weight 0.25, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.2021,
+      "trigonometry_map": 0.1823
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.2016,
+      "trigonometry_map": 0.2398
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1981,
+      "trigonometry_map": 0.2214
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1953,
+      "trigonometry_map": 0.2094
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1951,
+      "trigonometry_map": 0.2441
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.195,
+      "trigonometry_map": 0.2428
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1929,
+      "trigonometry_map": 0.1948
+    },
+    {
+      "setting": "count_pct, relevance weight 0.5, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1915,
+      "trigonometry_map": 0.2014
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1903,
+      "trigonometry_map": 0.2369
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1887,
+      "trigonometry_map": 0.2298
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2383
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2383
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2383
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2383
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2372
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2372
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2372
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.187,
+      "trigonometry_map": 0.2372
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1864,
+      "trigonometry_map": 0.198
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1824,
+      "trigonometry_map": 0.2311
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1824,
+      "trigonometry_map": 0.2311
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1824,
+      "trigonometry_map": 0.2311
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1824,
+      "trigonometry_map": 0.2311
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.182,
+      "trigonometry_map": 0.1995
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1806,
+      "trigonometry_map": 0.1831
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1805,
+      "trigonometry_map": 0.2248
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1805,
+      "trigonometry_map": 0.2248
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1805,
+      "trigonometry_map": 0.2248
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1805,
+      "trigonometry_map": 0.2248
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1785,
+      "trigonometry_map": 0.1888
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1785,
+      "trigonometry_map": 0.1888
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1785,
+      "trigonometry_map": 0.1888
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1785,
+      "trigonometry_map": 0.1888
+    },
+    {
+      "setting": "count_pct, relevance weight 0.75, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.178,
+      "trigonometry_map": 0.195
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1746,
+      "trigonometry_map": 0.2664
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1746,
+      "trigonometry_map": 0.2593
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1746,
+      "trigonometry_map": 0.2664
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1746,
+      "trigonometry_map": 0.2593
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1745,
+      "trigonometry_map": 0.1975
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1745,
+      "trigonometry_map": 0.1975
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1745,
+      "trigonometry_map": 0.1975
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1745,
+      "trigonometry_map": 0.1975
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1729,
+      "trigonometry_map": 0.1815
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1729,
+      "trigonometry_map": 0.1815
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1729,
+      "trigonometry_map": 0.1815
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1729,
+      "trigonometry_map": 0.1815
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1707,
+      "trigonometry_map": 0.252
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1707,
+      "trigonometry_map": 0.2455
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1707,
+      "trigonometry_map": 0.252
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1707,
+      "trigonometry_map": 0.2455
+    },
+    {
+      "setting": "band, relevance weight 1.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1706,
+      "trigonometry_map": 0.1928
+    },
+    {
+      "setting": "band_k, relevance weight 1.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1706,
+      "trigonometry_map": 0.1928
+    },
+    {
+      "setting": "band_grade, relevance weight 1.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1706,
+      "trigonometry_map": 0.1928
+    },
+    {
+      "setting": "count_pct, relevance weight 1.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1706,
+      "trigonometry_map": 0.1928
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1677,
+      "trigonometry_map": 0.2015
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1677,
+      "trigonometry_map": 0.1997
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1677,
+      "trigonometry_map": 0.2015
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1677,
+      "trigonometry_map": 0.1997
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1643,
+      "trigonometry_map": 0.1925
+    },
+    {
+      "setting": "band, relevance weight 0.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1643,
+      "trigonometry_map": 0.1907
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1643,
+      "trigonometry_map": 0.1925
+    },
+    {
+      "setting": "band_grade, relevance weight 0.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1643,
+      "trigonometry_map": 0.1907
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1599,
+      "trigonometry_map": 0.2152
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1599,
+      "trigonometry_map": 0.2152
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1597,
+      "trigonometry_map": 0.2138
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1597,
+      "trigonometry_map": 0.2139
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1558,
+      "trigonometry_map": 0.208
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1558,
+      "trigonometry_map": 0.2081
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1546,
+      "trigonometry_map": 0.2026
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1546,
+      "trigonometry_map": 0.2027
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.154,
+      "trigonometry_map": 0.172
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.154,
+      "trigonometry_map": 0.172
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1526,
+      "trigonometry_map": 0.2119
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1526,
+      "trigonometry_map": 0.2119
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1523,
+      "trigonometry_map": 0.2105
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1523,
+      "trigonometry_map": 0.2105
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1503,
+      "trigonometry_map": 0.178
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1503,
+      "trigonometry_map": 0.1781
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1501,
+      "trigonometry_map": 0.2114
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1501,
+      "trigonometry_map": 0.2113
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1498,
+      "trigonometry_map": 0.2099
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1498,
+      "trigonometry_map": 0.2099
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1493,
+      "trigonometry_map": 0.1644
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1493,
+      "trigonometry_map": 0.1644
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1488,
+      "trigonometry_map": 0.2047
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1488,
+      "trigonometry_map": 0.2048
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1478,
+      "trigonometry_map": 0.1998
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1478,
+      "trigonometry_map": 0.1998
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1473,
+      "trigonometry_map": 0.1699
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1473,
+      "trigonometry_map": 0.1699
+    },
+    {
+      "setting": "band, relevance weight 0.75, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1469,
+      "trigonometry_map": 0.1733
+    },
+    {
+      "setting": "band_grade, relevance weight 0.75, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1469,
+      "trigonometry_map": 0.1734
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1463,
+      "trigonometry_map": 0.2041
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1463,
+      "trigonometry_map": 0.2041
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1455,
+      "trigonometry_map": 0.1993
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.1455,
+      "trigonometry_map": 0.1993
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1451,
+      "trigonometry_map": 0.1695
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1451,
+      "trigonometry_map": 0.1695
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1436,
+      "trigonometry_map": 0.1759
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1436,
+      "trigonometry_map": 0.176
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1431,
+      "trigonometry_map": 0.1624
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1431,
+      "trigonometry_map": 0.1625
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1413,
+      "trigonometry_map": 0.1756
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1413,
+      "trigonometry_map": 0.1756
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.141,
+      "trigonometry_map": 0.1621
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.141,
+      "trigonometry_map": 0.1621
+    },
+    {
+      "setting": "band, relevance weight 0.5, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1405,
+      "trigonometry_map": 0.1712
+    },
+    {
+      "setting": "band_grade, relevance weight 0.5, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1405,
+      "trigonometry_map": 0.1712
+    },
+    {
+      "setting": "band, relevance weight 0.25, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1383,
+      "trigonometry_map": 0.1708
+    },
+    {
+      "setting": "band_grade, relevance weight 0.25, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1383,
+      "trigonometry_map": 0.1708
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1202,
+      "trigonometry_map": 0.1979
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1184,
+      "trigonometry_map": 0.1996
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.1142,
+      "trigonometry_map": 0.1933
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.114,
+      "trigonometry_map": 0.185
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1137,
+      "trigonometry_map": 0.1584
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.1114,
+      "trigonometry_map": 0.1706
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.1084,
+      "trigonometry_map": 0.1502
+    },
+    {
+      "setting": "band_k, relevance weight 0.75, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.1078,
+      "trigonometry_map": 0.1655
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.1013,
+      "trigonometry_map": 0.183
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.0994,
+      "trigonometry_map": 0.2187
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.0994,
+      "trigonometry_map": 0.2272
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.0993,
+      "trigonometry_map": 0.1848
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.0968,
+      "trigonometry_map": 0.1723
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.0968,
+      "trigonometry_map": 0.1497
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.0966,
+      "trigonometry_map": 0.2076
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.0966,
+      "trigonometry_map": 0.2168
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.0962,
+      "trigonometry_map": 0.179
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.0944,
+      "trigonometry_map": 0.1754
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.0944,
+      "trigonometry_map": 0.179
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.0942,
+      "trigonometry_map": 0.1618
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.0928,
+      "trigonometry_map": 0.1423
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.0919,
+      "trigonometry_map": 0.1674
+    },
+    {
+      "setting": "band_k, relevance weight 0.0, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.0919,
+      "trigonometry_map": 0.1713
+    },
+    {
+      "setting": "band_k, relevance weight 0.5, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.0915,
+      "trigonometry_map": 0.1568
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline plain",
+      "biology_map": 0.0909,
+      "trigonometry_map": 0.1739
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers dropped, generic verbs dropped, pipeline improved",
+      "biology_map": 0.0888,
+      "trigonometry_map": 0.1756
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline plain",
+      "biology_map": 0.0875,
+      "trigonometry_map": 0.1645
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline plain",
+      "biology_map": 0.0872,
+      "trigonometry_map": 0.1432
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers dropped, generic verbs kept, pipeline improved",
+      "biology_map": 0.0863,
+      "trigonometry_map": 0.1703
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers kept, generic verbs dropped, pipeline improved",
+      "biology_map": 0.0845,
+      "trigonometry_map": 0.1552
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers kept, generic verbs kept, pipeline plain",
+      "biology_map": 0.0842,
+      "trigonometry_map": 0.1365
+    },
+    {
+      "setting": "band_k, relevance weight 0.25, numbers kept, generic verbs kept, pipeline improved",
+      "biology_map": 0.0823,
+      "trigonometry_map": 0.1504
+    }
+  ]
+}

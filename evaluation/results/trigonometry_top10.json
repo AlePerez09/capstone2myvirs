@@ -1,0 +1,2788 @@
+[
+ {
+  "lesson": "trig-647",
+  "title": "Basic Functions",
+  "terms": [
+   "dependent variable",
+   "domain",
+   "function",
+   "independent variable",
+   "periodic function",
+   "range",
+   "relation"
+  ],
+  "top10": {
+   "frequency_only": [
+    "function",
+    "two",
+    "one",
+    "graph",
+    "point",
+    "three",
+    "five",
+    "number",
+    "example",
+    "value"
+   ],
+   "combined": [
+    "function",
+    "graph",
+    "two",
+    "one",
+    "three",
+    "number",
+    "value",
+    "equation",
+    "five",
+    "model"
+   ],
+   "relevance_only": [
+    "function",
+    "graph",
+    "two",
+    "one",
+    "three",
+    "number",
+    "value",
+    "equation",
+    "five",
+    "model"
+   ],
+   "count_only": [
+    "function",
+    "two",
+    "one",
+    "graph",
+    "point",
+    "three",
+    "five",
+    "number",
+    "example",
+    "value"
+   ],
+   "combined_improved": [
+    "function",
+    "graph",
+    "two",
+    "one",
+    "point",
+    "number",
+    "three",
+    "five",
+    "value",
+    "equation"
+   ],
+   "combined_weighted": [
+    "function",
+    "graph",
+    "two",
+    "one",
+    "point",
+    "three",
+    "number",
+    "five",
+    "value",
+    "equation"
+   ],
+   "combined_verbs": [
+    "function",
+    "graph",
+    "two",
+    "one",
+    "three",
+    "number",
+    "equation",
+    "value",
+    "five",
+    "model"
+   ],
+   "combined_abbrev": [
+    "function",
+    "graph",
+    "two",
+    "one",
+    "three",
+    "number",
+    "value",
+    "equation",
+    "five",
+    "model"
+   ]
+  },
+  "gold_first_words": [
+   "dependent",
+   "domain",
+   "function",
+   "independent",
+   "periodic",
+   "range",
+   "relation"
+  ],
+  "gold_all_words": [
+   "dependent",
+   "domain",
+   "function",
+   "independent",
+   "periodic",
+   "range",
+   "relation",
+   "varie"
+  ]
+ },
+ {
+  "lesson": "trig-920",
+  "title": "Angles in Triangles",
+  "terms": [
+   "acute angle",
+   "alternate interior angles",
+   "congruent",
+   "acute triangle",
+   "isosceles triangle",
+   "equilateral triangle",
+   "scalene triangle",
+   "leg",
+   "hypotenuse",
+   "obtuse angle",
+   "parallel lines",
+   "right angle",
+   "transversal"
+  ],
+  "top10": {
+   "frequency_only": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "similar",
+    "measure",
+    "three",
+    "five",
+    "twenty",
+    "right"
+   ],
+   "combined": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "measure",
+    "three",
+    "twenty",
+    "similar",
+    "right",
+    "eight"
+   ],
+   "relevance_only": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "measure",
+    "three",
+    "twenty",
+    "similar",
+    "right",
+    "eight"
+   ],
+   "count_only": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "similar",
+    "measure",
+    "three",
+    "five",
+    "twenty",
+    "right"
+   ],
+   "combined_improved": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "measure",
+    "three",
+    "similar",
+    "twenty",
+    "right",
+    "five"
+   ],
+   "combined_weighted": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "measure",
+    "three",
+    "similar",
+    "twenty",
+    "right",
+    "five"
+   ],
+   "combined_verbs": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "three",
+    "measure",
+    "twenty",
+    "similar",
+    "right",
+    "eight"
+   ],
+   "combined_abbrev": [
+    "triangle",
+    "angle",
+    "one",
+    "two",
+    "measure",
+    "three",
+    "twenty",
+    "similar",
+    "right",
+    "eight"
+   ]
+  },
+  "gold_first_words": [
+   "acute",
+   "alternate",
+   "congruent",
+   "equilateral",
+   "hypotenuse",
+   "isoscele",
+   "leg",
+   "obtuse",
+   "parallel",
+   "right",
+   "scalene"
+  ],
+  "gold_all_words": [
+   "acute",
+   "alternate",
+   "angle",
+   "congruent",
+   "equilateral",
+   "hypotenuse",
+   "interior",
+   "isoscele",
+   "leg",
+   "line",
+   "obtuse",
+   "parallel",
+   "right",
+   "scalene",
+   "triangle"
+  ]
+ },
+ {
+  "lesson": "trig-1248",
+  "title": "Measuring Rotation",
+  "terms": [
+   "acute angle",
+   "coterminal angles",
+   "minutes",
+   "obtuse angle",
+   "protractor",
+   "quadrantal angle",
+   "right angle",
+   "seconds",
+   "standard position",
+   "straight angle"
+  ],
+  "top10": {
+   "frequency_only": [
+    "angle",
+    "rotate",
+    "one",
+    "degree",
+    "five",
+    "measure",
+    "three",
+    "wheel",
+    "two",
+    "thirty"
+   ],
+   "combined": [
+    "angle",
+    "rotate",
+    "wheel",
+    "measure",
+    "one",
+    "three",
+    "degree",
+    "thirty",
+    "two",
+    "terminal"
+   ],
+   "relevance_only": [
+    "angle",
+    "rotate",
+    "wheel",
+    "hundred",
+    "measure",
+    "one",
+    "three",
+    "degree",
+    "thirty",
+    "two"
+   ],
+   "count_only": [
+    "angle",
+    "hundred",
+    "rotate",
+    "one",
+    "degree",
+    "five",
+    "measure",
+    "three",
+    "wheel",
+    "two"
+   ],
+   "combined_improved": [
+    "angle",
+    "rotate",
+    "measure",
+    "one",
+    "wheel",
+    "degree",
+    "three",
+    "two",
+    "five",
+    "terminal"
+   ],
+   "combined_weighted": [
+    "angle",
+    "rotate",
+    "measure",
+    "one",
+    "wheel",
+    "degree",
+    "three",
+    "two",
+    "five",
+    "terminal"
+   ],
+   "combined_verbs": [
+    "angle",
+    "rotate",
+    "wheel",
+    "measure",
+    "one",
+    "three",
+    "degree",
+    "two",
+    "thirty",
+    "terminal"
+   ],
+   "combined_abbrev": [
+    "angle",
+    "rotate",
+    "wheel",
+    "measure",
+    "one",
+    "three",
+    "degree",
+    "thirty",
+    "two",
+    "terminal"
+   ]
+  },
+  "gold_first_words": [
+   "acute",
+   "coterminal",
+   "minute",
+   "obtuse",
+   "protractor",
+   "quadrantal",
+   "right",
+   "second",
+   "standard",
+   "straight"
+  ],
+  "gold_all_words": [
+   "acute",
+   "angle",
+   "coterminal",
+   "minute",
+   "obtuse",
+   "position",
+   "protractor",
+   "quadrantal",
+   "right",
+   "second",
+   "standard",
+   "straight"
+  ]
+ },
+ {
+  "lesson": "trig-1552",
+  "title": "Defining Trigonometric Functions",
+  "terms": [
+   "adjacent",
+   "hypotenuse",
+   "leg",
+   "pythagorean theorem",
+   "radius",
+   "unit circle"
+  ],
+  "top10": {
+   "frequency_only": [
+    "angle",
+    "function",
+    "triangle",
+    "value",
+    "one",
+    "circle",
+    "define",
+    "find",
+    "two",
+    "use"
+   ],
+   "combined": [
+    "angle",
+    "function",
+    "triangle",
+    "one",
+    "two",
+    "forty",
+    "circle",
+    "value",
+    "find",
+    "define"
+   ],
+   "relevance_only": [
+    "angle",
+    "function",
+    "triangle",
+    "one",
+    "two",
+    "forty",
+    "circle",
+    "value",
+    "find",
+    "define"
+   ],
+   "count_only": [
+    "angle",
+    "function",
+    "triangle",
+    "value",
+    "one",
+    "circle",
+    "define",
+    "find",
+    "two",
+    "use"
+   ],
+   "combined_improved": [
+    "angle",
+    "function",
+    "triangle",
+    "one",
+    "value",
+    "two",
+    "circle",
+    "terminal",
+    "define",
+    "forty"
+   ],
+   "combined_weighted": [
+    "angle",
+    "function",
+    "triangle",
+    "one",
+    "value",
+    "two",
+    "circle",
+    "terminal",
+    "find",
+    "define"
+   ],
+   "combined_verbs": [
+    "angle",
+    "function",
+    "triangle",
+    "one",
+    "two",
+    "forty",
+    "value",
+    "circle",
+    "define",
+    "terminal"
+   ],
+   "combined_abbrev": [
+    "angle",
+    "function",
+    "triangle",
+    "one",
+    "two",
+    "forty",
+    "sine",
+    "circle",
+    "value",
+    "define"
+   ]
+  },
+  "gold_first_words": [
+   "adjacent",
+   "hypotenuse",
+   "leg",
+   "pythagorean",
+   "radius",
+   "unit"
+  ],
+  "gold_all_words": [
+   "adjacent",
+   "circle",
+   "hypotenuse",
+   "leg",
+   "pythagorean",
+   "radius",
+   "theorem",
+   "unit"
+  ]
+ },
+ {
+  "lesson": "trig-2151",
+  "title": "Trigonometric Functions of Any Angle",
+  "terms": [
+   "coterminal angles",
+   "reference angle"
+  ],
+  "top10": {
+   "frequency_only": [
+    "one",
+    "angle",
+    "value",
+    "zero",
+    "point",
+    "two",
+    "five",
+    "three",
+    "seven",
+    "six"
+   ],
+   "combined": [
+    "angle",
+    "value",
+    "one",
+    "function",
+    "find",
+    "three",
+    "two",
+    "thirty",
+    "trig",
+    "reference"
+   ],
+   "relevance_only": [
+    "angle",
+    "value",
+    "one",
+    "function",
+    "hundred",
+    "find",
+    "three",
+    "two",
+    "thirty",
+    "trig"
+   ],
+   "count_only": [
+    "one",
+    "angle",
+    "hundred",
+    "value",
+    "zero",
+    "point",
+    "two",
+    "five",
+    "three",
+    "sixty"
+   ],
+   "combined_improved": [
+    "angle",
+    "value",
+    "one",
+    "function",
+    "two",
+    "trig",
+    "three",
+    "five",
+    "point",
+    "reference"
+   ],
+   "combined_weighted": [
+    "angle",
+    "value",
+    "one",
+    "function",
+    "find",
+    "two",
+    "three",
+    "trig",
+    "point",
+    "five"
+   ],
+   "combined_verbs": [
+    "angle",
+    "value",
+    "one",
+    "function",
+    "two",
+    "trig",
+    "thirty",
+    "calculator",
+    "reference",
+    "three"
+   ],
+   "combined_abbrev": [
+    "angle",
+    "value",
+    "one",
+    "function",
+    "find",
+    "three",
+    "two",
+    "thirty",
+    "trig",
+    "reference"
+   ]
+  },
+  "gold_first_words": [
+   "coterminal",
+   "reference"
+  ],
+  "gold_all_words": [
+   "angle",
+   "coterminal",
+   "reference"
+  ]
+ },
+ {
+  "lesson": "trig-2487",
+  "title": "Relating Trigonometric Functions",
+  "terms": [
+   "domain",
+   "identity",
+   "quotient",
+   "range",
+   "reciprocal"
+  ],
+  "top10": {
+   "frequency_only": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "one",
+    "range",
+    "reciprocal",
+    "sine",
+    "two",
+    "quadrant"
+   ],
+   "combined": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "two",
+    "one",
+    "reciprocal",
+    "range",
+    "define",
+    "three"
+   ],
+   "relevance_only": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "two",
+    "one",
+    "reciprocal",
+    "range",
+    "define",
+    "three"
+   ],
+   "count_only": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "one",
+    "range",
+    "reciprocal",
+    "sine",
+    "two",
+    "hundred"
+   ],
+   "combined_improved": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "one",
+    "sine",
+    "reciprocal",
+    "range",
+    "two",
+    "trig"
+   ],
+   "combined_weighted": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "one",
+    "two",
+    "reciprocal",
+    "range",
+    "sine",
+    "trig"
+   ],
+   "combined_verbs": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "two",
+    "one",
+    "range",
+    "reciprocal",
+    "define",
+    "three"
+   ],
+   "combined_abbrev": [
+    "function",
+    "value",
+    "identity",
+    "angle",
+    "two",
+    "one",
+    "sine",
+    "reciprocal",
+    "range",
+    "define"
+   ]
+  },
+  "gold_first_words": [
+   "domain",
+   "identity",
+   "quotient",
+   "range",
+   "reciprocal"
+  ],
+  "gold_all_words": [
+   "domain",
+   "identity",
+   "quotient",
+   "range",
+   "reciprocal"
+  ]
+ },
+ {
+  "lesson": "trig-2735",
+  "title": "Applications of Right Triangle Trigonometry",
+  "terms": [
+   "angle of depression",
+   "angle of elevation",
+   "bearings",
+   "clinometer",
+   "theodolite",
+   "nautical mile"
+  ],
+  "top10": {
+   "frequency_only": [
+    "angle",
+    "triangle",
+    "use",
+    "right",
+    "find",
+    "two",
+    "measure",
+    "solve",
+    "distance",
+    "three"
+   ],
+   "combined": [
+    "angle",
+    "triangle",
+    "measure",
+    "right",
+    "find",
+    "solve",
+    "distance",
+    "one",
+    "length",
+    "two"
+   ],
+   "relevance_only": [
+    "angle",
+    "triangle",
+    "measure",
+    "right",
+    "find",
+    "solve",
+    "distance",
+    "one",
+    "length",
+    "two"
+   ],
+   "count_only": [
+    "angle",
+    "triangle",
+    "use",
+    "right",
+    "find",
+    "two",
+    "measure",
+    "solve",
+    "distance",
+    "three"
+   ],
+   "combined_improved": [
+    "angle",
+    "triangle",
+    "right",
+    "measure",
+    "distance",
+    "length",
+    "solve",
+    "two",
+    "three",
+    "one"
+   ],
+   "combined_weighted": [
+    "angle",
+    "triangle",
+    "right",
+    "find",
+    "measure",
+    "distance",
+    "solve",
+    "two",
+    "length",
+    "three"
+   ],
+   "combined_verbs": [
+    "angle",
+    "triangle",
+    "measure",
+    "right",
+    "solve",
+    "distance",
+    "one",
+    "length",
+    "two",
+    "three"
+   ],
+   "combined_abbrev": [
+    "angle",
+    "triangle",
+    "measure",
+    "right",
+    "find",
+    "solve",
+    "distance",
+    "one",
+    "length",
+    "two"
+   ]
+  },
+  "gold_first_words": [
+   "angle",
+   "bearing",
+   "nautical",
+   "theodolite"
+  ],
+  "gold_all_words": [
+   "angle",
+   "bearing",
+   "depression",
+   "elevation",
+   "mile",
+   "nautical",
+   "theodolite"
+  ]
+ },
+ {
+  "lesson": "trig-6433",
+  "title": "General Definitions of Inverse Trigonometric Functions",
+  "terms": [
+   "one-to-one function",
+   "arc cosine",
+   "arc sine",
+   "arc tangent"
+  ],
+  "top10": {
+   "frequency_only": [
+    "function",
+    "one",
+    "inverse",
+    "angle",
+    "relate",
+    "graph",
+    "two",
+    "line",
+    "trigonometric",
+    "foot"
+   ],
+   "combined": [
+    "one",
+    "function",
+    "angle",
+    "inverse",
+    "two",
+    "foot",
+    "relate",
+    "graph",
+    "point",
+    "trigonometric"
+   ],
+   "relevance_only": [
+    "one",
+    "function",
+    "angle",
+    "inverse",
+    "two",
+    "foot",
+    "relate",
+    "graph",
+    "point",
+    "trigonometric"
+   ],
+   "count_only": [
+    "function",
+    "one",
+    "inverse",
+    "angle",
+    "relate",
+    "graph",
+    "two",
+    "line",
+    "trigonometric",
+    "foot"
+   ],
+   "combined_improved": [
+    "function",
+    "one",
+    "inverse",
+    "angle",
+    "relate",
+    "two",
+    "foot",
+    "graph",
+    "trigonometric",
+    "line"
+   ],
+   "combined_weighted": [
+    "function",
+    "one",
+    "inverse",
+    "angle",
+    "relate",
+    "two",
+    "foot",
+    "graph",
+    "trigonometric",
+    "line"
+   ],
+   "combined_verbs": [
+    "function",
+    "one",
+    "angle",
+    "inverse",
+    "two",
+    "foot",
+    "trigonometric",
+    "graph",
+    "relate",
+    "point"
+   ],
+   "combined_abbrev": [
+    "one",
+    "function",
+    "angle",
+    "inverse",
+    "two",
+    "foot",
+    "graph",
+    "relate",
+    "point",
+    "trigonometric"
+   ]
+  },
+  "gold_first_words": [
+   "arc",
+   "function"
+  ],
+  "gold_all_words": [
+   "arc",
+   "cosine",
+   "function",
+   "one",
+   "sine",
+   "tangent"
+  ]
+ },
+ {
+  "lesson": "trig-6933",
+  "title": "Exact Values of Special Inverse Circular Functions",
+  "terms": [
+   "unit circle"
+  ],
+  "top10": {
+   "frequency_only": [
+    "circle",
+    "unit",
+    "value",
+    "special",
+    "use",
+    "function",
+    "inverse",
+    "triangle",
+    "exact",
+    "one"
+   ],
+   "combined": [
+    "value",
+    "function",
+    "inverse",
+    "special",
+    "exact",
+    "use",
+    "circle",
+    "three",
+    "triangle",
+    "evaluate"
+   ],
+   "relevance_only": [
+    "value",
+    "function",
+    "inverse",
+    "special",
+    "exact",
+    "use",
+    "hundred",
+    "circle",
+    "three",
+    "triangle"
+   ],
+   "count_only": [
+    "circle",
+    "unit",
+    "value",
+    "special",
+    "use",
+    "function",
+    "inverse",
+    "triangle",
+    "exact",
+    "hundred"
+   ],
+   "combined_improved": [
+    "value",
+    "circle",
+    "function",
+    "inverse",
+    "exact",
+    "special",
+    "triangle",
+    "evaluate",
+    "three",
+    "radian"
+   ],
+   "combined_weighted": [
+    "value",
+    "circle",
+    "inverse",
+    "function",
+    "exact",
+    "special",
+    "use",
+    "triangle",
+    "three",
+    "evaluate"
+   ],
+   "combined_verbs": [
+    "value",
+    "function",
+    "inverse",
+    "exact",
+    "special",
+    "circle",
+    "triangle",
+    "three",
+    "evaluate",
+    "reference"
+   ],
+   "combined_abbrev": [
+    "value",
+    "function",
+    "inverse",
+    "exact",
+    "special",
+    "use",
+    "circle",
+    "three",
+    "triangle",
+    "evaluate"
+   ]
+  },
+  "gold_first_words": [
+   "unit"
+  ],
+  "gold_all_words": [
+   "circle",
+   "unit"
+  ]
+ },
+ {
+  "lesson": "trig-7122",
+  "title": "inside function)",
+  "terms": [
+   "inverse function",
+   "invertible"
+  ],
+  "top10": {
+   "frequency_only": [
+    "one",
+    "function",
+    "five",
+    "inverse",
+    "graph",
+    "two",
+    "point",
+    "thirty",
+    "three",
+    "zero"
+   ],
+   "combined": [
+    "function",
+    "one",
+    "inverse",
+    "three",
+    "graph",
+    "five",
+    "value",
+    "two",
+    "twenty",
+    "point"
+   ],
+   "relevance_only": [
+    "function",
+    "one",
+    "inverse",
+    "three",
+    "graph",
+    "five",
+    "value",
+    "two",
+    "hundred",
+    "twenty"
+   ],
+   "count_only": [
+    "one",
+    "function",
+    "five",
+    "inverse",
+    "graph",
+    "two",
+    "point",
+    "thirty",
+    "three",
+    "zero"
+   ],
+   "combined_improved": [
+    "one",
+    "function",
+    "inverse",
+    "five",
+    "graph",
+    "two",
+    "value",
+    "point",
+    "three",
+    "thirty"
+   ],
+   "combined_weighted": [
+    "one",
+    "function",
+    "inverse",
+    "five",
+    "graph",
+    "two",
+    "three",
+    "point",
+    "value",
+    "thirty"
+   ],
+   "combined_verbs": [
+    "function",
+    "one",
+    "inverse",
+    "graph",
+    "three",
+    "five",
+    "value",
+    "two",
+    "twenty",
+    "thirty"
+   ],
+   "combined_abbrev": [
+    "function",
+    "one",
+    "inverse",
+    "three",
+    "graph",
+    "five",
+    "value",
+    "two",
+    "twenty",
+    "point"
+   ]
+  },
+  "gold_first_words": [
+   "inverse",
+   "invertible"
+  ],
+  "gold_all_words": [
+   "function",
+   "inverse",
+   "invertible"
+  ]
+ },
+ {
+  "lesson": "trig-7396",
+  "title": "Derive Inverse Cofunction Properties (short)",
+  "terms": [
+   "cofunction",
+   "complementary angles"
+  ],
+  "top10": {
+   "frequency_only": [
+    "identity",
+    "function",
+    "two",
+    "one",
+    "angle",
+    "graph",
+    "three",
+    "trigonometric",
+    "derive",
+    "respect"
+   ],
+   "combined": [
+    "identity",
+    "function",
+    "two",
+    "one",
+    "graph",
+    "angle",
+    "right",
+    "three",
+    "point",
+    "sin"
+   ],
+   "relevance_only": [
+    "cofunction",
+    "identity",
+    "function",
+    "two",
+    "one",
+    "graph",
+    "angle",
+    "right",
+    "three",
+    "point"
+   ],
+   "count_only": [
+    "cofunction",
+    "identity",
+    "function",
+    "two",
+    "one",
+    "angle",
+    "graph",
+    "three",
+    "hundred",
+    "trigonometric"
+   ],
+   "combined_improved": [
+    "identity",
+    "function",
+    "graph",
+    "one",
+    "two",
+    "angle",
+    "sine",
+    "three",
+    "right",
+    "point"
+   ],
+   "combined_weighted": [
+    "identity",
+    "function",
+    "graph",
+    "two",
+    "one",
+    "angle",
+    "three",
+    "sin",
+    "right",
+    "point"
+   ],
+   "combined_verbs": [
+    "identity",
+    "function",
+    "two",
+    "one",
+    "graph",
+    "angle",
+    "right",
+    "three",
+    "point",
+    "sin"
+   ],
+   "combined_abbrev": [
+    "identity",
+    "function",
+    "two",
+    "one",
+    "graph",
+    "sine",
+    "angle",
+    "right",
+    "three",
+    "point"
+   ]
+  },
+  "gold_first_words": [
+   "cofunction",
+   "complementary"
+  ],
+  "gold_all_words": [
+   "angle",
+   "cofunction",
+   "complementary"
+  ]
+ },
+ {
+  "lesson": "trig-8093",
+  "title": "Solve Trig Equations (Factoring)",
+  "terms": [
+   "principal value"
+  ],
+  "top10": {
+   "frequency_only": [
+    "sin",
+    "one",
+    "three",
+    "two",
+    "zero",
+    "equation",
+    "solve",
+    "tan",
+    "trigonometric",
+    "value"
+   ],
+   "combined": [
+    "one",
+    "solve",
+    "equation",
+    "trigonometric",
+    "zero",
+    "three",
+    "factor",
+    "function",
+    "variable",
+    "sin"
+   ],
+   "relevance_only": [
+    "one",
+    "solve",
+    "equation",
+    "trigonometric",
+    "zero",
+    "three",
+    "factor",
+    "function",
+    "variable",
+    "sin"
+   ],
+   "count_only": [
+    "sin",
+    "one",
+    "three",
+    "two",
+    "zero",
+    "equation",
+    "solve",
+    "tan",
+    "trigonometric",
+    "value"
+   ],
+   "combined_improved": [
+    "one",
+    "sine",
+    "equation",
+    "three",
+    "solve",
+    "two",
+    "zero",
+    "trigonometric",
+    "value",
+    "factor"
+   ],
+   "combined_weighted": [
+    "equation",
+    "one",
+    "three",
+    "sin",
+    "solve",
+    "trigonometric",
+    "two",
+    "zero",
+    "value",
+    "function"
+   ],
+   "combined_verbs": [
+    "one",
+    "solve",
+    "equation",
+    "trigonometric",
+    "zero",
+    "three",
+    "factor",
+    "function",
+    "variable",
+    "sin"
+   ],
+   "combined_abbrev": [
+    "one",
+    "solve",
+    "equation",
+    "trigonometric",
+    "zero",
+    "sine",
+    "three",
+    "factor",
+    "variable",
+    "value"
+   ]
+  },
+  "gold_first_words": [
+   "principal"
+  ],
+  "gold_all_words": [
+   "principal",
+   "value"
+  ]
+ },
+ {
+  "lesson": "trig-8640",
+  "title": "Solve equations (with double angles)",
+  "terms": [
+   "double angle identity",
+   "identity"
+  ],
+  "top10": {
+   "frequency_only": [
+    "two",
+    "cos",
+    "sin",
+    "one",
+    "angle",
+    "formula",
+    "zero",
+    "double",
+    "four",
+    "equation"
+   ],
+   "combined": [
+    "formula",
+    "angle",
+    "two",
+    "equation",
+    "sin",
+    "one",
+    "double",
+    "solve",
+    "trigonometric",
+    "zero"
+   ],
+   "relevance_only": [
+    "formula",
+    "angle",
+    "two",
+    "equation",
+    "sin",
+    "one",
+    "double",
+    "solve",
+    "trigonometric",
+    "zero"
+   ],
+   "count_only": [
+    "two",
+    "cos",
+    "sin",
+    "one",
+    "angle",
+    "formula",
+    "zero",
+    "double",
+    "four",
+    "equation"
+   ],
+   "combined_improved": [
+    "two",
+    "sine",
+    "one",
+    "formula",
+    "angle",
+    "equation",
+    "double",
+    "zero",
+    "solve",
+    "four"
+   ],
+   "combined_weighted": [
+    "two",
+    "sin",
+    "formula",
+    "one",
+    "angle",
+    "equation",
+    "double",
+    "zero",
+    "solve",
+    "trigonometric"
+   ],
+   "combined_verbs": [
+    "formula",
+    "angle",
+    "two",
+    "equation",
+    "sin",
+    "one",
+    "double",
+    "solve",
+    "trigonometric",
+    "zero"
+   ],
+   "combined_abbrev": [
+    "formula",
+    "two",
+    "sine",
+    "equation",
+    "angle",
+    "one",
+    "double",
+    "solve",
+    "trigonometric",
+    "zero"
+   ]
+  },
+  "gold_first_words": [
+   "double",
+   "identity"
+  ],
+  "gold_all_words": [
+   "angle",
+   "double",
+   "identity"
+  ]
+ },
+ {
+  "lesson": "trig-9606",
+  "title": "The Law of Cosines",
+  "terms": [
+   "law of cosines",
+   "oblique triangle"
+  ],
+  "top10": {
+   "frequency_only": [
+    "two",
+    "four",
+    "point",
+    "three",
+    "one",
+    "five",
+    "seven",
+    "law",
+    "cosine",
+    "eight"
+   ],
+   "combined": [
+    "three",
+    "point",
+    "two",
+    "angle",
+    "one",
+    "four",
+    "triangle",
+    "use",
+    "five",
+    "find"
+   ],
+   "relevance_only": [
+    "three",
+    "point",
+    "two",
+    "angle",
+    "hundred",
+    "one",
+    "four",
+    "triangle",
+    "use",
+    "five"
+   ],
+   "count_only": [
+    "two",
+    "hundred",
+    "four",
+    "point",
+    "three",
+    "one",
+    "five",
+    "seven",
+    "law",
+    "cosine"
+   ],
+   "combined_improved": [
+    "two",
+    "three",
+    "point",
+    "four",
+    "one",
+    "angle",
+    "triangle",
+    "five",
+    "eight",
+    "seven"
+   ],
+   "combined_weighted": [
+    "two",
+    "three",
+    "point",
+    "four",
+    "one",
+    "angle",
+    "triangle",
+    "five",
+    "use",
+    "eight"
+   ],
+   "combined_verbs": [
+    "three",
+    "point",
+    "two",
+    "angle",
+    "four",
+    "one",
+    "triangle",
+    "five",
+    "eight",
+    "seven"
+   ],
+   "combined_abbrev": [
+    "three",
+    "point",
+    "two",
+    "angle",
+    "one",
+    "four",
+    "triangle",
+    "use",
+    "five",
+    "find"
+   ]
+  },
+  "gold_first_words": [
+   "law",
+   "oblique"
+  ],
+  "gold_all_words": [
+   "cosine",
+   "law",
+   "oblique",
+   "triangle"
+  ]
+ },
+ {
+  "lesson": "trig-9889",
+  "title": "Area of a Triangle",
+  "terms": [
+   "heron's formula"
+  ],
+  "top10": {
+   "frequency_only": [
+    "two",
+    "point",
+    "area",
+    "one",
+    "triangle",
+    "four",
+    "three",
+    "six",
+    "know",
+    "find"
+   ],
+   "combined": [
+    "area",
+    "triangle",
+    "two",
+    "one",
+    "need",
+    "point",
+    "three",
+    "four",
+    "find",
+    "formula"
+   ],
+   "relevance_only": [
+    "area",
+    "triangle",
+    "two",
+    "one",
+    "need",
+    "point",
+    "three",
+    "four",
+    "find",
+    "formula"
+   ],
+   "count_only": [
+    "two",
+    "point",
+    "area",
+    "one",
+    "triangle",
+    "four",
+    "three",
+    "six",
+    "hundred",
+    "know"
+   ],
+   "combined_improved": [
+    "area",
+    "point",
+    "two",
+    "triangle",
+    "one",
+    "four",
+    "formula",
+    "three",
+    "need",
+    "six"
+   ],
+   "combined_weighted": [
+    "area",
+    "point",
+    "two",
+    "triangle",
+    "one",
+    "four",
+    "three",
+    "need",
+    "formula",
+    "find"
+   ],
+   "combined_verbs": [
+    "area",
+    "triangle",
+    "two",
+    "need",
+    "point",
+    "one",
+    "three",
+    "four",
+    "formula",
+    "square"
+   ],
+   "combined_abbrev": [
+    "area",
+    "triangle",
+    "two",
+    "one",
+    "need",
+    "point",
+    "three",
+    "four",
+    "find",
+    "formula"
+   ]
+  },
+  "gold_all_words": [
+   "formula"
+  ]
+ },
+ {
+  "lesson": "trig-10300",
+  "title": "The Law of Sines",
+  "terms": [
+   "included angle",
+   "included side",
+   "law of sines",
+   "non-included angle",
+   "non-included side"
+  ],
+  "top10": {
+   "frequency_only": [
+    "two",
+    "sin",
+    "law",
+    "one",
+    "angle",
+    "know",
+    "point",
+    "use",
+    "triangle",
+    "find"
+   ],
+   "combined": [
+    "two",
+    "one",
+    "know",
+    "find",
+    "three",
+    "use",
+    "angle",
+    "four",
+    "point",
+    "case"
+   ],
+   "relevance_only": [
+    "two",
+    "one",
+    "know",
+    "find",
+    "three",
+    "hundred",
+    "use",
+    "angle",
+    "four",
+    "point"
+   ],
+   "count_only": [
+    "two",
+    "sin",
+    "law",
+    "one",
+    "hundred",
+    "angle",
+    "know",
+    "point",
+    "use",
+    "triangle"
+   ],
+   "combined_improved": [
+    "two",
+    "one",
+    "angle",
+    "three",
+    "point",
+    "four",
+    "triangle",
+    "sine",
+    "case",
+    "eight"
+   ],
+   "combined_weighted": [
+    "two",
+    "one",
+    "know",
+    "angle",
+    "point",
+    "three",
+    "find",
+    "use",
+    "four",
+    "triangle"
+   ],
+   "combined_verbs": [
+    "two",
+    "one",
+    "three",
+    "angle",
+    "four",
+    "point",
+    "case",
+    "seven",
+    "triangle",
+    "form"
+   ],
+   "combined_abbrev": [
+    "two",
+    "one",
+    "know",
+    "find",
+    "three",
+    "use",
+    "angle",
+    "four",
+    "point",
+    "seven"
+   ]
+  },
+  "gold_first_words": [
+   "include",
+   "law"
+  ],
+  "gold_all_words": [
+   "angle",
+   "include",
+   "law",
+   "non",
+   "side",
+   "sin"
+  ]
+ },
+ {
+  "lesson": "trig-10676",
+  "title": "The Ambiguous Case",
+  "terms": [
+   "ambiguous case"
+  ],
+  "top10": {
+   "frequency_only": [
+    "two",
+    "one",
+    "point",
+    "solution",
+    "eight",
+    "angle",
+    "case",
+    "law",
+    "triangle",
+    "seven"
+   ],
+   "combined": [
+    "two",
+    "one",
+    "point",
+    "angle",
+    "three",
+    "solution",
+    "triangle",
+    "case",
+    "find",
+    "four"
+   ],
+   "relevance_only": [
+    "two",
+    "one",
+    "point",
+    "angle",
+    "three",
+    "solution",
+    "triangle",
+    "case",
+    "find",
+    "four"
+   ],
+   "count_only": [
+    "two",
+    "one",
+    "point",
+    "solution",
+    "eight",
+    "hundred",
+    "angle",
+    "case",
+    "law",
+    "triangle"
+   ],
+   "combined_improved": [
+    "two",
+    "one",
+    "point",
+    "angle",
+    "solution",
+    "eight",
+    "three",
+    "triangle",
+    "case",
+    "four"
+   ],
+   "combined_weighted": [
+    "two",
+    "one",
+    "point",
+    "angle",
+    "solution",
+    "eight",
+    "three",
+    "case",
+    "triangle",
+    "four"
+   ],
+   "combined_verbs": [
+    "two",
+    "one",
+    "angle",
+    "point",
+    "three",
+    "triangle",
+    "solution",
+    "case",
+    "four",
+    "eight"
+   ],
+   "combined_abbrev": [
+    "two",
+    "one",
+    "point",
+    "angle",
+    "three",
+    "solution",
+    "triangle",
+    "case",
+    "find",
+    "four"
+   ]
+  },
+  "gold_first_words": [
+   "ambiguous"
+  ],
+  "gold_all_words": [
+   "ambiguous",
+   "case"
+  ]
+ },
+ {
+  "lesson": "trig-11447",
+  "title": "Vectors",
+  "terms": [
+   "directed line segment",
+   "displacement",
+   "equal vectors",
+   "force",
+   "initial point",
+   "magnitude",
+   "negative vector",
+   "resultant",
+   "standard position",
+   "terminal point",
+   "vector",
+   "velocity"
+  ],
+  "top10": {
+   "frequency_only": [
+    "point",
+    "vector",
+    "two",
+    "direct",
+    "magnitude",
+    "six",
+    "one",
+    "three",
+    "twenty",
+    "find"
+   ],
+   "combined": [
+    "vector",
+    "direct",
+    "two",
+    "point",
+    "one",
+    "magnitude",
+    "use",
+    "twenty",
+    "find",
+    "four"
+   ],
+   "relevance_only": [
+    "vector",
+    "direct",
+    "two",
+    "point",
+    "one",
+    "magnitude",
+    "use",
+    "twenty",
+    "hundred",
+    "find"
+   ],
+   "count_only": [
+    "point",
+    "vector",
+    "two",
+    "direct",
+    "hundred",
+    "magnitude",
+    "six",
+    "one",
+    "three",
+    "twenty"
+   ],
+   "combined_improved": [
+    "vector",
+    "point",
+    "direct",
+    "two",
+    "magnitude",
+    "one",
+    "twenty",
+    "three",
+    "six",
+    "four"
+   ],
+   "combined_weighted": [
+    "vector",
+    "point",
+    "two",
+    "direct",
+    "magnitude",
+    "one",
+    "find",
+    "twenty",
+    "use",
+    "three"
+   ],
+   "combined_verbs": [
+    "vector",
+    "direct",
+    "two",
+    "point",
+    "one",
+    "magnitude",
+    "twenty",
+    "four",
+    "force",
+    "three"
+   ],
+   "combined_abbrev": [
+    "vector",
+    "direct",
+    "two",
+    "point",
+    "one",
+    "magnitude",
+    "use",
+    "twenty",
+    "find",
+    "four"
+   ]
+  },
+  "gold_first_words": [
+   "direct",
+   "displacement",
+   "equal",
+   "force",
+   "initial",
+   "magnitude",
+   "negative",
+   "resultant",
+   "standard",
+   "terminal",
+   "vector",
+   "velocity"
+  ],
+  "gold_all_words": [
+   "direct",
+   "displacement",
+   "equal",
+   "force",
+   "initial",
+   "line",
+   "magnitude",
+   "negative",
+   "point",
+   "position",
+   "resultant",
+   "segment",
+   "standard",
+   "terminal",
+   "vector",
+   "velocity"
+  ]
+ },
+ {
+  "lesson": "trig-11956",
+  "title": "Component Vectors",
+  "terms": [
+   "component vectors",
+   "scalar",
+   "unit vector"
+  ],
+  "top10": {
+   "frequency_only": [
+    "vector",
+    "two",
+    "point",
+    "direct",
+    "four",
+    "one",
+    "magnitude",
+    "three",
+    "angle",
+    "seven"
+   ],
+   "combined": [
+    "vector",
+    "direct",
+    "one",
+    "two",
+    "three",
+    "point",
+    "component",
+    "magnitude",
+    "angle",
+    "find"
+   ],
+   "relevance_only": [
+    "vector",
+    "direct",
+    "one",
+    "two",
+    "three",
+    "point",
+    "component",
+    "magnitude",
+    "angle",
+    "find"
+   ],
+   "count_only": [
+    "vector",
+    "two",
+    "point",
+    "direct",
+    "four",
+    "hundred",
+    "one",
+    "magnitude",
+    "three",
+    "angle"
+   ],
+   "combined_improved": [
+    "vector",
+    "two",
+    "direct",
+    "point",
+    "one",
+    "three",
+    "four",
+    "magnitude",
+    "angle",
+    "component"
+   ],
+   "combined_weighted": [
+    "vector",
+    "two",
+    "direct",
+    "point",
+    "one",
+    "three",
+    "magnitude",
+    "four",
+    "angle",
+    "component"
+   ],
+   "combined_verbs": [
+    "vector",
+    "direct",
+    "one",
+    "two",
+    "three",
+    "component",
+    "point",
+    "magnitude",
+    "angle",
+    "four"
+   ],
+   "combined_abbrev": [
+    "vector",
+    "direct",
+    "one",
+    "two",
+    "three",
+    "point",
+    "component",
+    "magnitude",
+    "angle",
+    "find"
+   ]
+  },
+  "gold_first_words": [
+   "component",
+   "scalar",
+   "unit"
+  ],
+  "gold_all_words": [
+   "component",
+   "scalar",
+   "unit",
+   "vector"
+  ]
+ },
+ {
+  "lesson": "trig-12499",
+  "title": "Polar Coordinates",
+  "terms": [
+   "polar coordinate system",
+   "pole",
+   "polar axis",
+   "polar coordinates"
+  ],
+  "top10": {
+   "frequency_only": [
+    "one",
+    "point",
+    "polar",
+    "four",
+    "five",
+    "two",
+    "plot",
+    "three",
+    "pair",
+    "pole"
+   ],
+   "combined": [
+    "polar",
+    "point",
+    "rectangular",
+    "pole",
+    "five",
+    "two",
+    "angle",
+    "represent",
+    "distance",
+    "plot"
+   ],
+   "relevance_only": [
+    "polar",
+    "point",
+    "rectangular",
+    "coordinate",
+    "hundred",
+    "pole",
+    "five",
+    "two",
+    "angle",
+    "represent"
+   ],
+   "count_only": [
+    "one",
+    "hundred",
+    "point",
+    "polar",
+    "coordinate",
+    "four",
+    "five",
+    "two",
+    "plot",
+    "three"
+   ],
+   "combined_improved": [
+    "polar",
+    "point",
+    "one",
+    "rectangular",
+    "plot",
+    "five",
+    "two",
+    "four",
+    "pole",
+    "graph"
+   ],
+   "combined_weighted": [
+    "polar",
+    "point",
+    "one",
+    "rectangular",
+    "two",
+    "five",
+    "plot",
+    "four",
+    "pole",
+    "graph"
+   ],
+   "combined_verbs": [
+    "polar",
+    "point",
+    "rectangular",
+    "pole",
+    "five",
+    "represent",
+    "angle",
+    "two",
+    "distance",
+    "plot"
+   ],
+   "combined_abbrev": [
+    "polar",
+    "point",
+    "rectangular",
+    "pole",
+    "five",
+    "two",
+    "angle",
+    "represent",
+    "distance",
+    "plot"
+   ]
+  },
+  "gold_first_words": [
+   "polar",
+   "pole"
+  ],
+  "gold_all_words": [
+   "axis",
+   "coordinate",
+   "polar",
+   "pole",
+   "system"
+  ]
+ },
+ {
+  "lesson": "trig-14018",
+  "title": "Applications, Technological Tools: Systems of Polar Equation",
+  "terms": [
+   "polar coordinates",
+   "polar equation",
+   "polar graph"
+  ],
+  "top10": {
+   "frequency_only": [
+    "point",
+    "two",
+    "graph",
+    "use",
+    "intersection",
+    "rose",
+    "application",
+    "press",
+    "block",
+    "calculator"
+   ],
+   "combined": [
+    "intersection",
+    "graph",
+    "two",
+    "point",
+    "rose",
+    "design",
+    "graphing",
+    "process",
+    "application",
+    "block"
+   ],
+   "relevance_only": [
+    "intersection",
+    "graph",
+    "two",
+    "point",
+    "rose",
+    "design",
+    "graphing",
+    "process",
+    "application",
+    "block"
+   ],
+   "count_only": [
+    "point",
+    "two",
+    "graph",
+    "use",
+    "intersection",
+    "rose",
+    "application",
+    "press",
+    "block",
+    "calculator"
+   ],
+   "combined_improved": [
+    "two",
+    "intersection",
+    "point",
+    "graph",
+    "graphing",
+    "process",
+    "rose",
+    "design",
+    "repeat",
+    "curve"
+   ],
+   "combined_weighted": [
+    "two",
+    "intersection",
+    "point",
+    "graph",
+    "graphing",
+    "process",
+    "rose",
+    "block",
+    "design",
+    "curve"
+   ],
+   "combined_verbs": [
+    "intersection",
+    "graph",
+    "two",
+    "point",
+    "rose",
+    "design",
+    "graphing",
+    "process",
+    "curve",
+    "polar"
+   ],
+   "combined_abbrev": [
+    "intersection",
+    "graph",
+    "two",
+    "point",
+    "rose",
+    "design",
+    "graphing",
+    "process",
+    "application",
+    "block"
+   ]
+  },
+  "gold_first_words": [
+   "polar"
+  ],
+  "gold_all_words": [
+   "equation",
+   "graph",
+   "polar"
+  ]
+ },
+ {
+  "lesson": "trig-14320",
+  "title": "Complex Number Plane",
+  "terms": [
+   "complex number",
+   "complex number plane",
+   "conjugate of a complex number",
+   "imaginary number"
+  ],
+  "top10": {
+   "frequency_only": [
+    "number",
+    "complex",
+    "point",
+    "plane",
+    "two",
+    "axis",
+    "distance",
+    "walk",
+    "plot",
+    "four"
+   ],
+   "combined": [
+    "number",
+    "complex",
+    "point",
+    "two",
+    "real",
+    "distance",
+    "plane",
+    "axis",
+    "solution",
+    "walk"
+   ],
+   "relevance_only": [
+    "number",
+    "complex",
+    "point",
+    "two",
+    "real",
+    "distance",
+    "plane",
+    "axis",
+    "coordinate",
+    "solution"
+   ],
+   "count_only": [
+    "number",
+    "complex",
+    "point",
+    "plane",
+    "coordinate",
+    "two",
+    "axis",
+    "distance",
+    "walk",
+    "plot"
+   ],
+   "combined_improved": [
+    "number",
+    "complex",
+    "point",
+    "plane",
+    "two",
+    "real",
+    "walk",
+    "distance",
+    "axis",
+    "four"
+   ],
+   "combined_weighted": [
+    "number",
+    "complex",
+    "point",
+    "plane",
+    "two",
+    "real",
+    "axis",
+    "walk",
+    "distance",
+    "four"
+   ],
+   "combined_verbs": [
+    "number",
+    "complex",
+    "point",
+    "two",
+    "distance",
+    "plane",
+    "real",
+    "axis",
+    "walk",
+    "system"
+   ],
+   "combined_abbrev": [
+    "number",
+    "complex",
+    "point",
+    "two",
+    "real",
+    "distance",
+    "plane",
+    "axis",
+    "solution",
+    "walk"
+   ]
+  },
+  "gold_first_words": [
+   "complex",
+   "imaginary"
+  ],
+  "gold_all_words": [
+   "complex",
+   "imaginary",
+   "number",
+   "plane"
+  ]
+ },
+ {
+  "lesson": "trig-14828",
+  "title": "Trigonometric Form of Complex Numbers: Steps for Conversion",
+  "terms": [
+   "argument",
+   "modulus",
+   "polar form"
+  ],
+  "top10": {
+   "frequency_only": [
+    "form",
+    "point",
+    "polar",
+    "six",
+    "two",
+    "complex",
+    "number",
+    "one",
+    "four",
+    "three"
+   ],
+   "combined": [
+    "form",
+    "complex",
+    "number",
+    "polar",
+    "circuit",
+    "six",
+    "one",
+    "point",
+    "three",
+    "two"
+   ],
+   "relevance_only": [
+    "form",
+    "complex",
+    "number",
+    "polar",
+    "circuit",
+    "six",
+    "one",
+    "point",
+    "three",
+    "hundred"
+   ],
+   "count_only": [
+    "form",
+    "point",
+    "polar",
+    "six",
+    "two",
+    "complex",
+    "hundred",
+    "number",
+    "one",
+    "four"
+   ],
+   "combined_improved": [
+    "form",
+    "number",
+    "complex",
+    "polar",
+    "point",
+    "six",
+    "two",
+    "circuit",
+    "one",
+    "three"
+   ],
+   "combined_weighted": [
+    "form",
+    "number",
+    "complex",
+    "polar",
+    "point",
+    "six",
+    "two",
+    "circuit",
+    "one",
+    "three"
+   ],
+   "combined_verbs": [
+    "form",
+    "complex",
+    "number",
+    "polar",
+    "circuit",
+    "six",
+    "one",
+    "three",
+    "point",
+    "two"
+   ],
+   "combined_abbrev": [
+    "form",
+    "complex",
+    "number",
+    "polar",
+    "circuit",
+    "six",
+    "one",
+    "point",
+    "three",
+    "two"
+   ]
+  },
+  "gold_first_words": [
+   "polar"
+  ],
+  "gold_all_words": [
+   "form",
+   "polar"
+  ]
+ }
+]

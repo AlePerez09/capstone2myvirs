@@ -1,0 +1,1555 @@
+{
+  "word_list": "full VIRS list (data/virs_words.csv)",
+  "word_list_entries": 30259,
+  "band_counts": {
+    "HIGH": 14174,
+    "LOW": 6475,
+    "MID": 9545,
+    "NONE": 65
+  },
+  "books": {
+    "biology": {
+      "first_words": {
+        "lessons": 84,
+        "frequency_only_map": 0.1643043934331956,
+        "frequency_only_p@10": 0.15,
+        "frequency_only_r@10": 0.1935634558284934,
+        "combined_map": 0.14312051981987095,
+        "combined_p@10": 0.13095238095238093,
+        "combined_r@10": 0.16584338106894495,
+        "relevance_only_map": 0.17289584190084153,
+        "relevance_only_p@10": 0.14523809523809525,
+        "relevance_only_r@10": 0.2048267521951732,
+        "count_only_map": 0.21303923046058673,
+        "count_only_p@10": 0.16785714285714284,
+        "count_only_r@10": 0.2273692003485236,
+        "combined_improved_map": 0.1404772766705917,
+        "combined_improved_p@10": 0.1333333333333333,
+        "combined_improved_r@10": 0.16946505701204945,
+        "combined_weighted_map": 0.14015268724279425,
+        "combined_weighted_p@10": 0.1345238095238095,
+        "combined_weighted_r@10": 0.17250553505252753,
+        "combined_verbs_map": 0.1429413227176875,
+        "combined_verbs_p@10": 0.13095238095238096,
+        "combined_verbs_r@10": 0.16497672127371374,
+        "combined_abbrev_map": 0.14312051981987095,
+        "combined_abbrev_p@10": 0.13095238095238093,
+        "combined_abbrev_r@10": 0.16584338106894495,
+        "tests": {
+          "combined_vs_frequency_only_ap": {
+            "mean_a": 0.14312051981987095,
+            "mean_b": 0.1643043934331956,
+            "better": 31,
+            "worse": 53,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 4.745590855672307e-06,
+            "wilcoxon_p_combined_greater": 0.9999976272045722
+          },
+          "combined_vs_frequency_only_p@10": {
+            "mean_a": 0.13095238095238093,
+            "mean_b": 0.15,
+            "better": 4,
+            "worse": 19,
+            "tied": 61,
+            "wilcoxon_p_two_sided": 0.007831569216061814,
+            "wilcoxon_p_combined_greater": 0.9960842153919691
+          },
+          "combined_improved_vs_frequency_only_ap": {
+            "mean_a": 0.1404772766705917,
+            "mean_b": 0.1643043934331956,
+            "better": 29,
+            "worse": 54,
+            "tied": 1,
+            "wilcoxon_p_two_sided": 6.963934166935284e-07,
+            "wilcoxon_p_combined_greater": 0.9999996518032916
+          },
+          "combined_improved_vs_frequency_only_p@10": {
+            "mean_a": 0.1333333333333333,
+            "mean_b": 0.15,
+            "better": 5,
+            "worse": 18,
+            "tied": 61,
+            "wilcoxon_p_two_sided": 0.0009758980320235032,
+            "wilcoxon_p_combined_greater": 0.9995120509839882
+          },
+          "combined_improved_vs_combined_ap": {
+            "mean_a": 0.1404772766705917,
+            "mean_b": 0.14312051981987095,
+            "better": 50,
+            "worse": 34,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.0385145095640255,
+            "wilcoxon_p_combined_greater": 0.01925725478201275
+          },
+          "combined_improved_vs_combined_p@10": {
+            "mean_a": 0.1333333333333333,
+            "mean_b": 0.13095238095238093,
+            "better": 8,
+            "worse": 5,
+            "tied": 71,
+            "wilcoxon_p_two_sided": 0.59496087457764,
+            "wilcoxon_p_combined_greater": 0.70251956271118
+          },
+          "relevance_only_vs_frequency_only_ap": {
+            "mean_a": 0.17289584190084153,
+            "mean_b": 0.1643043934331956,
+            "better": 45,
+            "worse": 39,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.5471275951329997,
+            "wilcoxon_p_combined_greater": 0.27356379756649984
+          },
+          "relevance_only_vs_frequency_only_p@10": {
+            "mean_a": 0.14523809523809525,
+            "mean_b": 0.15,
+            "better": 11,
+            "worse": 15,
+            "tied": 58,
+            "wilcoxon_p_two_sided": 0.5664957687556443,
+            "wilcoxon_p_combined_greater": 0.7167521156221779
+          },
+          "combined_vs_count_only_ap": {
+            "mean_a": 0.14312051981987095,
+            "mean_b": 0.21303923046058673,
+            "better": 5,
+            "worse": 79,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 5.184277374984021e-13,
+            "wilcoxon_p_combined_greater": 0.9999999999997408
+          },
+          "combined_vs_count_only_p@10": {
+            "mean_a": 0.13095238095238093,
+            "mean_b": 0.16785714285714284,
+            "better": 4,
+            "worse": 28,
+            "tied": 52,
+            "wilcoxon_p_two_sided": 0.00015205734466856844,
+            "wilcoxon_p_combined_greater": 0.9999239713276658
+          },
+          "combined_weighted_vs_combined_ap": {
+            "mean_a": 0.14015268724279425,
+            "mean_b": 0.14312051981987095,
+            "better": 46,
+            "worse": 37,
+            "tied": 1,
+            "wilcoxon_p_two_sided": 0.11620902549602627,
+            "wilcoxon_p_combined_greater": 0.058104512748013135
+          },
+          "combined_weighted_vs_combined_p@10": {
+            "mean_a": 0.1345238095238095,
+            "mean_b": 0.13095238095238093,
+            "better": 6,
+            "worse": 2,
+            "tied": 76,
+            "wilcoxon_p_two_sided": 0.31420433695387695,
+            "wilcoxon_p_combined_greater": 0.15710216847693848
+          },
+          "combined_verbs_vs_combined_ap": {
+            "mean_a": 0.1429413227176875,
+            "mean_b": 0.14312051981987095,
+            "better": 50,
+            "worse": 33,
+            "tied": 1,
+            "wilcoxon_p_two_sided": 0.3662676342900739,
+            "wilcoxon_p_combined_greater": 0.18313381714503696
+          },
+          "combined_verbs_vs_combined_p@10": {
+            "mean_a": 0.13095238095238096,
+            "mean_b": 0.13095238095238093,
+            "better": 4,
+            "worse": 4,
+            "tied": 76,
+            "wilcoxon_p_two_sided": 0.47221168404601166,
+            "wilcoxon_p_combined_greater": 0.7638941579769942
+          },
+          "combined_abbrev_vs_combined_ap": {
+            "mean_a": 0.14312051981987095,
+            "mean_b": 0.14312051981987095,
+            "better": 0,
+            "worse": 0,
+            "tied": 84,
+            "wilcoxon_p_two_sided": NaN,
+            "wilcoxon_p_combined_greater": NaN
+          },
+          "combined_abbrev_vs_combined_p@10": {
+            "mean_a": 0.13095238095238093,
+            "mean_b": 0.13095238095238093,
+            "better": 0,
+            "worse": 0,
+            "tied": 84,
+            "wilcoxon_p_two_sided": NaN,
+            "wilcoxon_p_combined_greater": NaN
+          }
+        },
+        "combined_beats_frequency_only": false,
+        "losses": [
+          {
+            "lesson": "bio-9",
+            "title": "4.1 Energy for Life",
+            "combined_ap": 0.4722,
+            "frequency_only_ap": 0.6464
+          },
+          {
+            "lesson": "bio-40",
+            "title": "13.1 Prokaryotes",
+            "combined_ap": 0.079,
+            "frequency_only_ap": 0.2091
+          },
+          {
+            "lesson": "bio-70",
+            "title": "21.3 The Muscular System",
+            "combined_ap": 0.4057,
+            "frequency_only_ap": 0.5283
+          },
+          {
+            "lesson": "bio-43",
+            "title": "14.2 Types of Protists",
+            "combined_ap": 0.1609,
+            "frequency_only_ap": 0.2728
+          },
+          {
+            "lesson": "bio-19",
+            "title": "7.2 Protein Synthesis",
+            "combined_ap": 0.4897,
+            "frequency_only_ap": 0.5927
+          },
+          {
+            "lesson": "bio-6",
+            "title": "3.1 Introduction to Cells",
+            "combined_ap": 0.0969,
+            "frequency_only_ap": 0.193
+          },
+          {
+            "lesson": "bio-30",
+            "title": "10.3 Microevolution and the Genetics ofPopulations",
+            "combined_ap": 0.2905,
+            "frequency_only_ap": 0.3748
+          },
+          {
+            "lesson": "bio-8",
+            "title": "3.3 Cell Transport and Homeostasis",
+            "combined_ap": 0.1304,
+            "frequency_only_ap": 0.2088
+          },
+          {
+            "lesson": "bio-24",
+            "title": "8.3 Biotechnology",
+            "combined_ap": 0.1728,
+            "frequency_only_ap": 0.2447
+          },
+          {
+            "lesson": "bio-74",
+            "title": "23.1 The Circulatory System",
+            "combined_ap": 0.2801,
+            "frequency_only_ap": 0.3511
+          },
+          {
+            "lesson": "bio-77",
+            "title": "23.4 The Excretory System",
+            "combined_ap": 0.2934,
+            "frequency_only_ap": 0.3583
+          },
+          {
+            "lesson": "bio-31",
+            "title": "10.4 Macroevolution and the Origin of",
+            "combined_ap": 0.0266,
+            "frequency_only_ap": 0.0845
+          },
+          {
+            "lesson": "bio-12",
+            "title": "4.4 Anaerobic Respiration",
+            "combined_ap": 0.1224,
+            "frequency_only_ap": 0.1741
+          },
+          {
+            "lesson": "bio-4",
+            "title": "2.2 Biochemical Reactions",
+            "combined_ap": 0.1777,
+            "frequency_only_ap": 0.2292
+          },
+          {
+            "lesson": "bio-5",
+            "title": "2.3 Water, Acids, and Bases",
+            "combined_ap": 0.1558,
+            "frequency_only_ap": 0.2066
+          },
+          {
+            "lesson": "bio-39",
+            "title": "12.5 Natural Resources and ClimateChange",
+            "combined_ap": 0.0721,
+            "frequency_only_ap": 0.1215
+          },
+          {
+            "lesson": "bio-15",
+            "title": "5.3 Reproduction and Meiosis",
+            "combined_ap": 0.1387,
+            "frequency_only_ap": 0.1875
+          },
+          {
+            "lesson": "bio-3",
+            "title": "2.1 Matter and Organic Compounds",
+            "combined_ap": 0.1807,
+            "frequency_only_ap": 0.2289
+          },
+          {
+            "lesson": "bio-65",
+            "title": "20.2 Reproduction in Mammals",
+            "combined_ap": 0.1736,
+            "frequency_only_ap": 0.221
+          },
+          {
+            "lesson": "bio-21",
+            "title": "7.4 Regulation of Gene Expression",
+            "combined_ap": 0.3364,
+            "frequency_only_ap": 0.3831
+          },
+          {
+            "lesson": "bio-16",
+            "title": "6.1 Mendel\u2019s Investigations",
+            "combined_ap": 0.0695,
+            "frequency_only_ap": 0.1153
+          },
+          {
+            "lesson": "bio-53",
+            "title": "17.1 Overview of Animals",
+            "combined_ap": 0.4096,
+            "frequency_only_ap": 0.4552
+          },
+          {
+            "lesson": "bio-33",
+            "title": "11.2 Recycling Matter",
+            "combined_ap": 0.2302,
+            "frequency_only_ap": 0.2735
+          },
+          {
+            "lesson": "bio-72",
+            "title": "22.1 The Nervous System",
+            "combined_ap": 0.3751,
+            "frequency_only_ap": 0.4143
+          },
+          {
+            "lesson": "bio-84",
+            "title": "25.3 From Fertilization to Old Age",
+            "combined_ap": 0.1007,
+            "frequency_only_ap": 0.1397
+          },
+          {
+            "lesson": "bio-13",
+            "title": "5.1 Cell Division and the Cell Cycle",
+            "combined_ap": 0.1822,
+            "frequency_only_ap": 0.2201
+          },
+          {
+            "lesson": "bio-7",
+            "title": "3.2 Cell Structures",
+            "combined_ap": 0.0346,
+            "frequency_only_ap": 0.0689
+          },
+          {
+            "lesson": "bio-35",
+            "title": "12.1 Community Interactions",
+            "combined_ap": 0.1363,
+            "frequency_only_ap": 0.17
+          },
+          {
+            "lesson": "bio-25",
+            "title": "9.1 Earth Forms and Life Begins",
+            "combined_ap": 0.0467,
+            "frequency_only_ap": 0.0774
+          },
+          {
+            "lesson": "bio-34",
+            "title": "11.3 Biomes",
+            "combined_ap": 0.0712,
+            "frequency_only_ap": 0.0995
+          },
+          {
+            "lesson": "bio-47",
+            "title": "15.1 Introduction to the Plant Kingdom",
+            "combined_ap": 0.1536,
+            "frequency_only_ap": 0.1811
+          },
+          {
+            "lesson": "bio-69",
+            "title": "21.2 The Skeletal System",
+            "combined_ap": 0.2791,
+            "frequency_only_ap": 0.3046
+          },
+          {
+            "lesson": "bio-2",
+            "title": "1.2 Biology: The Study of Life",
+            "combined_ap": 0.1229,
+            "frequency_only_ap": 0.1481
+          },
+          {
+            "lesson": "bio-20",
+            "title": "7.3 Mutation",
+            "combined_ap": 0.2111,
+            "frequency_only_ap": 0.235
+          },
+          {
+            "lesson": "bio-82",
+            "title": "25.1 Male Reproductive System",
+            "combined_ap": 0.0768,
+            "frequency_only_ap": 0.0995
+          },
+          {
+            "lesson": "bio-68",
+            "title": "21.1 Organization of the Human Body",
+            "combined_ap": 0.0377,
+            "frequency_only_ap": 0.0596
+          },
+          {
+            "lesson": "bio-85",
+            "title": "25.4 Sexually Transmitted Infections",
+            "combined_ap": 0.0443,
+            "frequency_only_ap": 0.0655
+          },
+          {
+            "lesson": "bio-54",
+            "title": "17.2 Overview of Invertebrates",
+            "combined_ap": 0.0579,
+            "frequency_only_ap": 0.0783
+          },
+          {
+            "lesson": "bio-22",
+            "title": "8.1 Human Chromosomes and Genes",
+            "combined_ap": 0.3192,
+            "frequency_only_ap": 0.3379
+          },
+          {
+            "lesson": "bio-10",
+            "title": "4.2 Photosynthesis: Sugar as Food",
+            "combined_ap": 0.0407,
+            "frequency_only_ap": 0.0551
+          },
+          {
+            "lesson": "bio-14",
+            "title": "5.2 Chromosomes and Mitosis",
+            "combined_ap": 0.1525,
+            "frequency_only_ap": 0.1667
+          },
+          {
+            "lesson": "bio-79",
+            "title": "24.2 The Immune Response",
+            "combined_ap": 0.3166,
+            "frequency_only_ap": 0.3294
+          },
+          {
+            "lesson": "bio-29",
+            "title": "10.2 Evidence for Evolution",
+            "combined_ap": 0.0127,
+            "frequency_only_ap": 0.0254
+          },
+          {
+            "lesson": "bio-56",
+            "title": "18.2 Mollusks and Annelids",
+            "combined_ap": 0.0199,
+            "frequency_only_ap": 0.0317
+          },
+          {
+            "lesson": "bio-17",
+            "title": "6.2 Mendelian Inheritance",
+            "combined_ap": 0.02,
+            "frequency_only_ap": 0.029
+          },
+          {
+            "lesson": "bio-18",
+            "title": "7.1 DNA and RNA",
+            "combined_ap": 0.0225,
+            "frequency_only_ap": 0.0305
+          },
+          {
+            "lesson": "bio-32",
+            "title": "11.1 The Science of Ecology",
+            "combined_ap": 0.0448,
+            "frequency_only_ap": 0.0522
+          },
+          {
+            "lesson": "bio-64",
+            "title": "20.1 Mammalian Traits",
+            "combined_ap": 0.1633,
+            "frequency_only_ap": 0.1695
+          },
+          {
+            "lesson": "bio-46",
+            "title": "14.5 Protists, Fungi, and Human Disease",
+            "combined_ap": 0.0119,
+            "frequency_only_ap": 0.018
+          },
+          {
+            "lesson": "bio-36",
+            "title": "12.2 Characteristics of Populations",
+            "combined_ap": 0.2627,
+            "frequency_only_ap": 0.2665
+          },
+          {
+            "lesson": "bio-76",
+            "title": "23.3 The Digestive System",
+            "combined_ap": 0.2127,
+            "frequency_only_ap": 0.2164
+          },
+          {
+            "lesson": "bio-1",
+            "title": "1.1 Science and the Natural World",
+            "combined_ap": 0.452,
+            "frequency_only_ap": 0.4543
+          },
+          {
+            "lesson": "bio-62",
+            "title": "19.4 Reptiles",
+            "combined_ap": 0.0069,
+            "frequency_only_ap": 0.0071
+          }
+        ],
+        "gold_words_frequency_had_in_top10_but_combined_dropped": [
+          [
+            "hypothesis",
+            1
+          ],
+          [
+            "biology",
+            1
+          ],
+          [
+            "element",
+            1
+          ],
+          [
+            "activation",
+            1
+          ],
+          [
+            "hydrogen",
+            1
+          ],
+          [
+            "prokaryotic",
+            1
+          ],
+          [
+            "life",
+            1
+          ],
+          [
+            "operon",
+            1
+          ],
+          [
+            "domain",
+            1
+          ],
+          [
+            "specie",
+            1
+          ],
+          [
+            "renewable",
+            1
+          ],
+          [
+            "archaea",
+            1
+          ],
+          [
+            "slime",
+            1
+          ],
+          [
+            "placental",
+            1
+          ],
+          [
+            "placenta",
+            1
+          ],
+          [
+            "skeletal",
+            1
+          ],
+          [
+            "smooth",
+            1
+          ],
+          [
+            "cardiac",
+            1
+          ],
+          [
+            "central",
+            1
+          ],
+          [
+            "respiratory",
+            1
+          ],
+          [
+            "small",
+            1
+          ],
+          [
+            "excretory",
+            1
+          ],
+          [
+            "allergy",
+            1
+          ],
+          [
+            "genital",
+            1
+          ]
+        ],
+        "non_key_words_combined_added_to_top10": [
+          [
+            "one",
+            "HIGH",
+            13
+          ],
+          [
+            "two",
+            "HIGH",
+            8
+          ],
+          [
+            "water",
+            "HIGH",
+            8
+          ],
+          [
+            "produce",
+            "HIGH",
+            6
+          ],
+          [
+            "include",
+            "HIGH",
+            6
+          ],
+          [
+            "form",
+            "HIGH",
+            5
+          ],
+          [
+            "organism",
+            "HIGH",
+            4
+          ],
+          [
+            "cell",
+            "HIGH",
+            4
+          ],
+          [
+            "food",
+            "HIGH",
+            4
+          ],
+          [
+            "body",
+            "HIGH",
+            4
+          ],
+          [
+            "scientist",
+            "HIGH",
+            3
+          ],
+          [
+            "know",
+            "HIGH",
+            3
+          ],
+          [
+            "protein",
+            "HIGH",
+            3
+          ],
+          [
+            "occur",
+            "HIGH",
+            3
+          ],
+          [
+            "parent",
+            "HIGH",
+            3
+          ],
+          [
+            "adapt",
+            "HIGH",
+            3
+          ],
+          [
+            "people",
+            "HIGH",
+            3
+          ],
+          [
+            "tree",
+            "HIGH",
+            3
+          ],
+          [
+            "evolve",
+            "HIGH",
+            3
+          ],
+          [
+            "point",
+            "HIGH",
+            2
+          ],
+          [
+            "need",
+            "HIGH",
+            2
+          ],
+          [
+            "molecule",
+            "HIGH",
+            2
+          ],
+          [
+            "chloroplast",
+            "HIGH",
+            2
+          ],
+          [
+            "oxygen",
+            "HIGH",
+            2
+          ],
+          [
+            "muscle",
+            "HIGH",
+            2
+          ]
+        ]
+      }
+    },
+    "trigonometry": {
+      "first_words": {
+        "lessons": 22,
+        "frequency_only_map": 0.1924661789639923,
+        "frequency_only_p@10": 0.08636363636363638,
+        "frequency_only_r@10": 0.3333530106257379,
+        "combined_map": 0.1624334855150655,
+        "combined_p@10": 0.08181818181818183,
+        "combined_r@10": 0.2803227075954349,
+        "relevance_only_map": 0.18154664693031292,
+        "relevance_only_p@10": 0.08181818181818183,
+        "relevance_only_r@10": 0.2803227075954349,
+        "count_only_map": 0.2128944239642079,
+        "count_only_p@10": 0.08636363636363638,
+        "count_only_r@10": 0.3333530106257379,
+        "combined_improved_map": 0.17116630441836309,
+        "combined_improved_p@10": 0.08181818181818183,
+        "combined_improved_r@10": 0.2803227075954349,
+        "combined_weighted_map": 0.1680372528054108,
+        "combined_weighted_p@10": 0.07727272727272728,
+        "combined_weighted_r@10": 0.25759543486816217,
+        "combined_verbs_map": 0.17745983290921818,
+        "combined_verbs_p@10": 0.09090909090909091,
+        "combined_verbs_r@10": 0.3295651318378591,
+        "combined_abbrev_map": 0.16166619917429617,
+        "combined_abbrev_p@10": 0.08181818181818183,
+        "combined_abbrev_r@10": 0.2803227075954349,
+        "tests": {
+          "combined_vs_frequency_only_ap": {
+            "mean_a": 0.1624334855150655,
+            "mean_b": 0.1924661789639923,
+            "better": 7,
+            "worse": 15,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.09173250198364258,
+            "wilcoxon_p_combined_greater": 0.9572954177856445
+          },
+          "combined_vs_frequency_only_p@10": {
+            "mean_a": 0.08181818181818183,
+            "mean_b": 0.08636363636363638,
+            "better": 2,
+            "worse": 3,
+            "tied": 17,
+            "wilcoxon_p_two_sided": 0.6547208460185769,
+            "wilcoxon_p_combined_greater": 0.6726395769907115
+          },
+          "combined_improved_vs_frequency_only_ap": {
+            "mean_a": 0.17116630441836309,
+            "mean_b": 0.1924661789639923,
+            "better": 6,
+            "worse": 16,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.19821882247924805,
+            "wilcoxon_p_combined_greater": 0.9065117835998535
+          },
+          "combined_improved_vs_frequency_only_p@10": {
+            "mean_a": 0.08181818181818183,
+            "mean_b": 0.08636363636363638,
+            "better": 2,
+            "worse": 3,
+            "tied": 17,
+            "wilcoxon_p_two_sided": 0.6547208460185769,
+            "wilcoxon_p_combined_greater": 0.6726395769907115
+          },
+          "combined_improved_vs_combined_ap": {
+            "mean_a": 0.17116630441836309,
+            "mean_b": 0.1624334855150655,
+            "better": 16,
+            "worse": 5,
+            "tied": 1,
+            "wilcoxon_p_two_sided": 0.03863248475560448,
+            "wilcoxon_p_combined_greater": 0.01931624237780224
+          },
+          "combined_improved_vs_combined_p@10": {
+            "mean_a": 0.08181818181818183,
+            "mean_b": 0.08181818181818183,
+            "better": 0,
+            "worse": 0,
+            "tied": 22,
+            "wilcoxon_p_two_sided": NaN,
+            "wilcoxon_p_combined_greater": NaN
+          },
+          "relevance_only_vs_frequency_only_ap": {
+            "mean_a": 0.18154664693031292,
+            "mean_b": 0.1924661789639923,
+            "better": 8,
+            "worse": 14,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.3534979820251465,
+            "wilcoxon_p_combined_greater": 0.8315262794494629
+          },
+          "relevance_only_vs_frequency_only_p@10": {
+            "mean_a": 0.08181818181818183,
+            "mean_b": 0.08636363636363638,
+            "better": 2,
+            "worse": 3,
+            "tied": 17,
+            "wilcoxon_p_two_sided": 0.6547208460185769,
+            "wilcoxon_p_combined_greater": 0.6726395769907115
+          },
+          "combined_vs_count_only_ap": {
+            "mean_a": 0.1624334855150655,
+            "mean_b": 0.2128944239642079,
+            "better": 7,
+            "worse": 15,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.06341934204101562,
+            "wilcoxon_p_combined_greater": 0.9706549644470215
+          },
+          "combined_vs_count_only_p@10": {
+            "mean_a": 0.08181818181818183,
+            "mean_b": 0.08636363636363638,
+            "better": 3,
+            "worse": 4,
+            "tied": 15,
+            "wilcoxon_p_two_sided": 0.7054569861112734,
+            "wilcoxon_p_combined_greater": 0.6472715069443633
+          },
+          "combined_weighted_vs_combined_ap": {
+            "mean_a": 0.1680372528054108,
+            "mean_b": 0.1624334855150655,
+            "better": 14,
+            "worse": 6,
+            "tied": 2,
+            "wilcoxon_p_two_sided": 0.26272224684071965,
+            "wilcoxon_p_combined_greater": 0.13136112342035983
+          },
+          "combined_weighted_vs_combined_p@10": {
+            "mean_a": 0.07727272727272728,
+            "mean_b": 0.08181818181818183,
+            "better": 0,
+            "worse": 1,
+            "tied": 21,
+            "wilcoxon_p_two_sided": 0.31731050786291415,
+            "wilcoxon_p_combined_greater": 0.8413447460685429
+          },
+          "combined_verbs_vs_combined_ap": {
+            "mean_a": 0.17745983290921818,
+            "mean_b": 0.1624334855150655,
+            "better": 14,
+            "worse": 5,
+            "tied": 3,
+            "wilcoxon_p_two_sided": 0.014087612795763423,
+            "wilcoxon_p_combined_greater": 0.007043806397881712
+          },
+          "combined_verbs_vs_combined_p@10": {
+            "mean_a": 0.09090909090909091,
+            "mean_b": 0.08181818181818183,
+            "better": 2,
+            "worse": 0,
+            "tied": 20,
+            "wilcoxon_p_two_sided": 0.17971249487899976,
+            "wilcoxon_p_combined_greater": 0.08985624743949988
+          },
+          "combined_abbrev_vs_combined_ap": {
+            "mean_a": 0.16166619917429617,
+            "mean_b": 0.1624334855150655,
+            "better": 6,
+            "worse": 2,
+            "tied": 14,
+            "wilcoxon_p_two_sided": 0.6744240722352938,
+            "wilcoxon_p_combined_greater": 0.3372120361176469
+          },
+          "combined_abbrev_vs_combined_p@10": {
+            "mean_a": 0.08181818181818183,
+            "mean_b": 0.08181818181818183,
+            "better": 0,
+            "worse": 0,
+            "tied": 22,
+            "wilcoxon_p_two_sided": NaN,
+            "wilcoxon_p_combined_greater": NaN
+          }
+        },
+        "combined_beats_frequency_only": false,
+        "losses": [
+          {
+            "lesson": "trig-6933",
+            "title": "Exact Values of Special Inverse Circular Functions",
+            "combined_ap": 0.0159,
+            "frequency_only_ap": 0.5
+          },
+          {
+            "lesson": "trig-6433",
+            "title": "General Definitions of Inverse Trigonometric Functions",
+            "combined_ap": 0.2679,
+            "frequency_only_ap": 0.5303
+          },
+          {
+            "lesson": "trig-10300",
+            "title": "The Law of Sines",
+            "combined_ap": 0.0128,
+            "frequency_only_ap": 0.2292
+          },
+          {
+            "lesson": "trig-14828",
+            "title": "Trigonometric Form of Complex Numbers: Steps for Conversion",
+            "combined_ap": 0.25,
+            "frequency_only_ap": 0.3333
+          },
+          {
+            "lesson": "trig-9606",
+            "title": "The Law of Cosines",
+            "combined_ap": 0.0104,
+            "frequency_only_ap": 0.0869
+          },
+          {
+            "lesson": "trig-1248",
+            "title": "Measuring Rotation",
+            "combined_ap": 0.068,
+            "frequency_only_ap": 0.1086
+          },
+          {
+            "lesson": "trig-2487",
+            "title": "Relating Trigonometric Functions",
+            "combined_ap": 0.2872,
+            "frequency_only_ap": 0.3163
+          },
+          {
+            "lesson": "trig-647",
+            "title": "Basic Functions",
+            "combined_ap": 0.1881,
+            "frequency_only_ap": 0.2138
+          },
+          {
+            "lesson": "trig-920",
+            "title": "Angles in Triangles",
+            "combined_ap": 0.0765,
+            "frequency_only_ap": 0.101
+          },
+          {
+            "lesson": "trig-1552",
+            "title": "Defining Trigonometric Functions",
+            "combined_ap": 0.0367,
+            "frequency_only_ap": 0.0602
+          },
+          {
+            "lesson": "trig-8093",
+            "title": "Solve Trig Equations (Factoring)",
+            "combined_ap": 0.05,
+            "frequency_only_ap": 0.0667
+          },
+          {
+            "lesson": "trig-8640",
+            "title": "Solve equations (with double angles)",
+            "combined_ap": 0.1214,
+            "frequency_only_ap": 0.1339
+          },
+          {
+            "lesson": "trig-7396",
+            "title": "Derive Inverse Cofunction Properties (short)",
+            "combined_ap": 0.0342,
+            "frequency_only_ap": 0.0428
+          },
+          {
+            "lesson": "trig-14320",
+            "title": "Complex Number Plane",
+            "combined_ap": 0.2885,
+            "frequency_only_ap": 0.2955
+          },
+          {
+            "lesson": "trig-2735",
+            "title": "Applications of Right Triangle Trigonometry",
+            "combined_ap": 0.2732,
+            "frequency_only_ap": 0.2739
+          }
+        ],
+        "gold_words_frequency_had_in_top10_but_combined_dropped": [
+          [
+            "law",
+            2
+          ],
+          [
+            "unit",
+            1
+          ]
+        ],
+        "non_key_words_combined_added_to_top10": [
+          [
+            "find",
+            "HIGH",
+            4
+          ],
+          [
+            "three",
+            "HIGH",
+            4
+          ],
+          [
+            "four",
+            "HIGH",
+            3
+          ],
+          [
+            "function",
+            "HIGH",
+            2
+          ],
+          [
+            "point",
+            "HIGH",
+            2
+          ],
+          [
+            "angle",
+            "HIGH",
+            2
+          ],
+          [
+            "use",
+            "HIGH",
+            2
+          ],
+          [
+            "model",
+            "HIGH",
+            1
+          ],
+          [
+            "equation",
+            "HIGH",
+            1
+          ],
+          [
+            "eight",
+            "HIGH",
+            1
+          ],
+          [
+            "terminal",
+            "HIGH",
+            1
+          ],
+          [
+            "forty",
+            "HIGH",
+            1
+          ],
+          [
+            "trig",
+            "HIGH",
+            1
+          ],
+          [
+            "thirty",
+            "HIGH",
+            1
+          ],
+          [
+            "define",
+            "HIGH",
+            1
+          ],
+          [
+            "one",
+            "HIGH",
+            1
+          ],
+          [
+            "length",
+            "HIGH",
+            1
+          ],
+          [
+            "evaluate",
+            "HIGH",
+            1
+          ],
+          [
+            "value",
+            "HIGH",
+            1
+          ],
+          [
+            "twenty",
+            "HIGH",
+            1
+          ],
+          [
+            "right",
+            "HIGH",
+            1
+          ],
+          [
+            "sin",
+            "HIGH",
+            1
+          ],
+          [
+            "factor",
+            "HIGH",
+            1
+          ],
+          [
+            "variable",
+            "HIGH",
+            1
+          ],
+          [
+            "trigonometric",
+            "HIGH",
+            1
+          ]
+        ]
+      },
+      "all_words": {
+        "lessons": 23,
+        "frequency_only_map": 0.3137929981385546,
+        "frequency_only_p@10": 0.17391304347826086,
+        "frequency_only_r@10": 0.4170807453416149,
+        "combined_map": 0.2714733132317073,
+        "combined_p@10": 0.16521739130434784,
+        "combined_r@10": 0.4170807453416149,
+        "relevance_only_map": 0.2898535855722315,
+        "relevance_only_p@10": 0.16956521739130437,
+        "relevance_only_r@10": 0.4257763975155279,
+        "count_only_map": 0.33084897134072366,
+        "count_only_p@10": 0.17826086956521742,
+        "count_only_r@10": 0.43157349896480335,
+        "combined_improved_map": 0.2743229788628094,
+        "combined_improved_p@10": 0.1695652173913044,
+        "combined_improved_r@10": 0.4388198757763975,
+        "combined_weighted_map": 0.27097282208988394,
+        "combined_weighted_p@10": 0.16521739130434784,
+        "combined_weighted_r@10": 0.4243271221532091,
+        "combined_verbs_map": 0.2778699897329644,
+        "combined_verbs_p@10": 0.17391304347826086,
+        "combined_verbs_r@10": 0.43429089026915113,
+        "combined_abbrev_map": 0.26541030926798964,
+        "combined_abbrev_p@10": 0.1695652173913044,
+        "combined_abbrev_r@10": 0.4388198757763975,
+        "tests": {
+          "combined_vs_frequency_only_ap": {
+            "mean_a": 0.2714733132317073,
+            "mean_b": 0.3137929981385546,
+            "better": 8,
+            "worse": 15,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.28614330291748047,
+            "wilcoxon_p_combined_greater": 0.86370849609375
+          },
+          "combined_vs_frequency_only_p@10": {
+            "mean_a": 0.16521739130434784,
+            "mean_b": 0.17391304347826086,
+            "better": 3,
+            "worse": 4,
+            "tied": 16,
+            "wilcoxon_p_two_sided": 0.5270892568655381,
+            "wilcoxon_p_combined_greater": 0.736455371567231
+          },
+          "combined_improved_vs_frequency_only_ap": {
+            "mean_a": 0.2743229788628094,
+            "mean_b": 0.3137929981385546,
+            "better": 5,
+            "worse": 18,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.14241743087768555,
+            "wilcoxon_p_combined_greater": 0.9329330921173096
+          },
+          "combined_improved_vs_frequency_only_p@10": {
+            "mean_a": 0.1695652173913044,
+            "mean_b": 0.17391304347826086,
+            "better": 3,
+            "worse": 3,
+            "tied": 17,
+            "wilcoxon_p_two_sided": 0.7388826803635273,
+            "wilcoxon_p_combined_greater": 0.6305586598182363
+          },
+          "combined_improved_vs_combined_ap": {
+            "mean_a": 0.2743229788628094,
+            "mean_b": 0.2714733132317073,
+            "better": 15,
+            "worse": 7,
+            "tied": 1,
+            "wilcoxon_p_two_sided": 0.32207523283525596,
+            "wilcoxon_p_combined_greater": 0.16103761641762798
+          },
+          "combined_improved_vs_combined_p@10": {
+            "mean_a": 0.1695652173913044,
+            "mean_b": 0.16521739130434784,
+            "better": 1,
+            "worse": 0,
+            "tied": 22,
+            "wilcoxon_p_two_sided": 0.31731050786291415,
+            "wilcoxon_p_combined_greater": 0.15865525393145707
+          },
+          "relevance_only_vs_frequency_only_ap": {
+            "mean_a": 0.2898535855722315,
+            "mean_b": 0.3137929981385546,
+            "better": 9,
+            "worse": 14,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.481952428817749,
+            "wilcoxon_p_combined_greater": 0.768309473991394
+          },
+          "relevance_only_vs_frequency_only_p@10": {
+            "mean_a": 0.16956521739130437,
+            "mean_b": 0.17391304347826086,
+            "better": 4,
+            "worse": 4,
+            "tied": 15,
+            "wilcoxon_p_two_sided": 0.6082476524171389,
+            "wilcoxon_p_combined_greater": 0.6958761737914305
+          },
+          "combined_vs_count_only_ap": {
+            "mean_a": 0.2714733132317073,
+            "mean_b": 0.33084897134072366,
+            "better": 8,
+            "worse": 15,
+            "tied": 0,
+            "wilcoxon_p_two_sided": 0.36039113998413086,
+            "wilcoxon_p_combined_greater": 0.8276575803756714
+          },
+          "combined_vs_count_only_p@10": {
+            "mean_a": 0.16521739130434784,
+            "mean_b": 0.17826086956521742,
+            "better": 3,
+            "worse": 5,
+            "tied": 15,
+            "wilcoxon_p_two_sided": 0.36571229628151325,
+            "wilcoxon_p_combined_greater": 0.8171438518592433
+          },
+          "combined_weighted_vs_combined_ap": {
+            "mean_a": 0.27097282208988394,
+            "mean_b": 0.2714733132317073,
+            "better": 15,
+            "worse": 7,
+            "tied": 1,
+            "wilcoxon_p_two_sided": 0.4650985871802594,
+            "wilcoxon_p_combined_greater": 0.2325492935901297
+          },
+          "combined_weighted_vs_combined_p@10": {
+            "mean_a": 0.16521739130434784,
+            "mean_b": 0.16521739130434784,
+            "better": 1,
+            "worse": 1,
+            "tied": 21,
+            "wilcoxon_p_two_sided": 1.0,
+            "wilcoxon_p_combined_greater": 0.5
+          },
+          "combined_verbs_vs_combined_ap": {
+            "mean_a": 0.2778699897329644,
+            "mean_b": 0.2714733132317073,
+            "better": 17,
+            "worse": 4,
+            "tied": 2,
+            "wilcoxon_p_two_sided": 0.001304069820893846,
+            "wilcoxon_p_combined_greater": 0.000652034910446923
+          },
+          "combined_verbs_vs_combined_p@10": {
+            "mean_a": 0.17391304347826086,
+            "mean_b": 0.16521739130434784,
+            "better": 2,
+            "worse": 0,
+            "tied": 21,
+            "wilcoxon_p_two_sided": 0.17971249487899976,
+            "wilcoxon_p_combined_greater": 0.08985624743949988
+          },
+          "combined_abbrev_vs_combined_ap": {
+            "mean_a": 0.26541030926798964,
+            "mean_b": 0.2714733132317073,
+            "better": 3,
+            "worse": 6,
+            "tied": 14,
+            "wilcoxon_p_two_sided": 0.10974463874701328,
+            "wilcoxon_p_combined_greater": 0.9451276806264933
+          },
+          "combined_abbrev_vs_combined_p@10": {
+            "mean_a": 0.1695652173913044,
+            "mean_b": 0.16521739130434784,
+            "better": 1,
+            "worse": 0,
+            "tied": 22,
+            "wilcoxon_p_two_sided": 0.31731050786291415,
+            "wilcoxon_p_combined_greater": 0.15865525393145707
+          }
+        },
+        "combined_beats_frequency_only": false,
+        "losses": [
+          {
+            "lesson": "trig-6933",
+            "title": "Exact Values of Special Inverse Circular Functions",
+            "combined_ap": 0.0873,
+            "frequency_only_ap": 1.0
+          },
+          {
+            "lesson": "trig-10300",
+            "title": "The Law of Sines",
+            "combined_ap": 0.0643,
+            "frequency_only_ap": 0.3682
+          },
+          {
+            "lesson": "trig-9606",
+            "title": "The Law of Cosines",
+            "combined_ap": 0.0531,
+            "frequency_only_ap": 0.1648
+          },
+          {
+            "lesson": "trig-14320",
+            "title": "Complex Number Plane",
+            "combined_ap": 0.6456,
+            "frequency_only_ap": 0.733
+          },
+          {
+            "lesson": "trig-14828",
+            "title": "Trigonometric Form of Complex Numbers: Steps for Conversion",
+            "combined_ap": 0.75,
+            "frequency_only_ap": 0.8333
+          },
+          {
+            "lesson": "trig-1248",
+            "title": "Measuring Rotation",
+            "combined_ap": 0.1849,
+            "frequency_only_ap": 0.2296
+          },
+          {
+            "lesson": "trig-1552",
+            "title": "Defining Trigonometric Functions",
+            "combined_ap": 0.067,
+            "frequency_only_ap": 0.1045
+          },
+          {
+            "lesson": "trig-647",
+            "title": "Basic Functions",
+            "combined_ap": 0.1866,
+            "frequency_only_ap": 0.2167
+          },
+          {
+            "lesson": "trig-2487",
+            "title": "Relating Trigonometric Functions",
+            "combined_ap": 0.2872,
+            "frequency_only_ap": 0.3163
+          },
+          {
+            "lesson": "trig-7396",
+            "title": "Derive Inverse Cofunction Properties (short)",
+            "combined_ap": 0.097,
+            "frequency_only_ap": 0.1205
+          },
+          {
+            "lesson": "trig-920",
+            "title": "Angles in Triangles",
+            "combined_ap": 0.2638,
+            "frequency_only_ap": 0.2859
+          },
+          {
+            "lesson": "trig-8093",
+            "title": "Solve Trig Equations (Factoring)",
+            "combined_ap": 0.0955,
+            "frequency_only_ap": 0.1167
+          },
+          {
+            "lesson": "trig-2735",
+            "title": "Applications of Right Triangle Trigonometry",
+            "combined_ap": 0.1984,
+            "frequency_only_ap": 0.2118
+          },
+          {
+            "lesson": "trig-6433",
+            "title": "General Definitions of Inverse Trigonometric Functions",
+            "combined_ap": 0.3659,
+            "frequency_only_ap": 0.373
+          },
+          {
+            "lesson": "trig-10676",
+            "title": "The Ambiguous Case",
+            "combined_ap": 0.0718,
+            "frequency_only_ap": 0.0762
+          }
+        ],
+        "gold_words_frequency_had_in_top10_but_combined_dropped": [
+          [
+            "law",
+            2
+          ],
+          [
+            "unit",
+            1
+          ],
+          [
+            "value",
+            1
+          ],
+          [
+            "cosine",
+            1
+          ],
+          [
+            "sin",
+            1
+          ]
+        ],
+        "non_key_words_combined_added_to_top10": [
+          [
+            "find",
+            "HIGH",
+            4
+          ],
+          [
+            "three",
+            "HIGH",
+            4
+          ],
+          [
+            "four",
+            "HIGH",
+            3
+          ],
+          [
+            "function",
+            "HIGH",
+            2
+          ],
+          [
+            "point",
+            "HIGH",
+            2
+          ],
+          [
+            "angle",
+            "HIGH",
+            2
+          ],
+          [
+            "use",
+            "HIGH",
+            2
+          ],
+          [
+            "model",
+            "HIGH",
+            1
+          ],
+          [
+            "equation",
+            "HIGH",
+            1
+          ],
+          [
+            "eight",
+            "HIGH",
+            1
+          ],
+          [
+            "terminal",
+            "HIGH",
+            1
+          ],
+          [
+            "forty",
+            "HIGH",
+            1
+          ],
+          [
+            "trig",
+            "HIGH",
+            1
+          ],
+          [
+            "thirty",
+            "HIGH",
+            1
+          ],
+          [
+            "define",
+            "HIGH",
+            1
+          ],
+          [
+            "one",
+            "HIGH",
+            1
+          ],
+          [
+            "length",
+            "HIGH",
+            1
+          ],
+          [
+            "evaluate",
+            "HIGH",
+            1
+          ],
+          [
+            "value",
+            "HIGH",
+            1
+          ],
+          [
+            "twenty",
+            "HIGH",
+            1
+          ],
+          [
+            "right",
+            "HIGH",
+            1
+          ],
+          [
+            "sin",
+            "HIGH",
+            1
+          ],
+          [
+            "factor",
+            "HIGH",
+            1
+          ],
+          [
+            "variable",
+            "HIGH",
+            1
+          ],
+          [
+            "trigonometric",
+            "HIGH",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "verdict": "not met",
+  "books_where_combined_won_significantly": []
+}

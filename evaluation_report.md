@@ -35,13 +35,23 @@ before the evaluation ran on November 1):
 
 ## 2. What was tested
 
-**Automated tests.** `tests/test_word_lists.py` has 5 tests covering the
-word list loaders and their use in the ranking: Eric's Excel layout (on
-mock files), unknown cell colors raising an error, grade header parsing,
-the ranking using the loaded bands, and the full VIRS word list. All 5
-pass. Wider tests for the pipeline, word families, number handling and
-the Team B format were planned this sprint but not written, and carry
-over to Sprint 5.
+**Automated tests.** 143 automated tests, run with `python -m pytest tests`:
+
+- `tests/test_pipeline.py`, `tests/test_priority_ranking.py` and
+  `tests/test_contract.py` (Miguel, pull request #3, merged November 3):
+  138 tests covering text cleaning, ligatures, number handling, word
+  families, TextRank and relevance percentiles, the priority formula and
+  frequency-only fallback, filtering of stop and layout words, and Team B
+  output passing the JSON Schema.
+- `tests/test_word_lists.py`: 5 tests for the word list loaders (Eric's
+  Excel layout on mock files, unknown cell colors raising an error, grade
+  headers, the full VIRS word list, and the ranking using the loaded bands).
+
+141 pass. The other two are marked as expected failures because they document
+known bugs: a passage with only one candidate word gets relevance 0
+(which the contract reserves for "computed but not a keyword"), and other
+forms of textbook layout words, like *explained* or *sections*, slip past
+the filter. Both are logged for Sprint 5.
 
 **Evaluation.** `evaluation/run_evaluation.py` (Isa), built on the Sprint 3
 baseline comparison. Every ranking uses the same pipeline output and the
@@ -152,5 +162,5 @@ generic verbs. The official verdict stays **not met**.
 3. **Rethink the frequency part.** Counting within the text beat the VIRS
    band on both books. Worth discussing with Eric whether the band should
    play a smaller role, or a different one, like a grade-level filter.
-4. **Finish the automated tests** for the pipeline, word families, numbers
-   and Team B format in Sprint 5.
+4. **Fix the two known bugs** the tests document: relevance for one-word
+   passages, and layout-word forms slipping past the filter.

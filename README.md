@@ -83,10 +83,10 @@ layer design combines with the frequency bands from
 
 ### How to run it
 
-Requires `spacy` and `numpy`:
+Requires `spacy`, `numpy`, `wordfreq`:
 
 ```bash
-pip install spacy numpy
+pip install spacy numpy wordfreq
 python -m spacy download en_core_web_sm
 ```
 

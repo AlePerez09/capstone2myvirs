@@ -1,0 +1,241 @@
+[
+ {
+  "id": "ch01",
+  "chapter": 1,
+  "line": 645,
+  "text": "Evolution is a change in the characteristics of living things over time. Evolution occurs by a process called natural selection. In natural selection, some living things produce more offspring than others, so they pass more genes to the next generation than others do. Over many generations, this can lead to major changes in the characteristics of living things. Evolution explains how living things are changing today and how modern living things have descended from ancient life forms that no longer exist on Earth. As living things evolve, they generally become better suited for their environment. This is because they evolve adaptations. An adaptation is a characteristic that helps a living thing survive and reproduce in a given environment. Look at the mole inFigure 1.10. It has tentacles around its nose that it uses to sense things by touch. The mole lives underground in the soil where it is always dark.",
+  "key_words": [
+   "evolution",
+   "selection",
+   "natural",
+   "offspring",
+   "genes",
+   "generation",
+   "characteristics",
+   "adaptation",
+   "environment",
+   "survive",
+   "reproduce"
+  ]
+ },
+ {
+  "id": "ch02",
+  "chapter": 2,
+  "line": 1233,
+  "text": "All chemical reactions need energy to get started. Even reactions that release energy need a boost of energy in order to begin. The energy needed to start a chemical reaction is called activation energy. Activation energy is like the push a child needs to start going down a playground slide. The push gives the child enough energy to start moving, but once she starts, she keeps moving without being pushed again. Activation energy is illustrated in Figure 2.11. Why do all chemical reactions need energy to get started? In order for reactions to begin, reactant molecules must bump into each other, so they must be moving, and movement requires energy. When reactant molecules bump together, they may repel each other because of intermolecular forces pushing them apart. Overcoming these forces so the molecules can come together and react also takes energy. An overview of activation energy can be viewed at http://www.youtube.com/watch?v=VbIaK6PLrRM#38;feature=r",
+  "key_words": [
+   "energy",
+   "activation",
+   "chemical",
+   "reactions",
+   "reactant",
+   "molecules",
+   "intermolecular",
+   "forces"
+  ]
+ },
+ {
+  "id": "ch03",
+  "chapter": 3,
+  "line": 1893,
+  "text": "The mitochondrion (plural, mitochondria) is an organelle that makes energy available to the cell. This is why mitochondria are sometimes referred to as the power plants of the cell. They use energy from organic compounds such as glucose to make molecules ofATP(adenosine triphosphate), an energy-carrying molecule that is used almost universally inside cells for energy. Scientists think that mitochondria were once free-living organisms because they contain their own DNA. They theorize that ancient prokaryotes infected (or were engulfed by) larger prokaryotic cells, and the two organisms evolved a symbiotic relationship that bene\ufb01ted both of them. The larger cells provided the smaller prokaryotes with a place to live. In return, the larger cells got extra energy from the smaller prokaryotes. Eventually, the prokaryotes became permanent guests of the larger cells, as organelles inside them. This theory is called the endosymbiotic theory, and it is widely accepted by biologists today",
+  "key_words": [
+   "mitochondria",
+   "organelle",
+   "energy",
+   "cell",
+   "atp",
+   "glucose",
+   "prokaryotes",
+   "endosymbiotic",
+   "symbiotic",
+   "dna"
+  ]
+ },
+ {
+  "id": "ch04",
+  "chapter": 4,
+  "line": 2388,
+  "text": "Photosynthesis is often considered to be the single most important life process on Earth. It changes light energy into chemical energy and also releases oxygen. Without photosynthesis, there would be no oxygen in the atmosphere. Photosynthesis involves many chemical reactions, but they can be summed up in a single chemical equation: 6CO2 + 6H2O + Light Energy\u2192 C6H12O6 + 6O2. Photosynthetic autotrophs capture light energy from the sun and absorb carbon dioxide and water from their environ- ment. Using the light energy, they combine the reactants to produce glucose and oxygen, which is a waste product.",
+  "key_words": [
+   "photosynthesis",
+   "light",
+   "energy",
+   "chemical",
+   "oxygen",
+   "carbon",
+   "dioxide",
+   "autotrophs",
+   "sun",
+   "reactions",
+   "atmosphere",
+   "water"
+  ]
+ },
+ {
+  "id": "ch07",
+  "chapter": 7,
+  "line": 4454,
+  "text": "Translation is the second part of the central dogma of molecular biology: RNA\u2192 Protein. It is the process in which the genetic code in mRNA is read to make a protein. Figure 7.9 shows how this happens. After mRNA leaves the nucleus, it moves to a ribosome, which consists of rRNA and proteins. The ribosome reads the sequence of codons in mRNA. Molecules of tRNA bring amino acids to the ribosome in the correct sequence. To understand the role of tRNA, you need to know more about its structure. Each tRNA molecule has an anticodon for the amino acid it carries. An anticodon is complementary to the codon for an amino acid. For example, the amino acid lysine has the codon AAG, so the anticodon is UUC. Therefore, lysine would be carried by a tRNA molecule with the anticodon UUC. Wherever the codon AAG appears in mRNA, a UUC anticodon of tRNA temporarily binds.",
+  "key_words": [
+   "translation",
+   "protein",
+   "mrna",
+   "ribosome",
+   "trna",
+   "codons",
+   "anticodon",
+   "amino",
+   "sequence",
+   "code"
+  ]
+ },
+ {
+  "id": "ch08",
+  "chapter": 8,
+  "line": 5195,
+  "text": "Mistakes may occur during meiosis that result in nondisjunction. This is the failure of replicated chromosomes to separate during meiosis (the animation at the link below shows how this happens). Some of the resulting gametes will be missing a chromosome, while others will have an extra copy of the chromosome. If such gametes are fertilized and form zygotes, they usually do not survive. If they do survive, the individuals are likely to have serious genetic disorders. Table 8.3 lists several genetic disorders that are caused by abnormal numbers of chromosomes. Most chromosomal disorders involve the X chromosome. Look back at the X and Y chromosomes and you will see why. The X and Y chromosomes are very different in size, so nondisjunction of the sex chromosomes occurs relatively often. http://learn.genetics.utah.edu/content/begin/traits/predictdisorder/index.html TABLE 8.3: Genetic Disorders Caused by Abnormal Numbers of Chromosomes",
+  "key_words": [
+   "nondisjunction",
+   "meiosis",
+   "chromosomes",
+   "gametes",
+   "disorders",
+   "genetic",
+   "zygotes",
+   "fertilized",
+   "sex",
+   "separate"
+  ]
+ },
+ {
+  "id": "ch10",
+  "chapter": 10,
+  "line": 6798,
+  "text": "Genetic drift is a random change in allele frequencies that occurs in a small population. When a small number of parents produce just a few offspring, allele frequencies in the offspring may differ, by chance, from allele frequencies in the parents. This is like tossing a coin. If you toss a coin just a few times, you may, by chance, get more or less than the expected 50 percent heads or tails. In a small population, you may also, by chance, get different allele frequencies than expected in the next generation. In this way, allele frequencies may drift over time. There are two special conditions under which genetic drift occurs. They are called bottleneck effect and founder effect. a. Bottleneck effect occurs when a population suddenly gets much smaller. This might happen because of a natural disaster such as a forest \ufb01re. By chance, allele frequencies of the survivors may be different from those",
+  "key_words": [
+   "genetic",
+   "drift",
+   "allele",
+   "frequencies",
+   "population",
+   "chance",
+   "random",
+   "offspring",
+   "bottleneck",
+   "founder"
+  ]
+ },
+ {
+  "id": "ch11",
+  "chapter": 11,
+  "line": 7869,
+  "text": "If you saw the movie Finding Nemo, then you probably recognize this \ufb01sh. It\u2019s known as a clown\ufb01sh, and it\u2019s swimming near the tentacles of an animal called a sea anemone. The sea anemone kills prey by injecting poison with its tentacles. For some reason, the anemone doesn\u2019t harm the clown\ufb01sh, perhaps because the \ufb01sh has a coating of mucus that helps disguise it. But why does the clown\ufb01sh \u201chang out\u201d with the sea anemone? One reason is for the food. The clown\ufb01sh eats the remains of the anemone\u2019s prey after it \ufb01nishes feeding. Another reason is safety. The clown\ufb01sh is safe from predators when it\u2019s near the anemone. Predators are scared away by the anemone\u2019s poison tentacles. In return, the clown\ufb01sh helps the anemone catch food by attracting prey with its bright colors. Its feces also provide nutrients to the anemone. The clown\ufb01sh and anemone are just one example of the diverse ways that living things may help each other in nature.",
+  "key_words": [
+   "clownfish",
+   "anemone",
+   "tentacles",
+   "prey",
+   "poison",
+   "predators",
+   "food",
+   "safety",
+   "nutrients"
+  ]
+ },
+ {
+  "id": "ch12",
+  "chapter": 12,
+  "line": 8440,
+  "text": "Both birth and death rates were fairly high. As a result, human population growth was very slow. The invention of agriculture increased both birth and death rates. The population continued to grow slowly. \u2022 Major changes in the human population \ufb01rst began during the 1700s. This occurred in Europe and North America. First, death rates fell while birth rates remained high. This led to rapid population growth. Later, birth rates also fell. As a result, population growth slowed. \u2022 Other countries have completed a similar demographic transition. However, some countries seem stalled at early stages. They have high birth rates and rapidly growing populations. \u2022 The total human population may have to stop growing eventually. Even if we reduce our use of resources and distribute them more fairly, at some point the carrying capacity will be reached.",
+  "key_words": [
+   "population",
+   "growth",
+   "birth",
+   "death",
+   "rates",
+   "demographic",
+   "transition",
+   "agriculture",
+   "carrying",
+   "capacity",
+   "resources"
+  ]
+ },
+ {
+  "id": "ch14",
+  "chapter": 14,
+  "line": 10150,
+  "text": "Most fungi get organic compounds from dead organisms. They are decomposers called saprotrophs. A saprotroph feeds on any remaining organic matter after other decomposers do their work. Fungi use enzymes to digest organic remains and then absorb the resulting organic compounds. As decomposers, fungi are vital for the health of ecosystems. They break down nonliving organic matter and release the nutrients into the soil. Plants can then use the nutrients and pass them on to herbivores and other consumers. Bacteria are also major decomposers, but they can grow and feed only on the exposed surfaces of organic matter. In contrast, fungi can use their hyphae to penetrate deep into organic matter. Fungi are also the only decomposers that can break down tough plant substances, including lignin (in wood) and cellulose (in plant cell walls). They have special enzymes to do this work. The enzymes are released by the tips of the hyphae.",
+  "key_words": [
+   "fungi",
+   "decomposers",
+   "saprotrophs",
+   "organic",
+   "enzymes",
+   "digest",
+   "nutrients",
+   "hyphae",
+   "matter",
+   "absorb"
+  ]
+ },
+ {
+  "id": "ch16",
+  "chapter": 16,
+  "line": 11680,
+  "text": "Nonvascular plants include mosses, liverworts, and hornworts. They are the only plants with a life cycle in which the gametophyte generation is dominant. Figure 16.18 shows the life cycle of moss. The familiar, green, photosynthetic moss plants are gametophytes. The sporophyte generation is very small and dependent on the gametophyte plant. The gametophytes of nonvascular plants have distinct male or female reproductive organs (seeFigure 16.19). Male reproductive organs, called antheridia (singular, antheridium), produce motile sperm with two \ufb02agella. Female reproductive organs, called archegonia (singular, archegonium), produce eggs. In order for fertilization to occur, sperm must swim in a drop of water from an antheridium to an egg in an archegonium. If fertilization takes place, it results in a zygote that develops into a tiny sporophyte on the parent gametophyte plant. The sporophyte produces haploid spores, and these develop into the next generation of gametophyte plants.",
+  "key_words": [
+   "nonvascular",
+   "gametophyte",
+   "sporophyte",
+   "cycle",
+   "moss",
+   "reproductive",
+   "sperm",
+   "eggs",
+   "fertilization",
+   "zygote",
+   "spores",
+   "haploid",
+   "antheridia",
+   "archegonia"
+  ]
+ },
+ {
+  "id": "ch21",
+  "chapter": 21,
+  "line": 16428,
+  "text": "Skeletal muscles are attached to the skeleton by tough connective tissues called tendons (see Figure 21.15). Many skeletal muscles are attached to the ends of bones that meet at a joint. The muscles span the joint and connect the bones. When the muscles contract, they pull on the bones, causing them to move. You can watch a video showing how muscles and bones move together at this link: http://www.youtube.com/watch?v=7Rzi7zYlWno#38;feature=r elated. Muscles can only contract. They cannot actively extend, or lengthen. Therefore, to move bones in opposite directions, pairs of muscles must work in opposition. For example, the biceps and triceps muscles of the upper arm work in opposition to bend and extend the arm at the elbow (seeFigure 21.16). You can watch an animation of these two muscles working in opposition at the link below. What other body movements do you think require opposing muscle pairs? http://www.youtube.com/watch?v=T-ozRNVhGVg#38;feature=related",
+  "key_words": [
+   "muscles",
+   "skeletal",
+   "bones",
+   "tendons",
+   "contract",
+   "joint",
+   "opposition",
+   "pairs",
+   "extend",
+   "biceps",
+   "triceps"
+  ]
+ },
+ {
+  "id": "ch24",
+  "chapter": 24,
+  "line": 18981,
+  "text": "This prevents the host\u2019s immune system from detecting the antigens and destroying infected cells. As time passes, the number of HIV copies keeps increasing, while the number of helper T cells keeps decreasing. The graph in Figure 24.15 shows how the number of T cells typically declines over a period of many years following the initial HIV infection. As the number of T cells decreases, so does the ability of the immune system to defend the body. As a result, an HIV-infected person develops frequent infections. Medicines can slow down the virus but not get rid of it, so there is no cure at present for HIV infections or AIDS. There also is no vaccine to immunize people against HIV infection, but scientists are working to develop one.",
+  "key_words": [
+   "hiv",
+   "immune",
+   "cells",
+   "helper",
+   "infection",
+   "antigens",
+   "aids",
+   "vaccine",
+   "cure"
+  ]
+ }
+]

@@ -23,6 +23,9 @@ Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 - `word_lists.py` — loads the word lists (the full VIRS list, or Eric's five Excel files) into one lookup table
 - `data/virs_words.csv` — the full VIRS word list from the old site (~30,000 words), shared by Team B
 - `tests/test_word_lists.py` — tests for the word list loader, using mock files
+- `tests/test_pipeline.py` — tests for the relevance pipeline (pre-processing, TextRank, word families, numbers, relevance options)
+- `tests/test_priority_ranking.py` — tests for the combined ranking
+- `tests/test_contract.py` — tests for the Team B format (`contract.py` and the schema)
 - `schema/contract_v1.schema.json` — the contract format, for both teams to validate against
 - `data/` — extracted textbook text and pipeline results (e.g. `biology.txt`, `biology.json`)
 - `README.md` — this file
@@ -332,3 +335,41 @@ Numbers stuck to letters, like the 2 in CO2, are still dropped.
 
 Requires `num2words` (`pip install num2words`). Use `--no-numbers` with
 `pipeline.py` to drop numbers instead.
+
+## Tests
+
+The `tests/` folder checks the pipeline, the combined ranking, the Team B
+format, and the word list loader. Run them all with one command from the
+repo folder:
+
+```bash
+pip install pytest spacy scipy numpy pypdf jsonschema num2words openpyxl
+python -m spacy download en_core_web_sm
+python -m pytest tests
+```
+
+It takes about 20 seconds. Each file also runs on its own, e.g.
+`python tests/test_pipeline.py`.
+
+| File | What it checks |
+|---|---|
+| `test_pipeline.py` | Ligatures, hyphenation, layout numbers, spelled-out numbers, chunking long text, TextRank, percentiles, word families, stop words, and the three relevance options |
+| `test_priority_ranking.py` | Band scores, the grade bonus, the priority formula, tie-breaking, what's left out, and that the word list only has values the schema accepts |
+| `test_contract.py` | Every response is valid, the code and schema agree on fields, the schema rejects broken responses, the samples in `data/contract/` stay valid, and the command line works |
+| `test_word_lists.py` | Loading Eric's Excel files (mock files) and the VIRS CSV |
+
+Some settings are pinned on purpose: Cariello's TextRank settings (window
+of 4, damping 0.85, nouns/adjectives/verbs) and the weights and band
+scores fixed in `evaluation_criterion.md`. If you change one deliberately,
+update the test with it.
+
+Tests marked **xfail** are known bugs, expected to fail until fixed:
+
+- Other forms of textbook layout words ("explained," "sections,"
+  "described") are still scored, because `TEXTBOOK_STOPWORDS` is checked
+  against the exact word, not its lemma.
+- A passage with only one candidate word gives it relevance 0, which the
+  schema defines as "not a keyword."
+
+When one is fixed, pytest reports `XPASS(strict)` and fails, as a
+reminder to delete its `@pytest.mark.xfail` line.

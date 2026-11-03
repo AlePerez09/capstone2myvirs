@@ -1,0 +1,286 @@
+{
+  "protocol": "evaluation/KEYNESS3_PROTOCOL.md",
+  "threshold": 0.03741421760516611,
+  "detector_accuracy_seen": 0.8294736842105264,
+  "choice": {
+    "science": {
+      "relevance": "both",
+      "weight": 0.75,
+      "biology": 0.3933,
+      "chemistry": 0.4078,
+      "average": 0.4005
+    },
+    "math": {
+      "relevance": "textbooks",
+      "weight": 0.75,
+      "trigonometry": 0.3812,
+      "geometry": 0.617,
+      "algebra": 0.3774,
+      "average": 0.4585
+    }
+  },
+  "grid": {
+    "science": [
+      {
+        "relevance": "both",
+        "weight": 0.75,
+        "biology": 0.3933,
+        "chemistry": 0.4078,
+        "average": 0.4005
+      },
+      {
+        "relevance": "both",
+        "weight": 1.0,
+        "biology": 0.4144,
+        "chemistry": 0.3813,
+        "average": 0.3978
+      },
+      {
+        "relevance": "english",
+        "weight": 0.75,
+        "biology": 0.4044,
+        "chemistry": 0.3692,
+        "average": 0.3868
+      },
+      {
+        "relevance": "english",
+        "weight": 0.5,
+        "biology": 0.379,
+        "chemistry": 0.3899,
+        "average": 0.3845
+      },
+      {
+        "relevance": "both",
+        "weight": 0.5,
+        "biology": 0.3563,
+        "chemistry": 0.4102,
+        "average": 0.3832
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 1.0,
+        "biology": 0.3349,
+        "chemistry": 0.4306,
+        "average": 0.3827
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 0.75,
+        "biology": 0.3113,
+        "chemistry": 0.4192,
+        "average": 0.3653
+      },
+      {
+        "relevance": "english",
+        "weight": 0.25,
+        "biology": 0.3346,
+        "chemistry": 0.3919,
+        "average": 0.3633
+      },
+      {
+        "relevance": "both",
+        "weight": 0.25,
+        "biology": 0.3131,
+        "chemistry": 0.384,
+        "average": 0.3486
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 0.5,
+        "biology": 0.2831,
+        "chemistry": 0.3649,
+        "average": 0.324
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 0.25,
+        "biology": 0.2577,
+        "chemistry": 0.3443,
+        "average": 0.301
+      },
+      {
+        "relevance": "none",
+        "weight": 0.0,
+        "biology": 0.2307,
+        "chemistry": 0.3188,
+        "average": 0.2747
+      },
+      {
+        "relevance": "english",
+        "weight": 1.0,
+        "biology": 0.2891,
+        "chemistry": 0.2563,
+        "average": 0.2727
+      }
+    ],
+    "math": [
+      {
+        "relevance": "textbooks",
+        "weight": 0.75,
+        "trigonometry": 0.3812,
+        "geometry": 0.617,
+        "algebra": 0.3774,
+        "average": 0.4585
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 0.5,
+        "trigonometry": 0.3883,
+        "geometry": 0.5918,
+        "algebra": 0.3858,
+        "average": 0.4553
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 1.0,
+        "trigonometry": 0.3829,
+        "geometry": 0.5935,
+        "algebra": 0.3652,
+        "average": 0.4472
+      },
+      {
+        "relevance": "textbooks",
+        "weight": 0.25,
+        "trigonometry": 0.3644,
+        "geometry": 0.5878,
+        "algebra": 0.3766,
+        "average": 0.4429
+      },
+      {
+        "relevance": "both",
+        "weight": 0.5,
+        "trigonometry": 0.3069,
+        "geometry": 0.5963,
+        "algebra": 0.4113,
+        "average": 0.4382
+      },
+      {
+        "relevance": "both",
+        "weight": 0.25,
+        "trigonometry": 0.3119,
+        "geometry": 0.5884,
+        "algebra": 0.4092,
+        "average": 0.4365
+      },
+      {
+        "relevance": "both",
+        "weight": 0.75,
+        "trigonometry": 0.2858,
+        "geometry": 0.587,
+        "algebra": 0.4112,
+        "average": 0.428
+      },
+      {
+        "relevance": "english",
+        "weight": 0.25,
+        "trigonometry": 0.3002,
+        "geometry": 0.5836,
+        "algebra": 0.3996,
+        "average": 0.4278
+      },
+      {
+        "relevance": "english",
+        "weight": 0.5,
+        "trigonometry": 0.27,
+        "geometry": 0.5802,
+        "algebra": 0.3883,
+        "average": 0.4128
+      },
+      {
+        "relevance": "none",
+        "weight": 0.0,
+        "trigonometry": 0.2932,
+        "geometry": 0.5572,
+        "algebra": 0.3426,
+        "average": 0.3977
+      },
+      {
+        "relevance": "both",
+        "weight": 1.0,
+        "trigonometry": 0.2641,
+        "geometry": 0.5317,
+        "algebra": 0.3672,
+        "average": 0.3877
+      },
+      {
+        "relevance": "english",
+        "weight": 0.75,
+        "trigonometry": 0.2541,
+        "geometry": 0.5141,
+        "algebra": 0.3595,
+        "average": 0.3759
+      },
+      {
+        "relevance": "english",
+        "weight": 1.0,
+        "trigonometry": 0.1177,
+        "geometry": 0.3997,
+        "algebra": 0.2764,
+        "average": 0.2646
+      }
+    ]
+  },
+  "fresh": {
+    "earth_science": {
+      "detector": {
+        "n": 81,
+        "map": 0.4085,
+        "count_only_map": 0.3122,
+        "better": 60,
+        "worse": 21,
+        "wilcoxon_p": 0.0
+      },
+      "true_subject": {
+        "n": 81,
+        "map": 0.414,
+        "count_only_map": 0.3122,
+        "better": 60,
+        "worse": 21,
+        "wilcoxon_p": 0.0
+      },
+      "frequency_only_map": 0.2338,
+      "lessons_labeled_math": 4,
+      "lessons": 81
+    },
+    "prob_stats": {
+      "detector": {
+        "n": 51,
+        "map": 0.377,
+        "count_only_map": 0.2841,
+        "better": 36,
+        "worse": 12,
+        "wilcoxon_p": 0.0001
+      },
+      "true_subject": {
+        "n": 51,
+        "map": 0.3549,
+        "count_only_map": 0.2841,
+        "better": 35,
+        "worse": 14,
+        "wilcoxon_p": 0.0005
+      },
+      "frequency_only_map": 0.1886,
+      "lessons_labeled_math": 37,
+      "lessons": 51
+    },
+    "pooled": {
+      "detector": {
+        "n": 132,
+        "map": 0.3963,
+        "count_only_map": 0.3013,
+        "better": 96,
+        "worse": 33,
+        "wilcoxon_p": 0.0
+      },
+      "true_subject": {
+        "n": 132,
+        "map": 0.3912,
+        "count_only_map": 0.3013,
+        "better": 95,
+        "worse": 35,
+        "wilcoxon_p": 0.0
+      }
+    }
+  },
+  "passes": true
+}

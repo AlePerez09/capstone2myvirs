@@ -1,0 +1,181 @@
+{
+  "settings": {
+    "frequency_only": "{'frequency_only': True}",
+    "combined_official": "{}",
+    "recommended": "{'score_by': 'count', 'frequency_weight': 0.75, 'relevance_weight': 0.25, 'drop_generic_verbs': True}",
+    "recommended_drop_numbers": "{'score_by': 'count', 'frequency_weight': 0.75, 'relevance_weight': 0.25, 'drop_generic_verbs': True, 'drop_numbers': True}",
+    "count_no_relevance": "{'score_by': 'count', 'frequency_weight': 1.0, 'relevance_weight': 0.0, 'drop_generic_verbs': True}",
+    "count_no_relevance_drop_numbers": "{'score_by': 'count', 'frequency_weight': 1.0, 'relevance_weight': 0.0, 'drop_generic_verbs': True, 'drop_numbers': True}"
+  },
+  "biology": {
+    "items": 84,
+    "frequency_only": {
+      "map": 0.1643,
+      "p@10": 0.15,
+      "better": 0,
+      "worse": 0,
+      "tied": 84,
+      "wilcoxon_p_vs_baseline": NaN,
+      "beats_baseline": false
+    },
+    "combined_official": {
+      "map": 0.1431,
+      "p@10": 0.131,
+      "better": 31,
+      "worse": 53,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 5e-06,
+      "beats_baseline": false
+    },
+    "recommended": {
+      "map": 0.2091,
+      "p@10": 0.1655,
+      "better": 72,
+      "worse": 11,
+      "tied": 1,
+      "wilcoxon_p_vs_baseline": 0.0,
+      "beats_baseline": true
+    },
+    "recommended_drop_numbers": {
+      "map": 0.2205,
+      "p@10": 0.1786,
+      "better": 75,
+      "worse": 9,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.0,
+      "beats_baseline": true
+    },
+    "count_no_relevance": {
+      "map": 0.2186,
+      "p@10": 0.1738,
+      "better": 76,
+      "worse": 7,
+      "tied": 1,
+      "wilcoxon_p_vs_baseline": 0.0,
+      "beats_baseline": true
+    },
+    "count_no_relevance_drop_numbers": {
+      "map": 0.2307,
+      "p@10": 0.1881,
+      "better": 80,
+      "worse": 4,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.0,
+      "beats_baseline": true
+    }
+  },
+  "trigonometry": {
+    "items": 22,
+    "frequency_only": {
+      "map": 0.1925,
+      "p@10": 0.0864,
+      "better": 0,
+      "worse": 0,
+      "tied": 22,
+      "wilcoxon_p_vs_baseline": NaN,
+      "beats_baseline": false
+    },
+    "combined_official": {
+      "map": 0.1624,
+      "p@10": 0.0818,
+      "better": 7,
+      "worse": 15,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.091733,
+      "beats_baseline": false
+    },
+    "recommended": {
+      "map": 0.2204,
+      "p@10": 0.0773,
+      "better": 12,
+      "worse": 9,
+      "tied": 1,
+      "wilcoxon_p_vs_baseline": 0.41404,
+      "beats_baseline": false
+    },
+    "recommended_drop_numbers": {
+      "map": 0.2772,
+      "p@10": 0.1227,
+      "better": 19,
+      "worse": 3,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.006649,
+      "beats_baseline": true
+    },
+    "count_no_relevance": {
+      "map": 0.2218,
+      "p@10": 0.0864,
+      "better": 13,
+      "worse": 6,
+      "tied": 3,
+      "wilcoxon_p_vs_baseline": 0.334138,
+      "beats_baseline": false
+    },
+    "count_no_relevance_drop_numbers": {
+      "map": 0.2932,
+      "p@10": 0.1455,
+      "better": 21,
+      "worse": 0,
+      "tied": 1,
+      "wilcoxon_p_vs_baseline": 6e-05,
+      "beats_baseline": true
+    }
+  },
+  "learner_key": {
+    "items": 13,
+    "frequency_only": {
+      "map": 0.5384,
+      "p@10": 0.5,
+      "better": 0,
+      "worse": 0,
+      "tied": 13,
+      "wilcoxon_p_vs_baseline": 1.0,
+      "beats_baseline": false
+    },
+    "combined_official": {
+      "map": 0.5333,
+      "p@10": 0.4462,
+      "better": 5,
+      "worse": 8,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.587891,
+      "beats_baseline": false
+    },
+    "recommended": {
+      "map": 0.6453,
+      "p@10": 0.5615,
+      "better": 11,
+      "worse": 2,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.013428,
+      "beats_baseline": true
+    },
+    "recommended_drop_numbers": {
+      "map": 0.6539,
+      "p@10": 0.5769,
+      "better": 12,
+      "worse": 1,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.002441,
+      "beats_baseline": true
+    },
+    "count_no_relevance": {
+      "map": 0.6373,
+      "p@10": 0.5462,
+      "better": 11,
+      "worse": 2,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.002441,
+      "beats_baseline": true
+    },
+    "count_no_relevance_drop_numbers": {
+      "map": 0.6422,
+      "p@10": 0.5538,
+      "better": 11,
+      "worse": 2,
+      "tied": 0,
+      "wilcoxon_p_vs_baseline": 0.001709,
+      "beats_baseline": true
+    }
+  }
+}

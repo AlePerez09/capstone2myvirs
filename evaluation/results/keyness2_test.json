@@ -1,0 +1,146 @@
+{
+  "protocol": "evaluation/KEYNESS2_PROTOCOL.md",
+  "tuning": [
+    {
+      "relevance": "english",
+      "weight": 0.25,
+      "biology": 0.3346,
+      "trigonometry": 0.3002,
+      "average": 0.3174
+    },
+    {
+      "relevance": "english",
+      "weight": 0.5,
+      "biology": 0.379,
+      "trigonometry": 0.27,
+      "average": 0.3245
+    },
+    {
+      "relevance": "english",
+      "weight": 0.75,
+      "biology": 0.4044,
+      "trigonometry": 0.2541,
+      "average": 0.3292
+    },
+    {
+      "relevance": "english",
+      "weight": 1.0,
+      "biology": 0.2891,
+      "trigonometry": 0.1177,
+      "average": 0.2034
+    },
+    {
+      "relevance": "textbooks",
+      "weight": 0.25,
+      "biology": 0.263,
+      "trigonometry": 0.3801,
+      "average": 0.3216
+    },
+    {
+      "relevance": "textbooks",
+      "weight": 0.5,
+      "biology": 0.2901,
+      "trigonometry": 0.3779,
+      "average": 0.334
+    },
+    {
+      "relevance": "textbooks",
+      "weight": 0.75,
+      "biology": 0.3223,
+      "trigonometry": 0.345,
+      "average": 0.3337
+    },
+    {
+      "relevance": "textbooks",
+      "weight": 1.0,
+      "biology": 0.3491,
+      "trigonometry": 0.3352,
+      "average": 0.3422
+    },
+    {
+      "relevance": "both",
+      "weight": 0.25,
+      "biology": 0.315,
+      "trigonometry": 0.3104,
+      "average": 0.3127
+    },
+    {
+      "relevance": "both",
+      "weight": 0.5,
+      "biology": 0.3604,
+      "trigonometry": 0.2898,
+      "average": 0.3251
+    },
+    {
+      "relevance": "both",
+      "weight": 0.75,
+      "biology": 0.3978,
+      "trigonometry": 0.2783,
+      "average": 0.338
+    },
+    {
+      "relevance": "both",
+      "weight": 1.0,
+      "biology": 0.4195,
+      "trigonometry": 0.267,
+      "average": 0.3432
+    }
+  ],
+  "chosen": {
+    "relevance": "both",
+    "weight": 1.0,
+    "biology": 0.4195,
+    "trigonometry": 0.267,
+    "average": 0.3432
+  },
+  "seen_books_count_only": {
+    "biology": 0.2307,
+    "trigonometry": 0.2932
+  },
+  "fresh": {
+    "chemistry": {
+      "n": 109,
+      "map": 0.3812,
+      "count_only_map": 0.3188,
+      "better": 66,
+      "worse": 37,
+      "wilcoxon_p": 0.0027,
+      "frequency_only_map": 0.2377
+    },
+    "geometry": {
+      "n": 119,
+      "map": 0.5212,
+      "count_only_map": 0.5572,
+      "better": 43,
+      "worse": 66,
+      "wilcoxon_p": 0.1625,
+      "frequency_only_map": 0.3951
+    },
+    "algebra": {
+      "n": 134,
+      "map": 0.3711,
+      "count_only_map": 0.3426,
+      "better": 76,
+      "worse": 50,
+      "wilcoxon_p": 0.1444,
+      "frequency_only_map": 0.2172
+    },
+    "pooled_all": {
+      "n": 362,
+      "map": 0.4235,
+      "count_only_map": 0.406,
+      "better": 185,
+      "worse": 153,
+      "wilcoxon_p": 0.1042
+    },
+    "pooled_math": {
+      "n": 253,
+      "map": 0.4417,
+      "count_only_map": 0.4435,
+      "better": 119,
+      "worse": 116,
+      "wilcoxon_p": 0.9679
+    }
+  },
+  "passes": false
+}

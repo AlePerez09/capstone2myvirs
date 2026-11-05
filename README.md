@@ -7,6 +7,13 @@ textbook, and it tells you which words matter. Sprint 1 tagged each
 word with how common it is, Sprint 2 added relevance scoring, and
 Sprint 3 runs the full pipeline end to end on real CK-12 textbooks.
 
+**Before relying on the results, read [limitations.md](limitations.md):**
+what the system doesn't do, including that our Sprint 4 evaluation did
+not show the combined ranking beating frequency alone.
+
+**New here? [walkthrough.md](walkthrough.md)** follows one text through every
+step, from PDF to Team B's JSON, with real commands and output.
+
 ## What's in this folder
 
 - `walking_skeleton.py` — the Sprint 1 script, tags each word with its frequency category

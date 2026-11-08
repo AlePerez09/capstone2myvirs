@@ -171,10 +171,10 @@ def test_text_grade_gives_the_grade_bonus():
 
 # ---------- Edge cases ----------
 
-def test_empty_text_gives_a_valid_empty_response():
-    response = build("")
-    assert response["words"] == []
-    assert response["text_summary"] == {"tokens": 0, "coverage_high": 0.0, "coverage_lsw": 0.0}
+def test_empty_text_is_rejected_with_a_clear_error():
+    import pipeline
+    with pytest.raises(pipeline.InputError, match="empty"):
+        build("")
 
 
 def test_stop_words_only_gives_no_words():

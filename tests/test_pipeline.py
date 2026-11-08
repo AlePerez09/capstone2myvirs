@@ -8,9 +8,7 @@ Run from the repo folder:
     python -m pytest tests            # every test file
     python tests/test_pipeline.py     # just this file
 
-Tests marked xfail are known bugs. They are expected to fail until the bug
-is fixed; once it is, pytest reports them as XPASS(strict) and fails the
-run, as a reminder to delete the xfail marker.
+Tests marked xfail would be known bugs; none are open right now.
 """
 
 import json
@@ -168,19 +166,16 @@ def test_tied_scores_share_a_percentile():
     assert pct["c"] == 1.0
 
 
-@pytest.mark.xfail(strict=True, reason=(
-    "Known bug: when a passage has only one candidate word, it gets percentile "
-    "0.0, which the contract schema defines as 'computed but not a keyword'. "
-    "Two or more tied candidates get 0.5 instead."))
 def test_single_candidate_is_not_reported_as_zero():
     assert pipeline.relevance_percentiles({"cell": 0.15})["cell"] > 0
 
 
 # ---------- analyze_text: shape and ordering ----------
 
-def test_empty_and_whitespace_text_give_no_records():
-    assert pipeline.analyze_text("") == []
-    assert pipeline.analyze_text("   \n\t ") == []
+def test_empty_and_whitespace_text_are_rejected():
+    for text in ("", "   \n\t "):
+        with pytest.raises(pipeline.InputError, match="empty"):
+            pipeline.analyze_text(text)
 
 
 def test_record_fields():
@@ -296,11 +291,6 @@ def test_textbook_layout_words_are_not_scored():
     assert records["cell"]["textrank_score"] is not None
 
 
-@pytest.mark.xfail(strict=True, reason=(
-    "Known bug: TEXTBOOK_STOPWORDS is checked against the exact word, so other "
-    "forms (explained, sections, described, listed) are still scored and join "
-    "the 'explain'/'section' families. In data/contract/ck12-biology.json, "
-    "'describe' is rank 272 with relevance 0.94. Checking the lemma too fixes it."))
 def test_other_forms_of_textbook_layout_words_are_not_scored():
     records = by_head(pipeline.analyze_text(
         "Scientists explained how cells divide. The sections described cell growth."))
@@ -419,6 +409,87 @@ def test_scanned_pdf_is_rejected():
             writer.write(f)
         with pytest.raises(ValueError, match="OCR"):
             pipeline.extract_pdf_text(str(pdf))
+
+
+# ---------- Bad input ----------
+
+def test_input_error_is_a_value_error():
+    assert issubclass(pipeline.InputError, ValueError)
+
+
+def test_text_with_no_words_is_rejected():
+    with pytest.raises(pipeline.InputError, match="no words"):
+        pipeline.analyze_text("?? !! -- ## ab to")
+
+
+@pytest.mark.parametrize("text", [
+    "Las células se dividen para formar nuevas células y crecer en el cuerpo humano. "
+    "El agua entra en la célula por la membrana, y la energía se produce en las "
+    "mitocondrias de cada organismo vivo que existe en la Tierra.",
+    "Les cellules se divisent pour former de nouvelles cellules dans le corps humain. "
+    "L'eau entre dans la cellule par la membrane, et l'énergie est produite dans les "
+    "mitochondries de chaque organisme vivant sur la Terre.",
+    "Die Zellen teilen sich, um neue Zellen zu bilden und im Körper zu wachsen. "
+    "Wasser gelangt durch die Membran in die Zelle, und die Energie wird in den "
+    "Mitochondrien jedes lebenden Organismus auf der Erde erzeugt.",
+    "细胞分裂形成新的细胞",
+    "Клетки делятся, чтобы образовать новые клетки",
+])
+def test_non_english_text_is_rejected(text):
+    with pytest.raises(pipeline.InputError, match="English"):
+        pipeline.analyze_text(text)
+
+
+def test_short_english_text_is_not_mistaken_for_another_language():
+    assert pipeline.analyze_text("Development takes time.")
+
+
+def test_missing_pdf_gives_clear_error():
+    with pytest.raises(pipeline.InputError, match="File not found"):
+        pipeline.extract_pdf_text("no/such/book.pdf")
+
+
+def test_missing_text_file_gives_clear_error():
+    with pytest.raises(pipeline.InputError, match="File not found"):
+        pipeline.read_text_file("no/such/book.txt")
+
+
+def test_pdf_with_no_pages_is_rejected(tmp_path):
+    pypdf = pytest.importorskip("pypdf")
+    pdf = tmp_path / "empty.pdf"
+    with open(pdf, "wb") as f:
+        pypdf.PdfWriter().write(f)
+    with pytest.raises(pipeline.InputError, match="no pages"):
+        pipeline.extract_pdf_text(str(pdf))
+
+
+def test_file_that_is_not_a_pdf_is_rejected(tmp_path):
+    pytest.importorskip("pypdf")
+    fake = tmp_path / "fake.pdf"
+    fake.write_text("this is not a pdf")
+    with pytest.raises(pipeline.InputError, match="PDF"):
+        pipeline.extract_pdf_text(str(fake))
+
+
+def test_binary_file_as_text_file_is_rejected(tmp_path):
+    binary = tmp_path / "book.txt"
+    binary.write_bytes(b"\xff\xfe\x00\x80\x81")
+    with pytest.raises(pipeline.InputError, match="UTF-8"):
+        pipeline.read_text_file(str(binary))
+
+
+@pytest.mark.parametrize("args, message", [
+    (["--text", ""], "empty"),
+    (["--text", "细胞分裂形成新的细胞"], "English"),
+    (["--text-file", "no/such/file.txt"], "File not found"),
+    (["no/such/book.pdf"], "File not found"),
+])
+def test_command_line_bad_input_prints_message_not_traceback(args, message):
+    result = subprocess.run([sys.executable, "pipeline.py", *args], cwd=REPO,
+                            capture_output=True, text=True, timeout=120)
+    assert result.returncode == 1
+    assert result.stderr.startswith("Error:") and message in result.stderr
+    assert "Traceback" not in result.stderr
 
 
 # ---------- Command line ----------

@@ -34,8 +34,10 @@ has a --no- form too, so evaluation runs can be scripted either way):
 
 import argparse
 import json
+import os
 import re
 import sys
+import unicodedata
 
 import numpy as np
 import spacy
@@ -96,21 +98,77 @@ nlp.max_length = CHUNK_CHARS * 2
 
 # ---------- 1. Text extraction ----------
 
+class InputError(ValueError):
+    """The input can't be analyzed (missing file, scanned PDF, empty or
+    non-English text). The message says what is wrong and what to do."""
+
+
 def extract_pdf_text(pdf_path):
     """Pull the text layer out of a searchable PDF, page by page."""
     from pypdf import PdfReader
+    from pypdf.errors import PyPdfError
 
-    reader = PdfReader(pdf_path)
-    pages = []
-    for page in reader.pages:
-        pages.append(page.extract_text() or "")
+    if not os.path.isfile(pdf_path):
+        raise InputError(f"File not found: {pdf_path}. Check the path and try again.")
+    try:
+        reader = PdfReader(pdf_path)
+        if reader.is_encrypted:
+            raise InputError(f"{pdf_path} is password-protected. Remove the "
+                             "password and try again.")
+        if len(reader.pages) == 0:
+            raise InputError(f"{pdf_path} has no pages.")
+        pages = [page.extract_text() or "" for page in reader.pages]
+    except InputError:
+        raise
+    except (PyPdfError, OSError, ValueError, KeyError, AttributeError) as e:
+        raise InputError(f"{pdf_path} could not be read as a PDF ({e}). "
+                         "Is the file corrupt or not a PDF?") from e
     text = "\n".join(pages)
     if len(text.strip()) < 100:
-        raise ValueError(
+        raise InputError(
             f"{pdf_path} has almost no extractable text. It may be a scanned PDF "
             "that needs OCR, which this pipeline does not do."
         )
     return text
+
+
+def read_text_file(path):
+    """Read a UTF-8 text file, with a clear error if it can't be read."""
+    if not os.path.isfile(path):
+        raise InputError(f"File not found: {path}. Check the path and try again.")
+    try:
+        with open(path, encoding="utf-8") as f:
+            return f.read()
+    except UnicodeDecodeError as e:
+        raise InputError(f"{path} is not UTF-8 text, so it can't be read as a "
+                         "text file. Is it a PDF? Pass it as the PDF argument instead.") from e
+    except OSError as e:
+        raise InputError(f"{path} could not be read ({e.strerror or e}).") from e
+
+
+# Below this many words there isn't enough text to judge the language.
+MIN_WORDS_FOR_LANGUAGE_CHECK = 30
+MIN_STOPWORD_SHARE = 0.10  # English prose is roughly 30-50% stop words
+_WORD_RE = re.compile(r"[^\W\d_]+")
+
+
+def check_english(text):
+    """Raise InputError if the text clearly isn't English. This is a rough
+    check (no language-detection library): non-Latin scripts, or enough words
+    with almost no common English words like "the", "of", "and"."""
+    letters = [ch for ch in text if ch.isalpha()]
+    if letters:
+        latin = sum(1 for ch in letters if ch.isascii() or "LATIN" in unicodedata.name(ch, ""))
+        if latin / len(letters) < 0.5:
+            raise InputError("The text doesn't look like English (it is mostly "
+                             "non-Latin characters). This pipeline only supports English.")
+    words = [w.lower() for w in _WORD_RE.findall(text)]
+    if len(words) >= MIN_WORDS_FOR_LANGUAGE_CHECK:
+        share = sum(1 for w in words if w in nlp.Defaults.stop_words) / len(words)
+        if share < MIN_STOPWORD_SHARE:
+            raise InputError("The text doesn't look like English (almost no common "
+                             "English words found, so it is either another language or a bare "
+                             "word list). This pipeline only supports English prose.")
 
 
 # ---------- 2. Pre-processing (Appendix A) ----------
@@ -118,8 +176,6 @@ def extract_pdf_text(pdf_path):
 def normalize_text(text):
     """Turn PDF ligatures into plain letters (the "fi" in "ﬁsh" is one
     character in CK-12 PDFs), so "ﬁsh" and "fish" count as one word."""
-    import unicodedata
-
     return unicodedata.normalize("NFKC", text)
 
 
@@ -258,6 +314,7 @@ def build_corpus_and_sentences(text, numbers=SPELL_OUT_NUMBERS, filter_verbs=Fal
                     token.pos_ in CANDIDATE_POS
                     and not token.is_stop
                     and word not in TEXTBOOK_STOPWORDS
+                    and lemma not in TEXTBOOK_STOPWORDS
                     and not generic
                 ):
                     candidates.append(word)
@@ -328,6 +385,10 @@ def relevance_percentiles(scores):
         return {}
     from scipy.stats import rankdata
 
+    if len(scores) == 1:
+        # A lone candidate is the top keyword. 0.0 would mean "not a keyword".
+        return {next(iter(scores)): 1.0}
+
     words = list(scores)
     # Tied scores share the same percentile (common in short passages)
     ranks = rankdata([scores[w] for w in words], method="average")
@@ -350,9 +411,16 @@ def analyze_text(text, families=True, family_list=None, numbers=SPELL_OUT_NUMBER
     filter_verbs: generic textbook verbs and layout words are not candidates.
     group_abbreviations: sin/cos/tan are counted as sine/cosine/tangent.
     """
+    if not isinstance(text, str) or not text.strip():
+        raise InputError("The text is empty. Provide some English text to analyze.")
+    check_english(text)
+
     corpus, sentences = build_corpus_and_sentences(
         text, numbers=numbers, filter_verbs=filter_verbs,
         group_abbreviations=group_abbreviations)
+    if not corpus:
+        raise InputError("The text has no words to analyze (only numbers, "
+                         "symbols or very short words).")
 
     if not families:
         scores = textrank(sentences, weighted=weighted)
@@ -422,19 +490,26 @@ def main():
                              "data/word_families.txt is used automatically if present")
     args = parser.parse_args()
 
-    if args.text:
+    if args.text is None and not args.text_file and not args.pdf:
+        parser.print_help()
+        sys.exit(1)
+    try:
+        run(args)
+    except InputError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+def run(args):
+    if args.text is not None:
         text = args.text
     elif args.text_file:
-        with open(args.text_file, encoding="utf-8") as f:
-            text = f.read()
+        text = read_text_file(args.text_file)
     elif args.pdf:
         text = extract_pdf_text(args.pdf)
         if args.save_text:
             with open(args.save_text, "w", encoding="utf-8") as f:
                 f.write(text)
-    else:
-        parser.print_help()
-        sys.exit(1)
 
     family_list = None
     if not args.no_families:

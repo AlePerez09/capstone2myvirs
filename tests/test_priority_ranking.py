@@ -251,8 +251,10 @@ def test_rank_text_frequency_only():
     assert ranked[0]["headword"] == "cell"
 
 
-def test_rank_text_empty():
-    assert pr.rank_text("", lexicon=LEXICON) == []
+def test_rank_text_empty_is_rejected_with_a_clear_error():
+    import pipeline
+    with pytest.raises(pipeline.InputError, match="empty"):
+        pr.rank_text("", lexicon=LEXICON)
 
 
 def test_rank_text_is_repeatable():

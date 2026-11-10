@@ -1,0 +1,230 @@
+{
+  "protocol": "evaluation/KEYNESS_PROTOCOL.md",
+  "tuning_on_biology": [
+    {
+      "formula": "tf_rarity",
+      "weight": 0.25,
+      "biology_map": 0.2366
+    },
+    {
+      "formula": "tf_rarity",
+      "weight": 0.5,
+      "biology_map": 0.2491
+    },
+    {
+      "formula": "tf_rarity",
+      "weight": 0.75,
+      "biology_map": 0.2665
+    },
+    {
+      "formula": "tf_rarity",
+      "weight": 1.0,
+      "biology_map": 0.2776
+    },
+    {
+      "formula": "log_ratio",
+      "weight": 0.25,
+      "biology_map": 0.3346
+    },
+    {
+      "formula": "log_ratio",
+      "weight": 0.5,
+      "biology_map": 0.379
+    },
+    {
+      "formula": "log_ratio",
+      "weight": 0.75,
+      "biology_map": 0.4044
+    },
+    {
+      "formula": "log_ratio",
+      "weight": 1.0,
+      "biology_map": 0.2891
+    }
+  ],
+  "chosen": {
+    "formula": "log_ratio",
+    "weight": 0.75,
+    "biology_map": 0.4044
+  },
+  "results": {
+    "numbers dropped (primary)": {
+      "biology (tuned on)": {
+        "keyness_vs_count_only": {
+          "map": 0.4044,
+          "compared_map": 0.2307,
+          "better": 70,
+          "worse": 14,
+          "tied": 0,
+          "wilcoxon_p": 0.0,
+          "significantly_better": true
+        },
+        "keyness_vs_frequency_only": {
+          "map": 0.4044,
+          "compared_map": 0.1643,
+          "better": 75,
+          "worse": 9,
+          "tied": 0,
+          "wilcoxon_p": 0.0,
+          "significantly_better": true
+        },
+        "textrank_blend_vs_count_only": {
+          "map": 0.2205,
+          "compared_map": 0.2307,
+          "better": 20,
+          "worse": 63,
+          "tied": 1,
+          "wilcoxon_p": 0.0,
+          "significantly_better": false
+        }
+      },
+      "trigonometry": {
+        "keyness_vs_count_only": {
+          "map": 0.2541,
+          "compared_map": 0.2932,
+          "better": 7,
+          "worse": 15,
+          "tied": 0,
+          "wilcoxon_p": 0.2615,
+          "significantly_better": false
+        },
+        "keyness_vs_frequency_only": {
+          "map": 0.2541,
+          "compared_map": 0.1925,
+          "better": 13,
+          "worse": 9,
+          "tied": 0,
+          "wilcoxon_p": 0.5235,
+          "significantly_better": false
+        },
+        "textrank_blend_vs_count_only": {
+          "map": 0.2772,
+          "compared_map": 0.2932,
+          "better": 9,
+          "worse": 12,
+          "tied": 1,
+          "wilcoxon_p": 0.4869,
+          "significantly_better": false
+        }
+      },
+      "learner_key": {
+        "keyness_vs_count_only": {
+          "map": 0.7212,
+          "compared_map": 0.6422,
+          "better": 10,
+          "worse": 3,
+          "tied": 0,
+          "wilcoxon_p": 0.0327,
+          "significantly_better": true
+        },
+        "keyness_vs_frequency_only": {
+          "map": 0.7212,
+          "compared_map": 0.5384,
+          "better": 11,
+          "worse": 2,
+          "tied": 0,
+          "wilcoxon_p": 0.0034,
+          "significantly_better": true
+        },
+        "textrank_blend_vs_count_only": {
+          "map": 0.6539,
+          "compared_map": 0.6422,
+          "better": 8,
+          "worse": 5,
+          "tied": 0,
+          "wilcoxon_p": 0.4548,
+          "significantly_better": false
+        }
+      }
+    },
+    "numbers kept (sensitivity)": {
+      "biology (tuned on)": {
+        "keyness_vs_count_only": {
+          "map": 0.4001,
+          "compared_map": 0.2186,
+          "better": 72,
+          "worse": 12,
+          "tied": 0,
+          "wilcoxon_p": 0.0,
+          "significantly_better": true
+        },
+        "keyness_vs_frequency_only": {
+          "map": 0.4001,
+          "compared_map": 0.1643,
+          "better": 75,
+          "worse": 9,
+          "tied": 0,
+          "wilcoxon_p": 0.0,
+          "significantly_better": true
+        },
+        "textrank_blend_vs_count_only": {
+          "map": 0.2091,
+          "compared_map": 0.2186,
+          "better": 19,
+          "worse": 65,
+          "tied": 0,
+          "wilcoxon_p": 0.0,
+          "significantly_better": false
+        }
+      },
+      "trigonometry": {
+        "keyness_vs_count_only": {
+          "map": 0.2288,
+          "compared_map": 0.2218,
+          "better": 9,
+          "worse": 13,
+          "tied": 0,
+          "wilcoxon_p": 0.6556,
+          "significantly_better": false
+        },
+        "keyness_vs_frequency_only": {
+          "map": 0.2288,
+          "compared_map": 0.1925,
+          "better": 10,
+          "worse": 12,
+          "tied": 0,
+          "wilcoxon_p": 0.924,
+          "significantly_better": false
+        },
+        "textrank_blend_vs_count_only": {
+          "map": 0.2204,
+          "compared_map": 0.2218,
+          "better": 10,
+          "worse": 12,
+          "tied": 0,
+          "wilcoxon_p": 0.7262,
+          "significantly_better": false
+        }
+      },
+      "learner_key": {
+        "keyness_vs_count_only": {
+          "map": 0.7236,
+          "compared_map": 0.6373,
+          "better": 10,
+          "worse": 3,
+          "tied": 0,
+          "wilcoxon_p": 0.0266,
+          "significantly_better": true
+        },
+        "keyness_vs_frequency_only": {
+          "map": 0.7236,
+          "compared_map": 0.5384,
+          "better": 11,
+          "worse": 2,
+          "tied": 0,
+          "wilcoxon_p": 0.0034,
+          "significantly_better": true
+        },
+        "textrank_blend_vs_count_only": {
+          "map": 0.6453,
+          "compared_map": 0.6373,
+          "better": 8,
+          "worse": 5,
+          "tied": 0,
+          "wilcoxon_p": 0.5879,
+          "significantly_better": false
+        }
+      }
+    }
+  }
+}

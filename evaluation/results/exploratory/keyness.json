@@ -1,0 +1,128 @@
+{
+  "biology": {
+    "frequency_only (official baseline)": {
+      "map": 0.1643,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "count only": {
+      "map": 0.2307,
+      "wilcoxon_p_vs_count_only": null
+    },
+    "0.75 count + 0.25 TextRank": {
+      "map": 0.2205,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "TextRank only": {
+      "map": 0.187,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "keyness_english only": {
+      "map": 0.2983,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "0.75 count + 0.25 keyness_english": {
+      "map": 0.2426,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "0.5 count + 0.5 keyness_english": {
+      "map": 0.2575,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "keyness_book only": {
+      "map": 0.367,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "0.75 count + 0.25 keyness_book": {
+      "map": 0.2725,
+      "wilcoxon_p_vs_count_only": 0.0
+    },
+    "0.5 count + 0.5 keyness_book": {
+      "map": 0.3002,
+      "wilcoxon_p_vs_count_only": 0.0
+    }
+  },
+  "trigonometry": {
+    "frequency_only (official baseline)": {
+      "map": 0.1925,
+      "wilcoxon_p_vs_count_only": 0.0001
+    },
+    "count only": {
+      "map": 0.2932,
+      "wilcoxon_p_vs_count_only": null
+    },
+    "0.75 count + 0.25 TextRank": {
+      "map": 0.2772,
+      "wilcoxon_p_vs_count_only": 0.4869
+    },
+    "TextRank only": {
+      "map": 0.2383,
+      "wilcoxon_p_vs_count_only": 0.0172
+    },
+    "keyness_english only": {
+      "map": 0.3407,
+      "wilcoxon_p_vs_count_only": 0.211
+    },
+    "0.75 count + 0.25 keyness_english": {
+      "map": 0.293,
+      "wilcoxon_p_vs_count_only": 0.2115
+    },
+    "0.5 count + 0.5 keyness_english": {
+      "map": 0.3286,
+      "wilcoxon_p_vs_count_only": 0.0586
+    },
+    "keyness_book only": {
+      "map": 0.4528,
+      "wilcoxon_p_vs_count_only": 0.007
+    },
+    "0.75 count + 0.25 keyness_book": {
+      "map": 0.3798,
+      "wilcoxon_p_vs_count_only": 0.0007
+    },
+    "0.5 count + 0.5 keyness_book": {
+      "map": 0.4044,
+      "wilcoxon_p_vs_count_only": 0.0025
+    }
+  },
+  "learner_key": {
+    "frequency_only (official baseline)": {
+      "map": 0.5384,
+      "wilcoxon_p_vs_count_only": 0.0017
+    },
+    "count only": {
+      "map": 0.6422,
+      "wilcoxon_p_vs_count_only": null
+    },
+    "0.75 count + 0.25 TextRank": {
+      "map": 0.6539,
+      "wilcoxon_p_vs_count_only": 0.4548
+    },
+    "TextRank only": {
+      "map": 0.6087,
+      "wilcoxon_p_vs_count_only": 0.0942
+    },
+    "keyness_english only": {
+      "map": 0.7189,
+      "wilcoxon_p_vs_count_only": 0.0046
+    },
+    "0.75 count + 0.25 keyness_english": {
+      "map": 0.7033,
+      "wilcoxon_p_vs_count_only": 0.0017
+    },
+    "0.5 count + 0.5 keyness_english": {
+      "map": 0.7079,
+      "wilcoxon_p_vs_count_only": 0.0017
+    },
+    "keyness_book only": {
+      "map": 0.6713,
+      "wilcoxon_p_vs_count_only": 0.3054
+    },
+    "0.75 count + 0.25 keyness_book": {
+      "map": 0.6926,
+      "wilcoxon_p_vs_count_only": 0.0171
+    },
+    "0.5 count + 0.5 keyness_book": {
+      "map": 0.7085,
+      "wilcoxon_p_vs_count_only": 0.0034
+    }
+  }
+}

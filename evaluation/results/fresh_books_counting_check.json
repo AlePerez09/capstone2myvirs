@@ -1,0 +1,32 @@
+{
+ "chemistry": {
+  "recommended": 0.309,
+  "count_only": 0.319,
+  "freq_only": 0.238,
+  "rec_vs_freq": [
+   90,
+   8,
+   1.720824952191199e-13
+  ]
+ },
+ "geometry": {
+  "recommended": 0.566,
+  "count_only": 0.557,
+  "freq_only": 0.395,
+  "rec_vs_freq": [
+   101,
+   4,
+   2.606660488897525e-16
+  ]
+ },
+ "algebra": {
+  "recommended": 0.34,
+  "count_only": 0.343,
+  "freq_only": 0.217,
+  "rec_vs_freq": [
+   101,
+   24,
+   3.545366713548868e-14
+  ]
+ }
+}

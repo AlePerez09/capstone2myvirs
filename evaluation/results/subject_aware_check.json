@@ -1,0 +1,42 @@
+{
+  "numbers dropped (as tested)": {
+    "earth_science": {
+      "n": 81,
+      "map": 0.4085,
+      "count_only_map": 0.3122,
+      "better": 60,
+      "worse": 21,
+      "wilcoxon_p": 9.93e-06,
+      "frequency_only_map": 0.2338
+    },
+    "prob_stats": {
+      "n": 51,
+      "map": 0.377,
+      "count_only_map": 0.2841,
+      "better": 36,
+      "worse": 12,
+      "wilcoxon_p": 8.56e-05,
+      "frequency_only_map": 0.1886
+    }
+  },
+  "numbers kept (SUBJECT_AWARE default)": {
+    "earth_science": {
+      "n": 81,
+      "map": 0.3946,
+      "count_only_map": 0.2947,
+      "better": 61,
+      "worse": 20,
+      "wilcoxon_p": 3.48e-06,
+      "frequency_only_map": 0.2338
+    },
+    "prob_stats": {
+      "n": 51,
+      "map": 0.2982,
+      "count_only_map": 0.2005,
+      "better": 40,
+      "worse": 9,
+      "wilcoxon_p": 2.41e-05,
+      "frequency_only_map": 0.1886
+    }
+  }
+}

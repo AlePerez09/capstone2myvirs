@@ -26,6 +26,7 @@ step, from PDF to Team B's JSON, with real commands and output.
 - `pipeline.py` — the Sprint 3 end-to-end pipeline, textbook PDF in, ranked words out
 - `wordfamilies.py` — groups word forms into word families (cells + cell → cell)
 - `priority_ranking.py` — combines frequency band and relevance into one ranking
+- `ranking_default_decision.md` — proposal and team decision on the default ranking
 - `contract.py` — formats the ranked list as JSON for Team B (contract v1)
 - `word_lists.py` — loads the word lists (the full VIRS list, or Eric's five Excel files) into one lookup table
 - `data/virs_words.csv` — the full VIRS word list from the old site (~30,000 words), shared by Team B
@@ -248,6 +249,44 @@ priority = 0.5 × band score + 0.5 × relevance
 python3 priority_ranking.py --text-file data/biology.txt --top 25
 python3 priority_ranking.py --text-file data/biology.txt --frequency-only
 ```
+
+### Ranking options
+
+Sprint 5 added these options to `priority_ranking.py`. **All are off by
+default**, so the command above still gives the official Sprint 4 ranking
+(0.5 × band + 0.5 × relevance). Each works on the command line and as an
+argument to `rank_text()` / `rank_records()`.
+
+Scores are MAP (mean average precision against the CK-12 vocabulary lists,
+higher is better) next to the official **frequency-only** baseline on the
+same lessons. "ns" means not statistically significant.
+
+| Flag | What it does | Headline result | Full results |
+|---|---|---|---|
+| `--score-by count` | The frequency part becomes how often the word appears **in this text** (as a percentile), instead of its VIRS band. | With generic verbs dropped, counting alone beats frequency-only on Biology (0.219 vs 0.164) and the learner key (0.637 vs 0.538); ahead on Trigonometry but ns (0.222 vs 0.193). It also beat frequency-only on all three fresh books in the second relevance test. | [COUNT_RANKING_RESULTS.md](evaluation/COUNT_RANKING_RESULTS.md), [KEYNESS2_RESULTS.md](evaluation/KEYNESS2_RESULTS.md) |
+| `--drop-generic-verbs` | Leaves out generic textbook verbs (include, use, find, produce, occur, ...). | Not tested alone. These verbs were one of the two reasons the combined ranking lost in Sprint 4, and the filter is part of every setting that beats frequency-only. | [COUNT_RANKING_RESULTS.md](evaluation/COUNT_RANKING_RESULTS.md), [RESULTS.md](evaluation/RESULTS.md) |
+| `--drop-numbers` | Leaves out spelled-out number words (one, two, forty, ...). Off everywhere by default because numbers were requested as vocabulary. | Helps most on math text: with `--recommended`, Trigonometry goes from 0.220 (ns) to 0.277 vs 0.193 (p = 0.007); with `--subject-aware`, Probability & Statistics goes from 0.298 to 0.377 vs 0.189. CK-12 lists never contain number words, so this partly measures the answer key. | [COUNT_RANKING_RESULTS.md](evaluation/COUNT_RANKING_RESULTS.md), [KEYNESS3_RESULTS.md](evaluation/KEYNESS3_RESULTS.md) |
+| `--recommended` | Shortcut for the Sprint 4 tuned setting: 0.75 × count + 0.25 × TextRank relevance, generic verbs dropped, numbers kept. | Biology 0.209 vs 0.164 (p < 0.001, tuned here), learner key 0.645 vs 0.538 (p = 0.01), Trigonometry 0.220 vs 0.193 (ns). TextRank itself adds nothing on CK-12 lists: counting alone does as well. | [COUNT_RANKING_RESULTS.md](evaluation/COUNT_RANKING_RESULTS.md) |
+| `--relevance keyness` | Replaces TextRank with keyness: how much more this text uses a word than everyday English does. Needs `pip install wordfreq`. | **Did not pass** its pre-registered test. Strong on Biology (0.404, tuned there) and the learner key (0.721 vs 0.642 for counting, p = 0.03), but lower than counting on the held-out Trigonometry book (0.254 vs 0.293, ns). Tested with `--keyness-formula log_ratio --score-by count --frequency-weight 0.25 --relevance-weight 0.75 --drop-generic-verbs --drop-numbers`. | [KEYNESS_RESULTS.md](evaluation/KEYNESS_RESULTS.md), [KEYNESS_PROTOCOL.md](evaluation/KEYNESS_PROTOCOL.md) |
+| `--subject-aware` | Decides from the text whether it is math or science, then uses the relevance that worked for that kind of text (0.25 × count + 0.75 × keyness against everyday English and/or a pile of other textbooks). Generic verbs dropped, numbers kept. | **Passed** its pre-registered test on two books never used before. Numbers kept (the default): Earth Science 0.395 vs 0.234, Probability & Statistics 0.298 vs 0.189, and better than counting alone on both (p < 0.001). With `--drop-numbers`, as originally tested: 0.409 and 0.377. | [KEYNESS3_RESULTS.md](evaluation/KEYNESS3_RESULTS.md), [KEYNESS3_PROTOCOL.md](evaluation/KEYNESS3_PROTOCOL.md) |
+
+```bash
+python3 priority_ranking.py --text-file data/biology.txt --subject-aware
+python3 priority_ranking.py --text-file data/biology.txt --recommended --drop-numbers
+```
+
+Things to know before relying on these:
+
+- Biology was used to pick the settings, so Biology numbers are in-sample.
+  The fresh books (Earth Science, Probability & Statistics) and the learner
+  key were not used for tuning.
+- The learner key is 13 Biology passages labeled by one person; the team
+  should review it (`baseline-comparison/learner-key/answer_key.json`).
+- `--subject-aware` was the third relevance idea tried. The first two
+  (`--relevance keyness`, and a version tested in
+  [KEYNESS2_RESULTS.md](evaluation/KEYNESS2_RESULTS.md)) failed on math books.
+- Which option becomes the default is a team decision, recorded in
+  [ranking_default_decision.md](ranking_default_decision.md).
 
 `contract.py` wraps that ranking in the contract v1 JSON from the design
 doc and checks every response against `schema/contract_v1.schema.json`

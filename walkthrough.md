@@ -23,9 +23,12 @@ PDF ──► text ──► words + word families ──► relevance (TextRank
 
 ## Setup
 
+Run `setup.bat` (Windows) or `./setup.sh` (Mac, Linux, Git Bash) from the
+repo folder, then activate `.venv` as the README's Setup section shows.
+Or, in an environment you already have:
+
 ```bash
-pip install spacy pypdf scipy numpy num2words jsonschema openpyxl pytest
-python -m spacy download en_core_web_sm
+pip install -r requirements.txt
 ```
 
 On Windows use `python` instead of `python3` in the commands below.
@@ -291,20 +294,21 @@ python3 -m pytest tests -q
 ```
 
 ```
-141 passed, 2 xfailed in 11.38s
+172 passed in 17.91s
 ```
 
 | File | Tests | Covers |
 |---|---|---|
-| `tests/test_pipeline.py` | 54 (2 xfail) | cleaning, ligatures, numbers, families, TextRank, percentiles |
+| `tests/test_pipeline.py` | 71 | cleaning, ligatures, numbers, families, TextRank, percentiles, empty and non-English input |
 | `tests/test_priority_ranking.py` | 35 | the formula, frequency-only, stop and layout word filtering |
+| `tests/test_ranking_options.py` | 12 | in-lesson counting, generic verb and number filters, keyness, subject-aware |
 | `tests/test_contract.py` | 49 | Team B output passes the schema; bad output is rejected |
 | `tests/test_word_lists.py` | 5 | the VIRS CSV and Eric's Excel layout (mock files) |
 
-The two "xfailed" tests are known bugs, written as tests so the suite
-reports when they're fixed. One is a passage with a single scorable word
-getting relevance 0. The other is forms of layout words ("explained,"
-"sections") slipping past the filter. Both are explained in limitations.md.
+The two known bugs from Sprint 4 (relevance 0 for a one-word passage, and
+forms like "explained" slipping past the layout-word filter) were fixed in
+Sprint 5, so their tests now pass instead of being marked as expected
+failures.
 
 ## Evaluation
 

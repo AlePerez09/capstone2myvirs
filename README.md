@@ -14,6 +14,31 @@ not show the combined ranking beating frequency alone.
 **New here? [walkthrough.md](walkthrough.md)** follows one text through every
 step, from PDF to Team B's JSON, with real commands and output.
 
+## Setup (one step)
+
+Needs Python 3.10 to 3.13 ([python.org](https://www.python.org/downloads/);
+on Windows, tick "Add python.exe to PATH"). From the repo folder run:
+
+| System | Command |
+|---|---|
+| Windows (Command Prompt or PowerShell) | `setup.bat` |
+| Mac, Linux, or Git Bash | `./setup.sh` |
+
+It creates a virtual environment in `.venv`, installs everything in
+`requirements.txt` (spaCy's English model included), and runs the tests.
+It should end with `172 passed`. Then activate the environment each time
+you open a new terminal:
+
+```bash
+.venv\Scripts\activate          # Windows
+source .venv/bin/activate        # Mac / Linux
+source .venv/Scripts/activate    # Git Bash
+```
+
+Already have an environment you want to use? `pip install -r requirements.txt`
+does the same install in one command. The install commands in the sprint
+sections below are older; `requirements.txt` replaces all of them.
+
 ## What's in this folder
 
 - `walking_skeleton.py` — the Sprint 1 script, tags each word with its frequency category
@@ -94,11 +119,10 @@ layer design combines with the frequency bands from
 
 ### How to run it
 
-Requires `spacy`, `numpy`, `wordfreq`:
+Install (see Setup at the top):
 
 ```bash
-pip install spacy numpy wordfreq
-python -m spacy download en_core_web_sm
+pip install -r requirements.txt
 ```
 
 Run on the built-in sample passage:
@@ -142,11 +166,10 @@ lemma, count, and relevance score.
 
 ### How to run it
 
-Requires `spacy`, `pypdf`, `scipy`, and `numpy`:
+Install (see Setup at the top):
 
 ```bash
-pip install spacy pypdf scipy numpy
-python -m spacy download en_core_web_sm
+pip install -r requirements.txt
 ```
 
 Run on a textbook and save the results:
@@ -314,7 +337,7 @@ the K-12 files, and an unrecognized color stops with an error instead of
 guessing.
 
 ```bash
-pip install openpyxl jsonschema num2words
+pip install -r requirements.txt
 python3 word_lists.py              # summary of what loaded
 python3 word_lists.py --word cell  # look up one word
 python3 tests/test_word_lists.py   # tests on mock files
@@ -389,8 +412,7 @@ format, and the word list loader. Run them all with one command from the
 repo folder:
 
 ```bash
-pip install pytest spacy scipy numpy pypdf jsonschema num2words openpyxl
-python -m spacy download en_core_web_sm
+pip install -r requirements.txt
 python -m pytest tests
 ```
 

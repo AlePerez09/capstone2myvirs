@@ -74,11 +74,10 @@ different publisher may fail or give noisy results.
   occur*). An optional filter removes some, not all.
 - **Each word gets one part of speech**, its most common one in the text,
   so *use* as a noun and as a verb are treated alike.
-- **Two known bugs**, documented by tests marked as expected failures:
-  a passage with only one scorable word gets relevance 0 (which our output
-  format reserves for "not a keyword"), and other forms of layout words
-  (*explained, sections, described*) slip past the filter, so *describe*
-  can rank as if it were vocabulary.
+- **No known open bugs.** The two found in Sprint 4 (a one-word passage
+  getting relevance 0, and forms like *explained* or *sections* slipping
+  past the layout-word filter) were fixed in Sprint 5 (pull request #5),
+  and their tests now pass.
 
 ## 5. The word list
 
@@ -116,9 +115,11 @@ accurate as this list.
 - **Team B's app doesn't call our code yet.** They can read our sample
   JSON output, but there's no live connection or web service between
   the two systems.
-- **Setup is manual.** Packages are installed one at a time (spaCy and its
-  English model, num2words, wordfreq, openpyxl, jsonschema, pytest), and
-  versions aren't pinned.
+- **Setup needs Python and an internet connection.** `setup.bat` or
+  `setup.sh` installs everything in one step, but you need Python 3.10 to
+  3.13 already installed, and the first install downloads about 100 MB.
+  Versions have minimums and spaCy is held to 3.8, so a future package
+  release could still break something.
 - **Nothing is stored and no one signs in.** The system doesn't save
   uploaded texts, learn from new material, or track individual learners.
   Collecting learner data was outside this semester's rules.

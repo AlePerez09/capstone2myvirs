@@ -441,3 +441,11 @@ Tests marked **xfail** are known bugs, expected to fail until fixed:
 
 When one is fixed, pytest reports `XPASS(strict)` and fails, as a
 reminder to delete its `@pytest.mark.xfail` line.
+
+## AI use
+
+We used Claude (Anthropic) for debugging assistance, mainly to help identify issues, understand failing tests, and troubleshoot problems in the code. It also provided suggestions when we encountered issues during development.
+
+Every code change went through a pull request reviewed by a teammate. Separately, the 172 automated tests were used to check the code.
+
+Every number in our reports comes from running the code. Licences in our provenance list were checked against each package's own metadata, not taken from the AI.
